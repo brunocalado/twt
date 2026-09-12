@@ -12,6 +12,22 @@ This system implements the game's rules — the d6 mark pool, Strain, record slo
 travel — with character and NPC sheets, a chat-card dice engine, and compendiums of the printed
 content.
 
+## Install
+
+In Foundry, open **Configuration and Setup → Game Systems → Install System**, paste the manifest
+URL below into the *Manifest URL* field, and click **Install**:
+
+```
+https://github.com/brunocalado/twt/releases/latest/download/system.json
+```
+
+That URL always points at the newest release, so Foundry will offer updates as they are published.
+
+To install by hand instead, download `twt.zip` from the
+[latest release](https://github.com/brunocalado/twt/releases/latest) and unzip it into your Foundry
+data folder at `Data/systems/twt`, so that `Data/systems/twt/system.json` exists. Restart Foundry
+afterwards.
+
 ## Screenshots
 
 |  |  |
@@ -44,22 +60,6 @@ ownership of the game.
 ## Requirements
 
 Foundry VTT **v14** or later. No modules are required.
-
-## Install
-
-In Foundry, open **Configuration and Setup → Game Systems → Install System**, paste the manifest
-URL below into the *Manifest URL* field, and click **Install**:
-
-```
-https://github.com/brunocalado/twt/releases/latest/download/system.json
-```
-
-That URL always points at the newest release, so Foundry will offer updates as they are published.
-
-To install by hand instead, download `twt.zip` from the
-[latest release](https://github.com/brunocalado/twt/releases/latest) and unzip it into your Foundry
-data folder at `Data/systems/twt`, so that `Data/systems/twt/system.json` exists. Restart Foundry
-afterwards.
 
 ## Legal
 
