@@ -2,7 +2,7 @@
   "id": "twt",
   "title": "Time Without Tide",
   "description": "A Victorian apocalypse TTRPG where the moon shattered and eldritch fog consumes the world. Unofficial fan-made system. Time Without Tide is copyright Chaosium Studios LLC; this system is not published, endorsed, or approved by Chaosium Inc.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "compatibility": {
     "minimum": "14",
     "verified": "14"

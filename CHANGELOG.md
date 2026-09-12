@@ -4,6 +4,11 @@ All notable changes to this system are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 [semantic versioning](https://semver.org/).
 
+## [0.0.2] — 2026-09-12
+
+- Move the Install section above Screenshots
+- Add interface screenshots to the README
+
 ## [0.0.1] — 2026-09-12
 
 The first complete pass: every subsystem from the Quickstart, built and verified in a live client.
