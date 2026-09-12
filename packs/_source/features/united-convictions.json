@@ -1,0 +1,27 @@
+{
+  "_id": "twtfea0000000000",
+  "name": "United Convictions",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+    "rules": "<p>When you or a targetable creature within 2 range are damaged, exhaust this feature to reduce the damage to 0.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "As a 10-minute action, take 1 MIND damage to restore this feature.",
+    "skill": "culture",
+    "tier": "junior"
+  },
+  "sort": 100000,
+  "_key": "!items!twtfea0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

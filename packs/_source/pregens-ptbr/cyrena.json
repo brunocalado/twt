@@ -1,0 +1,321 @@
+{
+  "_id": "ptbpre0000000000",
+  "name": "Cyrena",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Acólita da Luz Sagrada.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 4,
+        "hp": {
+          "value": 4
+        }
+      },
+      "mind": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "will": {
+        "score": 4,
+        "hp": {
+          "value": 4
+        }
+      }
+    },
+    "skills": {
+      "culture": 2,
+      "industry": 0,
+      "navigation": 2,
+      "skulduggery": 0,
+      "survival": 2,
+      "violence": 0
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "ptbpgi0000000000",
+      "name": "Grandeluz",
+      "type": "equipment",
+      "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+      "system": {
+        "description": "<p>Uma lanterna pesada, de duas mãos, que empurra a névoa mais longe do que qualquer outra luz que um Desbravador consiga carregar.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "lantern",
+        "heavy": true,
+        "doubleWielded": true,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 4
+      },
+      "sort": 100000,
+      "_key": "!actors.items!ptbpre0000000000.ptbpgi0000000000",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000001",
+      "name": "Ícone Inabalável",
+      "type": "equipment",
+      "img": "icons/commodities/treasure/token-brass-round.webp",
+      "system": {
+        "description": "<p>Um pequeno objeto devocional, polido pelos polegares.</p>",
+        "rules": "<p>Sempre que você faz um teste de VONTADE para resistir a um efeito, use 1 carga para tornar o teste -1M mais fácil.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 300000,
+      "_key": "!actors.items!ptbpre0000000000.ptbpgi0000000001",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000002",
+      "name": "Uniforme de Parada",
+      "type": "equipment",
+      "img": "icons/equipment/chest/coat-collared-red-gold.webp",
+      "system": {
+        "description": "<p>Galões, latão e uma gola alta. Ele se lembra de ter sido saudado.</p>",
+        "rules": "<p>Ao ser danificado por um ataque, exaura este uniforme para causar ao atacante dano de VONTADE igual ao dano recebido.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "Como uma ação de 1 hora, passe em um teste de MENTE + CULTURA para restaurar este uniforme.",
+        "category": "armor",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "worn",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 400000,
+      "_key": "!actors.items!ptbpre0000000000.ptbpgi0000000002",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000003",
+      "name": "Pantufas Felpudas",
+      "type": "equipment",
+      "img": "icons/equipment/feet/boots-simple-leather-brown.webp",
+      "system": {
+        "description": "<p>Absurdas, e o único conforto em cem léguas.</p>",
+        "rules": "<p>Como uma ação de 1 hora durante o acampamento, use 1 carga para curar 1 de VONTADE.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 500000,
+      "_key": "!actors.items!ptbpre0000000000.ptbpgi0000000003",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000004",
+      "name": "Convicções Unidas",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Quando você ou uma criatura alvejável a até 2 de alcance sofre dano, exaura este talento para reduzir o dano a 0.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "Como uma ação de 10 minutos, sofra 1 de dano de MENTE para restaurar este talento.",
+        "skill": "culture",
+        "tier": "junior"
+      },
+      "sort": 100000,
+      "_key": "!actors.items!ptbpre0000000000.ptbpgi0000000004",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000005",
+      "name": "Conga!",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Sempre que você se move, pode puxar consigo um aliado ao alcance.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "navigation",
+        "tier": "junior"
+      },
+      "sort": 200000,
+      "_key": "!actors.items!ptbpre0000000000.ptbpgi0000000005",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000006",
+      "name": "Indomável",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Sempre que você sofre dano de CORPO ou de MENTE, pode tratá-lo como dano de VONTADE.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "survival",
+        "tier": "junior"
+      },
+      "sort": 300000,
+      "_key": "!actors.items!ptbpre0000000000.ptbpgi0000000006",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Cyrena",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 100000,
+  "_key": "!actors!ptbpre0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

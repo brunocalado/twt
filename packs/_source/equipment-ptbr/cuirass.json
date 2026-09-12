@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000012",
+  "name": "Couraça",
+  "type": "equipment",
+  "img": "icons/equipment/chest/breastplate-banded-steel.webp",
+  "system": {
+    "description": "<p>Uma caldeira martelada até virar peitoral, e ainda morna.</p>",
+    "rules": "<p>Testes de movimento e de esconder-se são +1M mais difíceis.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "armor",
+    "heavy": true,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "worn",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 1,
+    "wardValue": 0
+  },
+  "sort": 1300000,
+  "_key": "!items!ptbequ0000000012",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

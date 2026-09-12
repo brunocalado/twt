@@ -1,0 +1,18 @@
+// Time Without Tide — system stylesheet.
+//
+// Compiled to `css/twt.css` by `npm run build`; `system.json` ships only the
+// compiled file. Every rule is scoped under `.twt`, the class every Application
+// in this system carries, so nothing here can reach another module's UI.
+
+@use "global/fonts";
+@use "utils/colors";
+@use "global/window";
+@use "components/items";
+@use "components/chat";
+@use "components/dialogs";
+@use "components/delver";
+@use "components/record-grid";
+@use "components/item-sheet";
+@use "components/npc";
+@use "components/combat";
+@use "components/travel";

@@ -1,0 +1,45 @@
+// The palette, declared as custom properties on the system's scoping class so a
+// component can override one locally without a SCSS rebuild, and so chat cards
+// (which live outside any sheet) can pick the same values up.
+//
+// Every value below is sampled from the Quickstart's own artwork rather than
+// invented, because the book has a very particular register and guessing at it
+// lands somewhere generic. Two surfaces carry the whole design:
+//
+//   * the printed character sheet — black card stock, pale sage panels printed
+//     on it, dark green label ink, rose numerals;
+//   * the rules pages — warm cream paper, sage-green headings and banners, a
+//     steel-blue bar over each Keeper aside.
+//
+// Sheets in this system are the first surface. The second supplies the accents.
+.twt {
+  /* Card stock. The ground the printed sheet's panels are pasted onto. */
+  --twt-soot: #0a0c0b;
+  --twt-ash: #141813;
+  --twt-iron: #1f261d;
+  --twt-slate: #37452f;
+
+  /* Paper. `--twt-paper` is the sheet's sage panel; `--twt-cream` is a rules page. */
+  --twt-paper: #d9e2ac;
+  --twt-paper-edge: #c9d68e;
+  --twt-paper-sunk: #cdd79c;
+  --twt-cream: #f9f4ee;
+
+  /* Ink. `--twt-ink` reads on the card stock, `--twt-ink-paper` on the sage. */
+  --twt-ink: #e8eccd;
+  --twt-ink-dim: #93a37b;
+  --twt-ink-paper: #2f493e;
+  --twt-ink-paper-dim: #5b7452;
+
+  /* Accents. */
+  --twt-green: #69ae78; // headings and banners
+  --twt-green-deep: #3f6b48; // rules, borders on paper
+  --twt-glow: #8fd46f; // lantern light: the "lit" or "on" state
+  --twt-glow-dim: #4f7a3f;
+  --twt-wine: #a53e6b; // the printed numerals, and anything that harms
+  --twt-steel: #4c687e; // the Keeper-aside bar
+  --twt-unknown: #4f8a8b; // the fog
+
+  --twt-rule: color-mix(in srgb, var(--twt-slate) 80%, transparent);
+  --twt-rule-paper: color-mix(in srgb, var(--twt-ink-paper) 28%, transparent);
+}

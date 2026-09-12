@@ -1,0 +1,184 @@
+@use "../utils/typography" as *;
+
+// The expedition clock, and the ward-allocation window both modes share.
+.twt.twt-clock {
+  .twt-clock-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.2rem;
+  }
+
+  .twt-clock-date {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0;
+    color: var(--twt-ink);
+    font-family: $font-display;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .twt-clock-day {
+    color: var(--twt-green);
+    font-family: $font-data;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .twt-clock-segments {
+    display: flex;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .twt-clock-segment {
+    flex: 1 1 0;
+    border: 1px solid var(--twt-slate);
+    border-radius: 2px;
+    padding: 0.15rem 0.2rem;
+    color: var(--twt-ink-dim);
+    font-family: $font-data;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+
+    &.is-active {
+      border-color: var(--twt-glow);
+      background: color-mix(in srgb, var(--twt-glow) 16%, transparent);
+      color: var(--twt-glow);
+    }
+  }
+
+  .twt-clock-camp {
+    margin: 0;
+    color: var(--twt-ink-dim);
+    font-size: 0.75rem;
+
+    &.is-owed { color: var(--twt-wine); font-weight: 700; }
+  }
+
+  .twt-clock-party {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .twt-clock-member {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--twt-glow);
+    font-size: 0.8rem;
+
+    &.is-unwarded { color: var(--twt-ink-dim); }
+  }
+
+  .twt-clock-controls {
+    display: flex;
+    gap: 0.25rem;
+    border-top: 1px solid var(--twt-slate);
+    padding-top: 0.4rem;
+
+    button {
+      flex: 1 1 0;
+      border: 1px solid var(--twt-slate);
+      border-radius: 2px;
+      padding: 0.2rem 0.25rem;
+      background: transparent;
+      color: var(--twt-ink-dim);
+      font-family: $font-data;
+      font-size: 0.66rem;
+      cursor: pointer;
+
+      &:hover { border-color: var(--twt-glow); color: var(--twt-glow); }
+    }
+  }
+}
+
+// Ward allocation.
+.twt.twt-dialog.ward-allocation {
+  // The ward pool is the one number this window exists to spend, so it is printed
+  // on paper in the sheet's own rose, like every other total in the book.
+  .twt-ward-pool {
+    margin: 0;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    padding: 0.4rem 0.55rem;
+    background: var(--twt-paper);
+    color: var(--twt-ink-paper);
+    font-family: $font-data;
+    font-size: 0.88rem;
+
+    strong { color: var(--twt-wine); font-family: $font-body; font-size: 1.35rem; font-weight: 600; }
+  }
+
+  .twt-ward-targets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .twt-ward-target {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    width: 100%;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    padding: 0.3rem 0.45rem;
+    background: var(--twt-ash);
+    color: var(--twt-ink-dim);
+    text-align: left;
+    cursor: pointer;
+
+    &:hover { border-color: var(--twt-glow); }
+
+    &.is-picked {
+      border-color: var(--twt-glow);
+      background: color-mix(in srgb, var(--twt-glow) 14%, var(--twt-ash));
+      color: var(--twt-glow);
+    }
+
+    // The Delver's own zone is where the light starts, so it reads first.
+    &.is-origin { border-left-width: 3px; border-left-color: var(--twt-unknown); }
+  }
+
+  .twt-ward-img {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--twt-slate);
+    border-radius: 2px;
+    object-fit: cover;
+  }
+
+  .twt-ward-name {
+    flex: 1 1 auto;
+    color: var(--twt-ink);
+    font-family: $font-display;
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .twt-ward-meta {
+    flex: 0 0 auto;
+    color: var(--twt-ink-dim);
+    font-family: $font-data;
+    font-size: 0.66rem;
+  }
+}

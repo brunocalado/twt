@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000010",
+  "name": "João Teimoso",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Sempre que você toma como alvo um inimigo de quem está oculto e que esteja a até 1 de alcance, atordoe-o imediatamente.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "skulduggery",
+    "tier": "junior"
+  },
+  "sort": 1100000,
+  "_key": "!items!ptbfea0000000010",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

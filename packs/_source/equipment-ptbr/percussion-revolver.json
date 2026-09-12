@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000009",
+  "name": "Revólver de Percussão",
+  "type": "equipment",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+    "description": "<p>Seis câmaras, um cão duro e cheiro de papel queimado.</p>",
+    "rules": "<p>Sempre que você usa Rajada com este revólver, pode tratá-lo como uma arma diferente para atacar com ele de novo.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "weapon",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "mind",
+      "damage": 1,
+      "damageType": "body",
+      "range": 2,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1000000,
+  "_key": "!items!ptbequ0000000009",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,339 @@
+@use "../utils/typography" as *;
+
+// Record sheets: one header and description, with one type-specific body between them.
+//
+// A record is a card on the printed sheet, so this window follows the same pair of
+// surfaces: black card stock for the header and the window, sage paper for every
+// fieldset the values are written into.
+.twt.sheet.item {
+  background: var(--twt-soot);
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    background: var(--twt-soot);
+    overflow-y: auto;
+  }
+
+  /* ---- Header ---- */
+
+  .twt-item-top { display: flex; flex-direction: column; }
+
+  .twt-item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-bottom: 2px solid var(--twt-green);
+    padding: 0.6rem 0.7rem;
+    background: linear-gradient(to bottom, var(--twt-iron), var(--twt-ash));
+  }
+
+  .twt-item-img {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--twt-green-deep);
+    border-radius: 3px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .twt-item-identity {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .twt-item-name {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    border-radius: 0;
+    color: var(--twt-ink);
+    font-family: $font-display;
+    font-size: 1.35rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    &:hover:not(:disabled),
+    &:focus { border-bottom-color: var(--twt-green); background: transparent; }
+  }
+
+  .twt-item-type {
+    margin: 0;
+    color: var(--twt-green);
+    font-family: $font-data;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .twt-item-state {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .twt-state-chip {
+    width: auto;
+    border: 1px solid var(--twt-rule);
+    border-radius: 2px;
+    padding: 0.1rem 0.4rem;
+    background: transparent;
+    color: var(--twt-ink-dim);
+    font-family: $font-data;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &.is-exhausted { border-color: var(--twt-glow-dim); color: var(--twt-glow); }
+    &.is-destroyed { border-color: var(--twt-wine); color: var(--twt-wine); }
+  }
+
+  .twt-item-tool {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--twt-rule);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--twt-ink-dim);
+    font-size: 0.72rem;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover { border-color: var(--twt-glow); color: var(--twt-glow); }
+  }
+
+  /* ---- Banners ---- */
+
+  .twt-item-banner {
+    margin: 0;
+    border-bottom: 1px solid var(--twt-rule);
+    padding: 0.3rem 0.7rem;
+    font-size: 0.78rem;
+
+    &.is-exhausted {
+      background: color-mix(in srgb, var(--twt-glow) 14%, transparent);
+      color: var(--twt-glow);
+    }
+
+    &.is-destroyed {
+      background: color-mix(in srgb, var(--twt-wine) 18%, transparent);
+      color: var(--twt-ink);
+    }
+
+    &.is-malignant {
+      border: 1px solid var(--twt-wine);
+      border-radius: 3px;
+      margin: 0 0.7rem;
+      background: color-mix(in srgb, var(--twt-wine) 12%, transparent);
+      color: var(--twt-ink);
+      font-style: italic;
+    }
+  }
+
+  /* ---- Bodies ---- */
+
+  .twt-item-body,
+  .twt-item-prose {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.7rem;
+  }
+
+  .twt-item-prose { border-top: 1px solid var(--twt-rule); }
+
+  // The book prints a record's stats on the same sage stock as the character sheet.
+  .twt-fieldset {
+    margin: 0;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    padding: 0.45rem 0.6rem 0.6rem;
+    background: var(--twt-paper);
+    color: var(--twt-ink-paper);
+
+    legend {
+      border-radius: 2px;
+      padding: 0.1rem 0.45rem;
+      background: var(--twt-green-deep);
+      color: var(--twt-cream);
+      font-family: $font-display;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      border-color: var(--twt-rule-paper);
+      background: var(--twt-paper-sunk);
+      color: var(--twt-ink-paper);
+
+      &:hover:not(:disabled) { border-color: var(--twt-green-deep); }
+      &:focus { border-color: var(--twt-green-deep); }
+      &:disabled { color: var(--twt-ink-paper-dim); }
+    }
+
+    select option { background: var(--twt-paper); color: var(--twt-ink-paper); }
+
+    input[type="checkbox"] {
+      accent-color: var(--twt-green-deep);
+
+      &::after { color: var(--twt-green-deep); }
+    }
+  }
+
+  .twt-field-row {
+    display: flex;
+    gap: 0.55rem;
+    margin-top: 0.35rem;
+
+    > * { flex: 1 1 0; min-width: 0; }
+  }
+
+  .twt-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .twt-field-label {
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .twt-field-hint {
+    margin: 0;
+    color: var(--twt-ink-paper-dim);
+    font-size: 0.72rem;
+    font-style: italic;
+  }
+
+  .twt-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.35rem;
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+
+    input { flex: 0 0 auto; margin-top: 0.2rem; }
+  }
+
+  .twt-check-note {
+    color: var(--twt-ink-paper-dim);
+    font-size: 0.72rem;
+  }
+
+  .twt-stepper {
+    display: flex;
+
+    button {
+      flex: 0 0 auto;
+      width: 1.8rem;
+      border: 1px solid var(--twt-rule-paper);
+      background: var(--twt-green-deep);
+      color: var(--twt-cream);
+      line-height: 1;
+      cursor: pointer;
+
+      &:first-of-type { border-radius: 3px 0 0 3px; }
+      &:last-of-type { border-radius: 0 3px 3px 0; }
+      &:hover:not(:disabled) { background: var(--twt-green); }
+    }
+
+    input {
+      flex: 1 1 auto;
+      min-width: 0;
+      border-radius: 0;
+      font-family: $font-data;
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+    }
+  }
+
+  /* ---- Adaptation tiers ---- */
+
+  .twt-slot-cost { align-items: center; }
+
+  .twt-slot-cost-value {
+    color: var(--twt-wine);
+    font-family: $font-data;
+    font-size: 1.3rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .twt-tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  // A tier at or below the current one is live; the ones above it are dimmed and
+  // labelled with what it costs to reach them.
+  .twt-tier {
+    opacity: 0.55;
+
+    &.is-active { opacity: 1; }
+
+    &.is-current {
+      border-color: var(--twt-green-deep);
+      background: color-mix(in srgb, var(--twt-green) 20%, var(--twt-paper));
+    }
+  }
+
+  .twt-tier-cost,
+  .twt-tier-locked {
+    color: var(--twt-ink-paper-dim);
+    font-size: 0.62rem;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+
+  .twt-tier-locked { color: var(--twt-unknown); }
+
+  .twt-prose-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    padding: 0.4rem 0.55rem 0.5rem;
+    background: var(--twt-paper);
+
+    prose-mirror {
+      min-height: 5rem;
+      color: var(--twt-ink-paper);
+
+      a.content-link { color: var(--twt-green-deep); }
+    }
+  }
+
+  .twt-block-title {
+    margin: 0;
+    border: none;
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  textarea {
+    min-height: 3rem;
+    font-family: $font-body;
+    resize: vertical;
+  }
+}

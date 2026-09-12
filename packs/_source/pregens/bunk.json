@@ -1,0 +1,299 @@
+{
+  "_id": "twtpre0000000003",
+  "name": "Bunk",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Sewer-smith brawler, raised in an empty boiler.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 4,
+        "hp": {
+          "value": 4
+        }
+      },
+      "mind": {
+        "score": 2,
+        "hp": {
+          "value": 2
+        }
+      },
+      "will": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      }
+    },
+    "skills": {
+      "culture": 0,
+      "industry": 2,
+      "navigation": 1,
+      "skulduggery": 0,
+      "survival": 1,
+      "violence": 3
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "twtpgi0000000300",
+      "name": "Pickaxe",
+      "type": "equipment",
+      "img": "icons/tools/hand/pickaxe-steel-grey.webp",
+      "system": {
+        "description": "<p>Sewer-smith issue. Heavier than it looks, and it looks heavy.</p>",
+        "rules": "<p>Damaging objects with this pick is -1M easier.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": true,
+        "doubleWielded": true,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 2,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1200000,
+      "_key": "!actors.items!twtpre0000000003.twtpgi0000000300",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000301",
+      "name": "Cuirass",
+      "type": "equipment",
+      "img": "icons/equipment/chest/breastplate-banded-steel.webp",
+      "system": {
+        "description": "<p>A boiler beaten into a breastplate, and still faintly warm.</p>",
+        "rules": "<p>Moving and hiding tests are +1M harder.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "armor",
+        "heavy": true,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "worn",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 1,
+        "wardValue": 0
+      },
+      "sort": 1300000,
+      "_key": "!actors.items!twtpre0000000003.twtpgi0000000301",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000302",
+      "name": "Screwy Driver",
+      "type": "equipment",
+      "img": "icons/tools/hand/screwdriver-flat-steel-black.webp",
+      "system": {
+        "description": "<p>Not quite the right tool, and somehow always the right tool.</p>",
+        "rules": "<p>This tool makes fixing, rebuilding, disarming, and fiddling with objects -1M easier.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1400000,
+      "_key": "!actors.items!twtpre0000000003.twtpgi0000000302",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000303",
+      "name": "Meat Shield",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Once per round when an ally in your zone is attacked, you may make yourself the attack's target and reduce the damage it deals by -1.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "industry",
+        "tier": "junior"
+      },
+      "sort": 800000,
+      "_key": "!actors.items!twtpre0000000003.twtpgi0000000303",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000304",
+      "name": "Bloodthirsty",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Whenever you kill a creature, become invigorated. Then you may move.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "violence",
+        "tier": "junior"
+      },
+      "sort": 900000,
+      "_key": "!actors.items!twtpre0000000003.twtpgi0000000304",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000305",
+      "name": "Subterranean — CRUST",
+      "type": "adaptation",
+      "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+      "system": {
+        "description": "<p>The Subterranean line.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "line": "Subterranean",
+        "tier": "awakened1",
+        "effects": {
+          "malignant": {
+            "name": "",
+            "text": ""
+          },
+          "awakened1": {
+            "name": "CRUST",
+            "text": "You gain an extra sense that interprets seismic vibrations through the ground and structures within 2 range. It perceives shapes and motion, but cannot detect colour or airborne objects."
+          },
+          "awakened2": {
+            "name": "",
+            "text": ""
+          },
+          "awakened3": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "sort": 500000,
+      "_key": "!actors.items!twtpre0000000003.twtpgi0000000305",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Bunk",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 400000,
+  "_key": "!actors!twtpre0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

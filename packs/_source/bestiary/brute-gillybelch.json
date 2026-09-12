@@ -1,0 +1,104 @@
+{
+  "_id": "twtbst0000000002",
+  "name": "Brute Gillybelch",
+  "type": "npc",
+  "img": "icons/creatures/amphibians/bullfrog-glass-teal.webp",
+  "system": {
+    "biography": "",
+    "notes": "",
+    "tactics": "<p>Added to the Parlor, one per Delver beyond four.</p>",
+    "targetDifficulty": 1,
+    "ward": {
+      "warded": false
+    },
+    "creatureType": "horror",
+    "threat": 0.5,
+    "size": 1,
+    "speed": 1,
+    "tagline": "A gillybelch grown fat and bold on a season of easy prey.",
+    "hp": {
+      "value": 4,
+      "max": 4
+    },
+    "armor": {
+      "base": 0,
+      "current": 0
+    },
+    "traits": {
+      "body": 4,
+      "mind": 1,
+      "will": 1
+    },
+    "skills": {
+      "culture": 0,
+      "industry": 0,
+      "navigation": 1,
+      "skulduggery": 1,
+      "survival": 2,
+      "violence": 2
+    },
+    "abilities": [
+      {
+        "name": "HORROR",
+        "description": "While unwarded, your tests are -1M easier and tests targeting you are +1M harder."
+      },
+      {
+        "name": "AMPHIBIOUS",
+        "description": "You aren't slowed by water. You can breathe both water and air."
+      }
+    ],
+    "actions": [
+      {
+        "name": "BITE",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 1,
+        "damageType": "body",
+        "piercing": false,
+        "range": 0,
+        "frequency": "",
+        "description": "Melee attack.",
+        "boons": "Spend 1 boon to grapple the target. While grappling, you cannot bite other creatures."
+      },
+      {
+        "name": "POUNCE",
+        "actionType": "minor",
+        "trait": "body",
+        "skill": "navigation",
+        "difficulty": null,
+        "damage": 0,
+        "damageType": "body",
+        "piercing": false,
+        "range": 2,
+        "frequency": "",
+        "description": "Leap into the zone of an enemy within 2 range. If unsuccessful, you may still move normally.",
+        "boons": "Spend 1 boon to become invigorated."
+      }
+    ]
+  },
+  "items": [],
+  "prototypeToken": {
+    "name": "Brute Gillybelch",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "icons/creatures/amphibians/bullfrog-glass-teal.webp"
+    }
+  },
+  "sort": 300000,
+  "_key": "!actors!twtbst0000000002",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000014",
+  "name": "Fishline Garrote",
+  "type": "equipment",
+  "img": "icons/sundries/survival/rope-coiled-tan.webp",
+  "system": {
+    "description": "<p>A yard of line between two toggles. Quiet work.</p>",
+    "rules": "<p>On a hit, you may grapple the target; while grappled this way, the victim is muted and suffocating. Concealing this weapon is -1M easier.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "weapon",
+    "heavy": false,
+    "doubleWielded": true,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1500000,
+  "_key": "!items!twtequ0000000014",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

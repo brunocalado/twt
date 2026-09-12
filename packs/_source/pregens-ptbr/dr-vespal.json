@@ -1,0 +1,299 @@
+{
+  "_id": "ptbpre0000000005",
+  "name": "Dr. Vespal",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Um cadáver animado com nome, licença médica e nenhuma formação.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "mind": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "will": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      }
+    },
+    "skills": {
+      "culture": 1,
+      "industry": 1,
+      "navigation": 0,
+      "skulduggery": 2,
+      "survival": 2,
+      "violence": 0
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "ptbpgi0000000500",
+      "name": "Lanterna",
+      "type": "equipment",
+      "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+      "system": {
+        "description": "<p>A luz padrão que todo Desbravador recebe em seu primeiro contrato.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "lantern",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 2
+      },
+      "sort": 200000,
+      "_key": "!actors.items!ptbpre0000000005.ptbpgi0000000500",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000501",
+      "name": "Kit de Primeiros Socorros",
+      "type": "equipment",
+      "img": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "system": {
+        "description": "<p>Fiapos, categute e um frasco de algo que arde.</p>",
+        "rules": "<p>Como uma ação maior, gaste 1 carga e passe em um teste de MENTE + SOBREVIVÊNCIA para curar 1 de CORPO (+1 por dádiva) em um aliado ao alcance.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1800000,
+      "_key": "!actors.items!ptbpre0000000005.ptbpgi0000000501",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000502",
+      "name": "Injeções Estimulantes",
+      "type": "equipment",
+      "img": "icons/tools/laboratory/injector-needle-syringe-plunger.webp",
+      "system": {
+        "description": "<p>Três ampolas de vidro com algo que o rótulo não nomeia.</p>",
+        "rules": "<p>Como uma ação maior, injete em um aliado ao alcance. Ele ganha um turno extra imediato, mas depois precisa passar em um teste de VONTADE + SOBREVIVÊNCIA ou cai Inconsciente até o fim do próximo turno dele.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1900000,
+      "_key": "!actors.items!ptbpre0000000005.ptbpgi0000000502",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000503",
+      "name": "Sob Pressão",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Quando você se esforça em um teste, gaste 1 carga para não sofrer dano de MENTE.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "skulduggery",
+        "tier": "junior"
+      },
+      "sort": 1200000,
+      "_key": "!actors.items!ptbpre0000000005.ptbpgi0000000503",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000504",
+      "name": "Socorrista de Campo",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Sempre que um aliado a até 2 de alcance sofre dano, você pode se mover imediatamente na direção dele. Sempre que você cura outra criatura, pode revigorá-la.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "survival",
+        "tier": "junior"
+      },
+      "sort": 1300000,
+      "_key": "!actors.items!ptbpre0000000005.ptbpgi0000000504",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000505",
+      "name": "Imortal — OSSOS",
+      "type": "adaptation",
+      "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+      "system": {
+        "description": "<p>A linhagem Imortal.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "line": "Imortal",
+        "tier": "awakened2",
+        "effects": {
+          "malignant": {
+            "name": "",
+            "text": ""
+          },
+          "awakened1": {
+            "name": "CINZAS",
+            "text": "Imune a sufocamento, fadiga e inconsciência. Você não consegue dormir nem sonhar, e não precisa de comida ou água. Perfeitamente imóvel, você é indistinguível de um cadáver inanimado."
+          },
+          "awakened2": {
+            "name": "OSSOS",
+            "text": "Como uma ação de 1 segmento, gaste 1 carga para curar 1 de CORPO, 1 de MENTE e 1 de VONTADE."
+          },
+          "awakened3": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "sort": 700000,
+      "_key": "!actors.items!ptbpre0000000005.ptbpgi0000000505",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Dr. Vespal",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 600000,
+  "_key": "!actors!ptbpre0000000005",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

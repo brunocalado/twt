@@ -1,0 +1,33 @@
+{{!-- A Feature: which skill it came from, and how far along that skill it sits. --}}
+<div class="twt-item-body">
+  <fieldset class="twt-fieldset">
+    <legend>{{localize "TWT.Item.Classification"}}</legend>
+
+    <div class="twt-field-row">
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Feature.FIELDS.skill.label"}}</span>
+        <select name="system.skill" {{disabled (not editable)}}>
+          <option value="" {{#unless system.skill}}selected{{/unless}}>
+            {{localize "TWT.Feature.NoSkill"}}
+          </option>
+          {{#each skillChoices}}
+          <option value="{{this.value}}" {{#if (eq this.value ../system.skill)}}selected{{/if}}>
+            {{localize this.label}}
+          </option>
+          {{/each}}
+        </select>
+        <span class="twt-field-hint">{{localize "TWT.Feature.FIELDS.skill.hint"}}</span>
+      </label>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Feature.FIELDS.tier.label"}}</span>
+        <select name="system.tier" {{disabled (not editable)}}>
+          {{selectOptions config.featureTiers selected=system.tier localize=true}}
+        </select>
+        <span class="twt-field-hint">{{localize "TWT.Feature.FIELDS.tier.hint"}}</span>
+      </label>
+    </div>
+  </fieldset>
+
+  {{> "twt.item-charges"}}
+</div>

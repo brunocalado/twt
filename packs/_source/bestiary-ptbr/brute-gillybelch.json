@@ -1,0 +1,104 @@
+{
+  "_id": "ptbbst0000000002",
+  "name": "Guelrarroto Brutamontes",
+  "type": "npc",
+  "img": "icons/creatures/amphibians/bullfrog-glass-teal.webp",
+  "system": {
+    "biography": "",
+    "notes": "",
+    "tactics": "<p>Acrescentado ao Salão, um por Desbravador além de quatro.</p>",
+    "targetDifficulty": 1,
+    "ward": {
+      "warded": false
+    },
+    "creatureType": "horror",
+    "threat": 0.5,
+    "size": 1,
+    "speed": 1,
+    "tagline": "Um guelrarroto que engordou e se tornou atrevido com uma temporada de presas fáceis.",
+    "hp": {
+      "value": 4,
+      "max": 4
+    },
+    "armor": {
+      "base": 0,
+      "current": 0
+    },
+    "traits": {
+      "body": 4,
+      "mind": 1,
+      "will": 1
+    },
+    "skills": {
+      "culture": 0,
+      "industry": 0,
+      "navigation": 1,
+      "skulduggery": 1,
+      "survival": 2,
+      "violence": 2
+    },
+    "abilities": [
+      {
+        "name": "HORROR",
+        "description": "Enquanto desamparado, seus testes são -1M mais fáceis e os testes que o têm como alvo são +1M mais difíceis."
+      },
+      {
+        "name": "ANFÍBIO",
+        "description": "A água não o deixa lento. Você pode respirar tanto na água quanto no ar."
+      }
+    ],
+    "actions": [
+      {
+        "name": "MORDIDA",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 1,
+        "damageType": "body",
+        "piercing": false,
+        "range": 0,
+        "frequency": "",
+        "description": "Ataque corpo a corpo.",
+        "boons": "Spend 1 boon to grapple the target. While grappling, you cannot bite other creatures."
+      },
+      {
+        "name": "BOTE",
+        "actionType": "minor",
+        "trait": "body",
+        "skill": "navigation",
+        "difficulty": null,
+        "damage": 0,
+        "damageType": "body",
+        "piercing": false,
+        "range": 2,
+        "frequency": "",
+        "description": "Salte para a zona de um inimigo a até 2 de alcance. Se não tiver sucesso, você ainda pode se mover normalmente.",
+        "boons": "Spend 1 boon to become invigorated."
+      }
+    ]
+  },
+  "items": [],
+  "prototypeToken": {
+    "name": "Guelrarroto Brutamontes",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "icons/creatures/amphibians/bullfrog-glass-teal.webp"
+    }
+  },
+  "sort": 300000,
+  "_key": "!actors!ptbbst0000000002",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

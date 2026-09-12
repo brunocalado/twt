@@ -1,0 +1,103 @@
+{{!-- Gathers a test's parameters. Rolls nothing. --}}
+<div class="twt-dialog-body">
+
+  {{#if label}}<p class="twt-dialog-lead">{{label}}</p>{{/if}}
+
+  <div class="twt-field-row">
+    <label class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Test.Trait"}}</span>
+      <select name="trait">
+        {{#each traits}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>
+          {{localize this.label}} ({{this.score}})
+        </option>
+        {{/each}}
+      </select>
+    </label>
+
+    <label class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Test.Skill"}}</span>
+      <select name="skill">
+        {{#each skills}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>
+          {{localize this.label}} ({{this.score}})
+        </option>
+        {{/each}}
+      </select>
+    </label>
+  </div>
+
+  <div class="twt-field-row">
+    <div class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Test.Difficulty"}}</span>
+      <div class="twt-stepper">
+        <button type="button" data-action="step" data-field="difficulty" data-by="-1"
+                aria-label="{{localize 'TWT.Test.Decrease'}}">&minus;</button>
+        <input type="number" name="difficulty" value="{{params.difficulty}}" min="1" step="1">
+        <button type="button" data-action="step" data-field="difficulty" data-by="1"
+                aria-label="{{localize 'TWT.Test.Increase'}}">+</button>
+      </div>
+    </div>
+
+    <div class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Test.Modifier"}}</span>
+      <div class="twt-stepper">
+        <button type="button" data-action="step" data-field="modifier" data-by="-1"
+                aria-label="{{localize 'TWT.Test.Easier'}}">&minus;</button>
+        <input type="number" name="modifier" value="{{params.modifier}}" step="1">
+        <button type="button" data-action="step" data-field="modifier" data-by="1"
+                aria-label="{{localize 'TWT.Test.Harder'}}">+</button>
+      </div>
+    </div>
+  </div>
+
+  {{#if conditionModifiers.length}}
+  <fieldset class="twt-fieldset">
+    <legend>{{localize "TWT.Test.ConditionModifiers"}}</legend>
+    {{#each conditionModifiers}}
+    <label class="twt-check">
+      <input type="checkbox" name="modifierIds" value="{{this.id}}" {{#if this.active}}checked{{/if}}>
+      <span>{{localize this.label}}
+        <em class="twt-check-value">{{#if (gt this.value 0)}}+{{/if}}{{this.value}}M</em>
+        {{#unless this.suggested}}<em class="twt-check-note">{{localize "TWT.Test.Situational"}}</em>{{/unless}}
+      </span>
+    </label>
+    {{/each}}
+  </fieldset>
+  {{/if}}
+
+  <label class="twt-field">
+    <span class="twt-field-label">{{localize "TWT.Test.Assist"}}</span>
+    <select name="assistActorId">
+      <option value="">{{localize "TWT.Test.NoAssist"}}</option>
+      {{#each assistCandidates}}
+      <option value="{{this.id}}" {{#if (eq this.id ../params.assistActorId)}}selected{{/if}}>
+        {{this.name}} (+{{this.dice}})
+      </option>
+      {{/each}}
+    </select>
+    <span class="twt-field-hint">{{localize "TWT.Test.AssistHint"}}</span>
+  </label>
+
+  <p class="twt-pool-readout">
+    {{localize "TWT.Test.PoolLabel"}}
+    <strong>{{traitScore}}</strong> + <strong>{{skillScore}}</strong>
+    {{#if assistDice}}+ <strong>{{assistDice}}</strong> {{localize "TWT.Test.AssistShort"}}{{/if}}
+    = <strong class="twt-pool-total">{{pool}}</strong> {{localize "TWT.Test.Dice"}}
+    {{localize "TWT.Test.Against"}} <strong class="twt-pool-total">{{difficulty}}M</strong>
+  </p>
+
+  {{#if floored}}
+  <p class="twt-dialog-note">
+    {{localize "TWT.Test.FlooredNote"}}
+    <strong>{{localize "TWT.Test.BonusBoons" }} {{bonusBoons}}</strong>
+  </p>
+  {{/if}}
+
+  <footer class="twt-dialog-footer">
+    <button type="submit" class="twt-primary">
+      <i class="fa-solid fa-dice-d6" inert></i>
+      {{localize "TWT.Test.Roll"}}
+    </button>
+  </footer>
+</div>

@@ -1,0 +1,90 @@
+# Publishes a release when a version tag is pushed.
+#
+#   npm version patch --no-git-tag-version   # or edit system.json + package.json by hand
+#   git commit -am "Release v0.1.0" && git tag v0.1.0 && git push --follow-tags
+#
+# The tag must match the `version` field in system.json. Two assets are attached:
+#
+#   system.json  -> https://github.com/brunocalado/twt/releases/latest/download/system.json
+#   twt.zip      -> https://github.com/brunocalado/twt/releases/download/<tag>/twt.zip
+#
+# The first is the manifest URL players paste into Foundry; because it resolves to
+# whatever the latest release is, Foundry offers updates automatically. The second
+# is the versioned payload that manifest's `download` field points at, so older
+# versions stay installable.
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the tag
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # A tag that disagrees with the manifest would ship a release whose download
+      # URL points at a tag that does not exist. Fail here instead.
+      - name: Check the tag against system.json
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          MANIFEST_VERSION="$(node -p "require('./system.json').version")"
+          if [ "$TAG_VERSION" != "$MANIFEST_VERSION" ]; then
+            echo "Tag $GITHUB_REF_NAME implies version $TAG_VERSION, but system.json says $MANIFEST_VERSION." >&2
+            exit 1
+          fi
+          echo "Releasing version $MANIFEST_VERSION."
+
+      # Written into the manifest at build time so the committed system.json never
+      # has to be kept in step with the tag by hand.
+      - name: Point the manifest at this release
+        env:
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          node -e '
+            const fs = require("node:fs");
+            const repo = process.env.REPO_URL;
+            const tag = process.env.GITHUB_REF_NAME;
+            const system = JSON.parse(fs.readFileSync("system.json", "utf8"));
+            system.url = repo;
+            system.manifest = `${repo}/releases/latest/download/system.json`;
+            system.download = `${repo}/releases/download/${tag}/${system.id}.zip`;
+            fs.writeFileSync("system.json", `${JSON.stringify(system, null, 2)}\n`);
+            console.log(system.manifest);
+            console.log(system.download);
+          '
+
+      - name: Build the stylesheet
+        run: npm run build
+
+      - name: Build the compendium packs
+        run: npm run packs:build
+
+      - name: Package the release ZIP
+        run: npm run release
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            system.json \
+            "dist/$(node -p "require('./system.json').id").zip"

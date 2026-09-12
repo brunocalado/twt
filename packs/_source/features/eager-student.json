@@ -1,0 +1,27 @@
+{
+  "_id": "twtfea0000000003",
+  "name": "Eager Student",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+    "rules": "<p>Whenever an ally assists you, if that ally's skill score is higher than yours, you may use their score instead.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "culture",
+    "tier": "junior"
+  },
+  "sort": 400000,
+  "_key": "!items!twtfea0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000007",
+  "name": "Percolator",
+  "type": "equipment",
+  "img": "icons/consumables/drinks/coffee.webp",
+  "system": {
+    "description": "<p>Brass, temperamental, and worth its weight in dust.</p>",
+    "rules": "<p>As a 1-hour action, use 1 charge and succeed a MIND + CULTURE test to brew 2 caffeinated drinks. Each drinker cannot sleep and is immune to fatigue for 3 segments.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 800000,
+  "_key": "!items!twtequ0000000007",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,66 @@
+{{!--
+  The one card layout every message this system posts uses. The accent colour is the
+  only thing carried inline, because it varies per message; everything else is styled
+  by `_chat.scss`, shipped in the system stylesheet so every client renders it alike.
+--}}
+<div class="twt twt-chat twt-chat--{{kind}}" style="--twt-chat-accent: {{accent}};">
+
+  <header class="twt-chat-header">
+    {{#if img}}<img class="twt-chat-img" src="{{img}}" alt="">{{/if}}
+    <div class="twt-chat-heading">
+      <h3 class="twt-chat-title">{{title}}</h3>
+      {{#if subtitle}}<p class="twt-chat-subtitle">{{subtitle}}</p>{{/if}}
+    </div>
+    {{#if badge}}<span class="twt-chat-badge">{{badge}}</span>{{/if}}
+  </header>
+
+  {{#if hasBody}}
+  <div class="twt-chat-body">
+
+    {{#if dice.length}}
+    <ol class="twt-dice" aria-label="{{localize 'TWT.Card.DiceLabel'}}">
+      {{#each dice}}
+      <li class="twt-die{{#if this.mark}} is-mark{{/if}}{{#if this.rerolled}} is-rerolled{{/if}}"
+          data-index="{{this.index}}">{{this.face}}</li>
+      {{/each}}
+    </ol>
+    {{/if}}
+
+    {{#if stats.length}}
+    <dl class="twt-chat-stats">
+      {{#each stats}}
+      <div class="twt-chat-stat">
+        <dt>{{localize this.label}}</dt>
+        <dd>{{this.value}}</dd>
+      </div>
+      {{/each}}
+    </dl>
+    {{/if}}
+
+    {{#if outcome}}
+    <p class="twt-chat-outcome{{#if success}} is-success{{else}} is-failure{{/if}}">{{outcome}}</p>
+    {{/if}}
+
+    {{#each sections}}
+    <section class="twt-chat-section">
+      {{#if this.label}}<h4 class="twt-chat-section-label">{{localize this.label}}</h4>{{/if}}
+      <div class="twt-chat-section-body">{{{this.content}}}</div>
+    </section>
+    {{/each}}
+
+    {{#if controls.length}}
+    <footer class="twt-chat-controls">
+      {{#each controls}}
+      <button type="button" class="twt-chat-button" data-twt-action="{{this.action}}">
+        {{#if this.icon}}<i class="{{this.icon}}" inert></i>{{/if}}
+        {{localize this.label}}
+      </button>
+      {{/each}}
+    </footer>
+    {{/if}}
+
+  </div>
+  {{/if}}
+
+  {{#if footer}}<p class="twt-chat-footer">{{footer}}</p>{{/if}}
+</div>

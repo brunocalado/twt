@@ -1,0 +1,26 @@
+// Font stacks.
+//
+// The faces themselves are declared in `global/_fonts.scss`; this file only says what
+// each one is for. See that file for why these two and not the book's own.
+//
+// An earlier cut named Cinzel, Crimson Text and Chivo. None of the three shipped with
+// this system or with Foundry, so every one of them silently fell back to a generic
+// serif — the sheets were never rendering in the faces the source claimed. Anything
+// added here has to exist in `fonts/` or in `CONFIG.fontDefinitions`.
+//
+// Every fallback is a literal family, never `var(--font-h1)` or `var(--font-primary)`.
+// Two reasons. Those two are player-configurable in Foundry's font settings, so
+// leaning on them lets a world setting restyle the system. Worse, a `var()` that is
+// not defined in the element's scope makes the whole `font-family` declaration
+// invalid at computed-value time — the declaration is dropped and the element falls
+// back to inheritance, which is how the trait scores ended up rendering in Signika
+// while the `font-size` and `font-weight` beside them applied normally.
+
+// Headings, banners, names, tab labels: the book's heavy flat display caps.
+$font-display: "Archivo Black", "Modesto Condensed", sans-serif;
+
+// Prose, descriptions, italic asides, and every score the sheet prints as a numeral.
+$font-body: "Crimson Pro", Georgia, serif;
+
+// Small uppercase labels and badges. Foundry loads Signika itself, so nothing ships.
+$font-data: "Signika", system-ui, sans-serif;

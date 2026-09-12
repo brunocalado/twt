@@ -1,0 +1,321 @@
+{
+  "_id": "ptbpre0000000001",
+  "name": "Lady Hollis Grey",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Diletante do comércio, livre-pensadora e demolidora.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 2,
+        "hp": {
+          "value": 2
+        }
+      },
+      "mind": {
+        "score": 4,
+        "hp": {
+          "value": 4
+        }
+      },
+      "will": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      }
+    },
+    "skills": {
+      "culture": 3,
+      "industry": 2,
+      "navigation": 1,
+      "skulduggery": 0,
+      "survival": 0,
+      "violence": 2
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "ptbpgi0000000100",
+      "name": "Lanterna",
+      "type": "equipment",
+      "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+      "system": {
+        "description": "<p>A luz padrão que todo Desbravador recebe em seu primeiro contrato.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "lantern",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 2
+      },
+      "sort": 200000,
+      "_key": "!actors.items!ptbpre0000000001.ptbpgi0000000100",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000101",
+      "name": "Mão? Arma!",
+      "type": "equipment",
+      "img": "icons/weapons/guns/gun-pistol-flintlock.webp",
+      "system": {
+        "description": "<p>Não está de todo claro qual parte é a mão.</p>",
+        "rules": "<p>Depois de atacar com esta arma, ela não pode ser usada de novo até ser recarregada como uma ação menor. Testes para ocultar a arma são -1M mais fáceis.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": false,
+        "doubleWielded": true,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "mind",
+          "damage": 2,
+          "damageType": "body",
+          "range": 1,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 600000,
+      "_key": "!actors.items!ptbpre0000000001.ptbpgi0000000101",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000102",
+      "name": "Cesta de Presente",
+      "type": "equipment",
+      "img": "icons/containers/bags/pack-leather-brown.webp",
+      "system": {
+        "description": "<p>Conservas, fita e a insinuação de boa estirpe.</p>",
+        "rules": "<p>Quando você faz um teste social, use 1 carga para tornar o teste -1M mais fácil.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 700000,
+      "_key": "!actors.items!ptbpre0000000001.ptbpgi0000000102",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000103",
+      "name": "Cafeteira",
+      "type": "equipment",
+      "img": "icons/consumables/drinks/coffee.webp",
+      "system": {
+        "description": "<p>De latão, temperamental, e vale seu peso em pó.</p>",
+        "rules": "<p>Como uma ação de 1 hora, use 1 carga e passe em um teste de MENTE + CULTURA para preparar 2 bebidas com cafeína. Quem bebe não consegue dormir e fica imune à fadiga por 3 segmentos.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 800000,
+      "_key": "!actors.items!ptbpre0000000001.ptbpgi0000000103",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000104",
+      "name": "Aluno Aplicado",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Sempre que um aliado o auxilia, se o valor de perícia dele for maior que o seu, você pode usar o valor dele no lugar.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "culture",
+        "tier": "junior"
+      },
+      "sort": 400000,
+      "_key": "!actors.items!ptbpre0000000001.ptbpgi0000000104",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000105",
+      "name": "Perfuração",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Sempre que você causa dano de CORPO, pode torná-lo perfurante.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "industry",
+        "tier": "junior"
+      },
+      "sort": 500000,
+      "_key": "!actors.items!ptbpre0000000001.ptbpgi0000000105",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000106",
+      "name": "Treino de Precisão",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Seus ataques à distância ganham +2 de alcance.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "violence",
+        "tier": "junior"
+      },
+      "sort": 600000,
+      "_key": "!actors.items!ptbpre0000000001.ptbpgi0000000106",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Lady Hollis Grey",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 200000,
+  "_key": "!actors!ptbpre0000000001",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

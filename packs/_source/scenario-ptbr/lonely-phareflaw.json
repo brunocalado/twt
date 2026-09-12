@@ -1,0 +1,71 @@
+{
+  "_id": "ptbjrn0000000002",
+  "name": "Phareflaw Solitário",
+  "pages": [
+    {
+      "_id": "ptbjpg0000000200",
+      "_key": "!journal.pages!ptbjrn0000000002.ptbjpg0000000200",
+      "name": "Introdução",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O frio quebrou Phareflaw. A geada do inverno rompeu o vidro pesado da sala da lanterna, deixando o Desconhecido serpenteante despencar para dentro. O Pavieiro Mortimer, um velho faroleiro veterano de 76 anos, lutou bravamente para reparar o estrago, mas a névoa o tomou.</p><p>Mortimer foi retorcido em <strong>Não-Papai</strong>. Sua neta de nove anos, Muesli, barricou-se na despensa refrigerada com seu ursinho, Ameixa. Uma ninhada de horrores parecidos com sapos, chamados <strong>guelrarrotos</strong>, agora infesta a casa.</p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000201",
+      "_key": "!journal.pages!ptbjrn0000000002.ptbjpg0000000201",
+      "name": "Muesli &amp; Ameixa",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Impressão:</strong> uma menina acanhada de nove anos agarrada a um ursinho maltrapilho de uma orelha só, através do qual ela fala.</p><p><strong>Motivação:</strong> manter um ao outro em segurança.</p><p>Para convencer Muesli a sair do esconderijo, passe em um teste de VONTADE + CULTURA. Em um fracasso, Ameixa exige um suborno: buscar o pote de besouros de bala preta escondido no quarto de Mortimer.</p><p>Se conquistada, Muesli fornece a chave do farol, um aviso de que o monstro lá em cima fala com a voz de Mortimer, e a lembrança de que o motor da sala de luz inundará a torre com um brilho cegante.</p><p><em>Muesli não tem ficha de criatura; ela é uma pessoa, não um encontro.</em></p>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000202",
+      "_key": "!journal.pages!ptbjrn0000000002.ptbjpg0000000202",
+      "name": "Conclusão",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>A luz brilhante limpa a névoa da sala de luz. O cadáver monstruoso do antigo pavieiro se contorce numa agonia gritante enquanto queima até virar cinza. Phareflaw está segura de novo.</p>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "sort": 300000,
+  "_key": "!journal!ptbjrn0000000002",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

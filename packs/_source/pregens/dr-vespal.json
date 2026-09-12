@@ -1,0 +1,299 @@
+{
+  "_id": "twtpre0000000005",
+  "name": "Dr. Vespal",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>An animated corpse with a name, a medical licence and no formal training.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "mind": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "will": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      }
+    },
+    "skills": {
+      "culture": 1,
+      "industry": 1,
+      "navigation": 0,
+      "skulduggery": 2,
+      "survival": 2,
+      "violence": 0
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "twtpgi0000000500",
+      "name": "Lantern",
+      "type": "equipment",
+      "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+      "system": {
+        "description": "<p>The standard-issue light every Delver is handed on their first contract.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "lantern",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 2
+      },
+      "sort": 200000,
+      "_key": "!actors.items!twtpre0000000005.twtpgi0000000500",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000501",
+      "name": "First Aid Kit",
+      "type": "equipment",
+      "img": "icons/tools/cooking/mortar-herbs-yellow.webp",
+      "system": {
+        "description": "<p>Lint, catgut, and a bottle of something that stings.</p>",
+        "rules": "<p>As a major action, spend 1 charge and succeed a MIND + SURVIVAL test to heal 1 BODY (+1 per boon) to an ally within reach.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1800000,
+      "_key": "!actors.items!twtpre0000000005.twtpgi0000000501",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000502",
+      "name": "Booster Shots",
+      "type": "equipment",
+      "img": "icons/tools/laboratory/injector-needle-syringe-plunger.webp",
+      "system": {
+        "description": "<p>Three glass ampoules of something the label does not name.</p>",
+        "rules": "<p>As a major action, inject an ally within reach. The recipient takes an immediate extra turn, but must then pass a WILL + SURVIVAL test or fall unconscious until their next turn ends.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1900000,
+      "_key": "!actors.items!twtpre0000000005.twtpgi0000000502",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000503",
+      "name": "Under Pressure",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>When you strain a test, spend 1 charge to suffer no MIND damage.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "skulduggery",
+        "tier": "junior"
+      },
+      "sort": 1200000,
+      "_key": "!actors.items!twtpre0000000005.twtpgi0000000503",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000504",
+      "name": "Field Medic",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Whenever an ally within 2 range is damaged, you may immediately move towards them. Whenever you heal another creature, you may invigorate them.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "survival",
+        "tier": "junior"
+      },
+      "sort": 1300000,
+      "_key": "!actors.items!twtpre0000000005.twtpgi0000000504",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000505",
+      "name": "Undying — BONES",
+      "type": "adaptation",
+      "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+      "system": {
+        "description": "<p>The Undying line.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "line": "Undying",
+        "tier": "awakened2",
+        "effects": {
+          "malignant": {
+            "name": "",
+            "text": ""
+          },
+          "awakened1": {
+            "name": "ASHES",
+            "text": "Immune to suffocation, fatigue, and unconsciousness. You cannot sleep or dream, and need no food or water. While perfectly motionless you are indistinguishable from an inanimate cadaver."
+          },
+          "awakened2": {
+            "name": "BONES",
+            "text": "As a 1-segment action, spend 1 charge to heal 1 BODY, 1 MIND, and 1 WILL."
+          },
+          "awakened3": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "sort": 700000,
+      "_key": "!actors.items!twtpre0000000005.twtpgi0000000505",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Dr. Vespal",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 600000,
+  "_key": "!actors!twtpre0000000005",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

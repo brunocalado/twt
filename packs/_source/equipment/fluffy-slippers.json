@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000004",
+  "name": "Fluffy Slippers",
+  "type": "equipment",
+  "img": "icons/equipment/feet/boots-simple-leather-brown.webp",
+  "system": {
+    "description": "<p>Absurd, and the only comfort for a hundred leagues.</p>",
+    "rules": "<p>As a 1-hour action while camping, use 1 charge to heal 1 WILL.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 500000,
+  "_key": "!items!twtequ0000000004",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

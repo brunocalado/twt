@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000010",
+  "name": "Jogo Bem Jogado",
+  "type": "equipment",
+  "img": "icons/sundries/gaming/chess-bishop-gray.webp",
+  "system": {
+    "description": "<p>Um tabuleiro dobrável, peças gastas e um placar corrente que ninguém admite manter.</p>",
+    "rules": "<p>Como uma ação de 1 hora, exaura este jogo e inicie uma disputa de MENTE + CULTURA com um aliado. Vencedor e perdedor curam 1 de MENTE (o perdedor precisa elogiar a tática superior do vencedor).</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1100000,
+  "_key": "!items!ptbequ0000000010",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "ptbada0000000003",
+  "name": "Fortuna — AZAR",
+  "type": "adaptation",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "system": {
+    "description": "<p>A linhagem Fortuna.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "Como uma ação de 10 minutos, sofra 1 de dano de VONTADE para restaurar 2 cargas.",
+    "line": "Fortuna",
+    "tier": "awakened1",
+    "effects": {
+      "malignant": {
+        "name": "",
+        "text": ""
+      },
+      "awakened1": {
+        "name": "AZAR",
+        "text": "Quando você faz um teste, gaste cargas para transformar 1 dado sem marca (resultado 4 ou menor) em uma marca por carga gasta."
+      },
+      "awakened2": {
+        "name": "",
+        "text": ""
+      },
+      "awakened3": {
+        "name": "",
+        "text": ""
+      }
+    }
+  },
+  "sort": 400000,
+  "_key": "!items!ptbada0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

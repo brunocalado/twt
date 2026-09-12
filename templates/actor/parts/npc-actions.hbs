@@ -1,0 +1,103 @@
+{{!--
+  The statblock's actions. The pool size in brackets is computed from the current scores,
+  never stored, so it cannot drift when a Keeper edits a trait.
+--}}
+<section class="twt-npc-list twt-npc-actions">
+  <header class="twt-npc-list-head">
+    <h2 class="twt-block-title">{{localize "TWT.NPC.FIELDS.actions.label"}}</h2>
+    {{#if editable}}
+    <button type="button" class="twt-list-add" data-action="addEntry" data-field="actions"
+            data-tooltip="{{localize 'TWT.NPC.AddAction'}}" aria-label="{{localize 'TWT.NPC.AddAction'}}">
+      <i class="fa-solid fa-plus" inert></i>
+    </button>
+    {{/if}}
+  </header>
+
+  {{#each actions}}
+  <article class="twt-entry twt-action" data-index="{{this.index}}">
+    <div class="twt-entry-head">
+      <button type="button" class="twt-action-roll" data-action="rollAction"
+              data-tooltip="{{localize 'TWT.NPC.RollAction'}}">
+        <i class="fa-solid fa-dice-d6" inert></i>
+      </button>
+      <input class="twt-entry-name" type="text" name="system.actions.{{this.index}}.name"
+             value="{{this.name}}" {{disabled (not ../editable)}}>
+      <span class="twt-badge twt-badge--{{this.actionType}}">{{localize this.actionTypeLabel}}</span>
+      {{#if ../editable}}
+      <div class="twt-entry-tools">
+        <button type="button" data-action="moveEntry" data-field="actions" data-by="-1"
+                aria-label="{{localize 'TWT.NPC.MoveUp'}}"><i class="fa-solid fa-chevron-up" inert></i></button>
+        <button type="button" data-action="moveEntry" data-field="actions" data-by="1"
+                aria-label="{{localize 'TWT.NPC.MoveDown'}}"><i class="fa-solid fa-chevron-down" inert></i></button>
+        <button type="button" data-action="removeEntry" data-field="actions"
+                aria-label="{{localize 'TWT.Record.Delete'}}"><i class="fa-solid fa-trash" inert></i></button>
+      </div>
+      {{/if}}
+    </div>
+
+    <p class="twt-action-formula">
+      {{localize this.traitLabel}} + {{localize this.skillLabel}}
+      <strong class="twt-action-pool">[{{this.pool}} {{localize "TWT.NPC.Dice"}}]</strong>
+    </p>
+
+    <div class="twt-action-fields">
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.trait.label"}}</span>
+        <select name="system.actions.{{this.index}}.trait" {{disabled (not ../editable)}}>
+          {{selectOptions ../traitChoices selected=this.trait localize=true}}
+        </select>
+      </label>
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.skill.label"}}</span>
+        <select name="system.actions.{{this.index}}.skill" {{disabled (not ../editable)}}>
+          {{selectOptions ../skillChoices selected=this.skill localize=true}}
+        </select>
+      </label>
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.actionType.label"}}</span>
+        <select name="system.actions.{{this.index}}.actionType" {{disabled (not ../editable)}}>
+          {{selectOptions ../actionTypeChoices selected=this.actionType localize=true}}
+        </select>
+      </label>
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.difficulty.label"}}</span>
+        <input type="number" name="system.actions.{{this.index}}.difficulty" value="{{this.difficulty}}"
+               min="1" step="1" placeholder="{{localize 'TWT.NPC.UseTarget'}}" {{disabled (not ../editable)}}>
+      </label>
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.damage.label"}}</span>
+        <input type="number" name="system.actions.{{this.index}}.damage" value="{{this.damage}}"
+               min="0" step="1" {{disabled (not ../editable)}}>
+      </label>
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.damageType.label"}}</span>
+        <select name="system.actions.{{this.index}}.damageType" {{disabled (not ../editable)}}>
+          {{selectOptions ../traitChoices selected=this.damageType localize=true}}
+        </select>
+      </label>
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.range.label"}}</span>
+        <input type="number" name="system.actions.{{this.index}}.range" value="{{this.range}}"
+               min="0" step="1" {{disabled (not ../editable)}}>
+      </label>
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.NPC.FIELDS.actions.frequency.label"}}</span>
+        <input type="text" name="system.actions.{{this.index}}.frequency" value="{{this.frequency}}"
+               placeholder="{{localize 'TWT.NPC.FIELDS.actions.frequency.hint'}}" {{disabled (not ../editable)}}>
+      </label>
+      <label class="twt-check">
+        <input type="checkbox" name="system.actions.{{this.index}}.piercing" {{checked this.piercing}}
+               {{disabled (not ../editable)}}>
+        <span>{{localize "TWT.NPC.FIELDS.actions.piercing.label"}}</span>
+      </label>
+    </div>
+
+    <textarea class="twt-entry-text" name="system.actions.{{this.index}}.description" rows="2"
+              placeholder="{{localize 'TWT.NPC.FIELDS.actions.description.label'}}"
+              {{disabled (not ../editable)}}>{{this.description}}</textarea>
+    <textarea class="twt-entry-text twt-action-boons" name="system.actions.{{this.index}}.boons" rows="1"
+              placeholder="{{localize 'TWT.NPC.FIELDS.actions.boons.hint'}}"
+              {{disabled (not ../editable)}}>{{this.boons}}</textarea>
+  </article>
+  {{/each}}
+</section>

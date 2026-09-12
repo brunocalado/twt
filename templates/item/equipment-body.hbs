@@ -1,0 +1,129 @@
+{{!-- Equipment: classification always, then whichever category-specific block applies. --}}
+<div class="twt-item-body">
+
+  <fieldset class="twt-fieldset">
+    <legend>{{localize "TWT.Item.Classification"}}</legend>
+
+    <div class="twt-field-row">
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.category.label"}}</span>
+        <select name="system.category" {{disabled (not editable)}}>
+          {{selectOptions config.equipCategories selected=system.category localize=true}}
+        </select>
+      </label>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.equipState.label"}}</span>
+        <select name="system.equipState" {{disabled (not editable)}}>
+          {{selectOptions config.equipStates selected=system.equipState localize=true}}
+        </select>
+      </label>
+    </div>
+
+    <div class="twt-field-row">
+      <label class="twt-check">
+        <input type="checkbox" name="system.heavy" {{checked system.heavy}} {{disabled (not editable)}}>
+        <span>{{localize "TWT.Equipment.FIELDS.heavy.label"}}
+          <em class="twt-check-note">{{localize "TWT.Equipment.FIELDS.heavy.hint"}}</em></span>
+      </label>
+
+      <label class="twt-check">
+        <input type="checkbox" name="system.doubleWielded" {{checked system.doubleWielded}} {{disabled (not editable)}}>
+        <span>{{localize "TWT.Equipment.FIELDS.doubleWielded.label"}}
+          <em class="twt-check-note">{{localize "TWT.Equipment.FIELDS.doubleWielded.hint"}}</em></span>
+      </label>
+    </div>
+
+    <div class="twt-field-row">
+      <label class="twt-check">
+        <input type="checkbox" name="system.consumable" {{checked system.consumable}} {{disabled (not editable)}}>
+        <span>{{localize "TWT.Equipment.FIELDS.consumable.label"}}
+          <em class="twt-check-note">{{localize "TWT.Equipment.FIELDS.consumable.hint"}}</em></span>
+      </label>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.price.label"}}</span>
+        <input type="number" name="system.price" value="{{system.price}}" min="0" step="1"
+               {{disabled (not editable)}}>
+      </label>
+    </div>
+  </fieldset>
+
+  {{#if isWeapon}}
+  <fieldset class="twt-fieldset">
+    <legend>{{localize "TWT.Category.Weapon"}}</legend>
+    <p class="twt-field-hint">{{localize "TWT.Item.WeaponModeHint"}}</p>
+
+    <div class="twt-field-row">
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.weapon.attackTrait.label"}}</span>
+        <select name="system.weapon.attackTrait" {{disabled (not editable)}}>
+          {{#each attackTraitChoices}}
+          <option value="{{this.value}}" {{#if (eq this.value ../system.weapon.attackTrait)}}selected{{/if}}>
+            {{localize this.label}}
+          </option>
+          {{/each}}
+        </select>
+      </label>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.weapon.range.label"}}</span>
+        <input type="number" name="system.weapon.range" value="{{system.weapon.range}}"
+               min="0" step="1" {{disabled (not editable)}}>
+      </label>
+    </div>
+
+    <div class="twt-field-row">
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.weapon.damage.label"}}</span>
+        <input type="number" name="system.weapon.damage" value="{{system.weapon.damage}}"
+               min="0" step="1" {{disabled (not editable)}}>
+      </label>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.weapon.damageType.label"}}</span>
+        <select name="system.weapon.damageType" {{disabled (not editable)}}>
+          {{#each traitChoices}}
+          <option value="{{this.value}}" {{#if (eq this.value ../system.weapon.damageType)}}selected{{/if}}>
+            {{localize this.label}}
+          </option>
+          {{/each}}
+        </select>
+      </label>
+    </div>
+
+    <label class="twt-check">
+      <input type="checkbox" name="system.weapon.piercing" {{checked system.weapon.piercing}}
+             {{disabled (not editable)}}>
+      <span>{{localize "TWT.Equipment.FIELDS.weapon.piercing.label"}}
+        <em class="twt-check-note">{{localize "TWT.Equipment.FIELDS.weapon.piercing.hint"}}</em></span>
+    </label>
+  </fieldset>
+  {{/if}}
+
+  {{#if isArmor}}
+  <fieldset class="twt-fieldset">
+    <legend>{{localize "TWT.Category.Armor"}}</legend>
+    <label class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.armorBonus.label"}}</span>
+      <input type="number" name="system.armorBonus" value="{{system.armorBonus}}"
+             min="0" step="1" {{disabled (not editable)}}>
+      <span class="twt-field-hint">{{localize "TWT.Equipment.FIELDS.armorBonus.hint"}}</span>
+    </label>
+  </fieldset>
+  {{/if}}
+
+  {{#if isLantern}}
+  <fieldset class="twt-fieldset">
+    <legend>{{localize "TWT.Category.Lantern"}}</legend>
+    <label class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Equipment.FIELDS.wardValue.label"}}</span>
+      <input type="number" name="system.wardValue" value="{{system.wardValue}}"
+             min="0" step="1" {{disabled (not editable)}}>
+      <span class="twt-field-hint">{{localize "TWT.Equipment.FIELDS.wardValue.hint"}}</span>
+    </label>
+  </fieldset>
+  {{/if}}
+
+  {{> "twt.item-charges"}}
+</div>

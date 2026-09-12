@@ -1,0 +1,45 @@
+{
+  "_id": "twtada0000000006",
+  "name": "Undying — BONES",
+  "type": "adaptation",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "system": {
+    "description": "<p>The Undying line.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "line": "Undying",
+    "tier": "awakened2",
+    "effects": {
+      "malignant": {
+        "name": "",
+        "text": ""
+      },
+      "awakened1": {
+        "name": "ASHES",
+        "text": "Immune to suffocation, fatigue, and unconsciousness. You cannot sleep or dream, and need no food or water. While perfectly motionless you are indistinguishable from an inanimate cadaver."
+      },
+      "awakened2": {
+        "name": "BONES",
+        "text": "As a 1-segment action, spend 1 charge to heal 1 BODY, 1 MIND, and 1 WILL."
+      },
+      "awakened3": {
+        "name": "",
+        "text": ""
+      }
+    }
+  },
+  "sort": 700000,
+  "_key": "!items!twtada0000000006",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

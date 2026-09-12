@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000012",
+  "name": "Socorrista de Campo",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Sempre que um aliado a até 2 de alcance sofre dano, você pode se mover imediatamente na direção dele. Sempre que você cura outra criatura, pode revigorá-la.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "survival",
+    "tier": "junior"
+  },
+  "sort": 1300000,
+  "_key": "!items!ptbfea0000000012",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

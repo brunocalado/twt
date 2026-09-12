@@ -1,0 +1,973 @@
+{
+  "TYPES": {
+    "Actor": {
+      "delver": "Desbravador",
+      "npc": "NPC"
+    },
+    "Item": {
+      "equipment": "Equipamento",
+      "feature": "Talento",
+      "adaptation": "Adaptação"
+    },
+    "HINTS": {
+      "Actor": {
+        "delver": "Um personagem de jogador que se embrenha no Desconhecido para manter a luz acesa.",
+        "npc": "Uma pessoa, horror ou construto conduzido pelo Guardião."
+      },
+      "Item": {
+        "equipment": "Uma arma, uma armadura, uma lanterna ou um apetrecho. Ocupa espaços de registro de CORPO.",
+        "feature": "Um talento conquistado por uma perícia. Ocupa espaços de registro de MENTE.",
+        "adaptation": "Uma mutação que o Desconhecido lavrou em um Desbravador. Ocupa espaços de registro de VONTADE."
+      }
+    }
+  },
+  "TWT": {
+    "SheetLabel": {
+      "Delver": "Fólio do Desbravador",
+      "NPC": "Ficha de Criatura",
+      "Item": "Ficha de Registro"
+    },
+    "Placeholder": {
+      "DelverSheet": "A ficha do Desbravador ainda não foi construída.",
+      "NpcSheet": "A ficha de criatura do NPC ainda não foi construída.",
+      "ItemSheet": "Esta ficha de registro ainda não foi construída."
+    },
+    "Warning": {
+      "NoActiveGM": "Nenhum Guardião está conectado, então esta mudança não pode ser aplicada. Peça ao Guardião que entre.",
+      "NoQueryPermission": "Seu papel de usuário não pode enviar solicitações ao Guardião. O Guardião precisa conceder a permissão \"Consultar Outros Usuários\".",
+      "DelegateFailed": "O cliente do Guardião não conseguiu concluir essa mudança. Veja o console para detalhes.",
+      "AlreadyStrained": "Este teste já foi esforçado.",
+      "NotEnoughBoons": "Não há dádivas suficientes para isso.",
+      "WieldLimit": "Apenas {max} mãos. Isso exigiria {cost}.",
+      "WornLimit": "Apenas {max} peça de armadura pode ser vestida por vez.",
+      "WrongColumn": "{name} é um {type}. Não vai na coluna {column}.",
+      "NoRoom": "Sem espaço para {name}: {group} está em {used} de {max}, e ele precisa de {cost}.",
+      "OverCapacity": "Acima da capacidade. Registros além do limite não funcionam.",
+      "DestroyedIsForever": "Um registro destruído não pode ser restaurado. Apague-o em vez disso.",
+      "ActionSpent": "Sua {cost} já foi gasta neste turno.",
+      "NoBoonOptions": "Essas dádivas não compram nada aqui."
+    },
+    "Migration": {
+      "Started": "Time Without Tide está migrando este mundo. Não feche o navegador.",
+      "Complete": "Time Without Tide terminou de migrar este mundo.",
+      "Failed": "Time Without Tide não conseguiu terminar a migração deste mundo. Veja o console e restaure um backup."
+    },
+    "Setting": {
+      "AutoRecoveryTest": {
+        "Name": "Rolar testes de recuperação automaticamente",
+        "Hint": "Quando uma reserva de vitalidade chega a 0, rola o teste de recuperação na hora. Desligado, ele é apenas solicitado."
+      },
+      "AutoArmorRefill": {
+        "Name": "Recompor a armadura a cada turno",
+        "Hint": "Restaura a armadura ao seu valor cheio no início do turno de cada combatente."
+      },
+      "AutoUnknownExposure": {
+        "Name": "Solicitar exposição desamparada",
+        "Hint": "Confere os atores desamparados contra o Desconhecido ao fim de cada turno de combate e de cada segmento de viagem."
+      },
+      "EnforceSlotLimits": {
+        "Name": "Impor limites de espaços de registro",
+        "Hint": "Recusa um registro que transbordaria seu grupo de espaços. Desligado, avisa e permite."
+      },
+      "SheetTheme": {
+        "Name": "Tema das fichas",
+        "Hint": "Sobre qual superfície as fichas são pintadas. Afeta apenas o seu próprio cliente.",
+        "Soot": "Fuligem",
+        "Parchment": "Pergaminho"
+      }
+    },
+    "Trait": {
+      "Body": "Corpo",
+      "BodyAbbr": "COR",
+      "Mind": "Mente",
+      "MindAbbr": "MEN",
+      "Will": "Vontade",
+      "WillAbbr": "VON"
+    },
+    "Skill": {
+      "Culture": "Cultura",
+      "CultureAbbr": "CUL",
+      "Industry": "Indústria",
+      "IndustryAbbr": "IND",
+      "Navigation": "Navegação",
+      "NavigationAbbr": "NAV",
+      "Skulduggery": "Trapaça",
+      "SkulduggeryAbbr": "TRA",
+      "Survival": "Sobrevivência",
+      "SurvivalAbbr": "SOB",
+      "Violence": "Violência",
+      "ViolenceAbbr": "VIO"
+    },
+    "Category": {
+      "Weapon": "Arma",
+      "Armor": "Armadura",
+      "Lantern": "Lanterna",
+      "Gear": "Apetrecho"
+    },
+    "EquipState": {
+      "Stored": "Guardado",
+      "Wielded": "Empunhado",
+      "Worn": "Vestido"
+    },
+    "State": {
+      "Normal": "Normal",
+      "Exhausted": "Exausto",
+      "Destroyed": "Destruído"
+    },
+    "CreatureType": {
+      "Human": "Humano",
+      "Horror": "Horror",
+      "Construct": "Construto"
+    },
+    "Feature": {
+      "Junior": "Iniciante",
+      "Veteran": "Veterano",
+      "FIELDS": {
+        "skill": {
+          "label": "Perícia",
+          "hint": "A perícia que rendeu este talento. Deixe em branco para um talento de origem."
+        },
+        "tier": {
+          "label": "Grau",
+          "hint": "Iniciante é conquistado na perícia 2, veterano na perícia 4."
+        }
+      },
+      "NoSkill": "Nenhuma perícia (origem)"
+    },
+    "ActionType": {
+      "Major": "Ação Maior",
+      "Minor": "Ação Menor",
+      "Free": "Ação Livre"
+    },
+    "Speed": {
+      "None": "0",
+      "Half": "½",
+      "Standard": "1",
+      "Fast": "2"
+    },
+    "Threat": {
+      "Mook": "Capanga",
+      "Equal": "Páreo",
+      "Elite": "Elite",
+      "Boss": "Chefe"
+    },
+    "Actor": {
+      "FIELDS": {
+        "biography": {
+          "label": "Biografia"
+        },
+        "notes": {
+          "label": "Anotações"
+        },
+        "targetDifficulty": {
+          "label": "Dificuldade Alvo",
+          "hint": "As marcas que um atacante precisa para acertar este ator. O padrão é 2."
+        },
+        "ward": {
+          "label": "Amparo",
+          "warded": {
+            "label": "Amparado",
+            "hint": "Se este ator está no momento sob a luz do amparo."
+          }
+        }
+      }
+    },
+    "Delver": {
+      "FIELDS": {
+        "traits": {
+          "label": "Atributos",
+          "body": {
+            "label": "Corpo",
+            "score": {
+              "label": "Valor de Corpo",
+              "hint": "De 1 a 5. Também o tamanho da reserva de vitalidade de Corpo."
+            },
+            "hp": {
+              "label": "Vitalidade de Corpo",
+              "value": {
+                "label": "Vitalidade de Corpo"
+              }
+            }
+          },
+          "mind": {
+            "label": "Mente",
+            "score": {
+              "label": "Valor de Mente",
+              "hint": "De 1 a 5. Também o tamanho da reserva de vitalidade de Mente."
+            },
+            "hp": {
+              "label": "Vitalidade de Mente",
+              "value": {
+                "label": "Vitalidade de Mente"
+              }
+            }
+          },
+          "will": {
+            "label": "Vontade",
+            "score": {
+              "label": "Valor de Vontade",
+              "hint": "De 1 a 5. Também o tamanho da reserva de vitalidade de Vontade."
+            },
+            "hp": {
+              "label": "Vitalidade de Vontade",
+              "value": {
+                "label": "Vitalidade de Vontade"
+              }
+            }
+          }
+        },
+        "skills": {
+          "label": "Perícias",
+          "culture": {
+            "label": "Cultura"
+          },
+          "industry": {
+            "label": "Indústria"
+          },
+          "navigation": {
+            "label": "Navegação"
+          },
+          "skulduggery": {
+            "label": "Trapaça"
+          },
+          "survival": {
+            "label": "Sobrevivência"
+          },
+          "violence": {
+            "label": "Violência"
+          }
+        },
+        "armor": {
+          "label": "Armadura",
+          "current": {
+            "label": "Armadura Restante",
+            "hint": "Recompõe-se ao valor cheio no início de cada turno de combate deste Desbravador."
+          },
+          "temp": {
+            "label": "Armadura Bônus",
+            "hint": "Armadura concedida além do que a peça vestida oferece."
+          }
+        },
+        "speed": {
+          "label": "Velocidade",
+          "base": {
+            "label": "Velocidade",
+            "hint": "Zonas percorridas com uma única ação de movimento, antes das condições."
+          }
+        },
+        "progression": {
+          "label": "Progressão",
+          "xp": {
+            "label": "Experiência"
+          },
+          "dust": {
+            "label": "Pó"
+          }
+        }
+      }
+    },
+    "NPC": {
+      "FIELDS": {
+        "creatureType": {
+          "label": "Tipo de Criatura"
+        },
+        "threat": {
+          "label": "Ameaça",
+          "hint": "O quão perigosa esta criatura é em relação a um Desbravador."
+        },
+        "size": {
+          "label": "Tamanho",
+          "hint": "Em zonas. De meia zona para cima."
+        },
+        "speed": {
+          "label": "Velocidade"
+        },
+        "tagline": {
+          "label": "Epígrafe",
+          "hint": "A única linha impressa sob o nome na ficha de criatura."
+        },
+        "tactics": {
+          "label": "Táticas"
+        },
+        "hp": {
+          "label": "Vitalidade",
+          "value": {
+            "label": "Vitalidade"
+          },
+          "max": {
+            "label": "Vitalidade Máxima"
+          }
+        },
+        "armor": {
+          "label": "Armadura",
+          "base": {
+            "label": "Armadura",
+            "hint": "Dano de Corpo que esta criatura absorve a cada turno."
+          },
+          "current": {
+            "label": "Armadura Restante"
+          }
+        },
+        "traits": {
+          "label": "Atributos",
+          "body": {
+            "label": "Corpo"
+          },
+          "mind": {
+            "label": "Mente"
+          },
+          "will": {
+            "label": "Vontade"
+          }
+        },
+        "skills": {
+          "label": "Perícias",
+          "culture": {
+            "label": "Cultura"
+          },
+          "industry": {
+            "label": "Indústria"
+          },
+          "navigation": {
+            "label": "Navegação"
+          },
+          "skulduggery": {
+            "label": "Trapaça"
+          },
+          "survival": {
+            "label": "Sobrevivência"
+          },
+          "violence": {
+            "label": "Violência"
+          }
+        },
+        "abilities": {
+          "label": "Habilidades",
+          "element": {
+            "label": "Habilidade"
+          },
+          "name": {
+            "label": "Nome"
+          },
+          "description": {
+            "label": "Descrição"
+          }
+        },
+        "actions": {
+          "label": "Ações",
+          "element": {
+            "label": "Ação"
+          },
+          "name": {
+            "label": "Nome"
+          },
+          "actionType": {
+            "label": "Custo da Ação"
+          },
+          "trait": {
+            "label": "Atributo"
+          },
+          "skill": {
+            "label": "Perícia"
+          },
+          "difficulty": {
+            "label": "Dificuldade",
+            "hint": "Deixe em branco para usar a dificuldade alvo do próprio alvo."
+          },
+          "damage": {
+            "label": "Dano"
+          },
+          "damageType": {
+            "label": "Tipo de Dano"
+          },
+          "piercing": {
+            "label": "Perfurante",
+            "hint": "Ignora armadura."
+          },
+          "range": {
+            "label": "Alcance",
+            "hint": "Em zonas. 0 é corpo a corpo."
+          },
+          "frequency": {
+            "label": "Frequência",
+            "hint": "uma vez por rodada"
+          },
+          "description": {
+            "label": "Descrição"
+          },
+          "boons": {
+            "label": "Dádivas",
+            "hint": "Gaste 2 dádivas para ganhar +1 de velocidade nesta ação."
+          }
+        }
+      },
+      "NamePlaceholder": "Dê um nome a esta criatura",
+      "TargetDifficulty": "Alvo",
+      "ApplyDamage": "Aplicar dano",
+      "Dice": "dados",
+      "UseTarget": "do alvo",
+      "RollAction": "Rolar esta ação",
+      "AddAbility": "Adicionar uma habilidade",
+      "AddAction": "Adicionar uma ação",
+      "NewAbility": "Nova Habilidade",
+      "NewAction": "Nova Ação",
+      "MoveUp": "Mover para cima",
+      "MoveDown": "Mover para baixo",
+      "KeeperPanel": "Anotações do Guardião",
+      "Damage": "Dano",
+      "Range": "Alcance",
+      "Target": "Alvo"
+    },
+    "Item": {
+      "FIELDS": {
+        "description": {
+          "label": "Descrição"
+        },
+        "rules": {
+          "label": "Regras",
+          "hint": "Texto mecânico que o Guardião arbitra. O sistema não o automatiza."
+        },
+        "state": {
+          "label": "Estado"
+        },
+        "charges": {
+          "label": "Cargas",
+          "enabled": {
+            "label": "Controla Cargas"
+          },
+          "value": {
+            "label": "Cargas"
+          },
+          "max": {
+            "label": "Cargas Máximas"
+          }
+        },
+        "restoreTrigger": {
+          "label": "Restaurado Por",
+          "hint": "O que restaura este registro. Por exemplo: como uma ação de 1 hora, passe em um teste de Mente + Cultura."
+        }
+      },
+      "NamePlaceholder": "Dê um nome a este registro",
+      "Classification": "Classificação",
+      "CycleState": "Alternar: normal, exausto, destruído",
+      "Restore": "Restaurar",
+      "Share": "Mostrar à mesa",
+      "RegainCharge": "Recuperar uma carga",
+      "DestroyedBanner": "Destruído. Este registro se foi de vez; um Descanso Seguro não o trará de volta.",
+      "ExhaustedBanner": "Exausto. Restaure-o antes que possa ser usado de novo.",
+      "WeaponModeHint": "Alcance 0 com Corpo é corpo a corpo. Alcance 1 ou mais com Mente é à distância; com Corpo, é arremesso.",
+      "RestoreMalignantTitle": "Restaurar Adaptação",
+      "RestoreMalignantBody": "Restaurar {name} a remove por completo. Uma adaptação maligna é descartada, não consertada. Isso não pode ser desfeito."
+    },
+    "Equipment": {
+      "FIELDS": {
+        "category": {
+          "label": "Categoria"
+        },
+        "heavy": {
+          "label": "Pesado",
+          "hint": "Ocupa dois espaços de registro de Corpo em vez de um."
+        },
+        "doubleWielded": {
+          "label": "Duas Mãos",
+          "hint": "Compromete os dois espaços de empunhadura."
+        },
+        "consumable": {
+          "label": "Consumível",
+          "hint": "Destruído ao ser usado."
+        },
+        "equipState": {
+          "label": "Carregado Como"
+        },
+        "price": {
+          "label": "Preço"
+        },
+        "weapon": {
+          "label": "Arma",
+          "attackTrait": {
+            "label": "Atributo de Ataque",
+            "hint": "Corpo para corpo a corpo e arremesso, Mente para à distância."
+          },
+          "damage": {
+            "label": "Dano"
+          },
+          "damageType": {
+            "label": "Tipo de Dano"
+          },
+          "range": {
+            "label": "Alcance",
+            "hint": "Em zonas. 0 é corpo a corpo."
+          },
+          "piercing": {
+            "label": "Perfurante",
+            "hint": "Ignora armadura."
+          }
+        },
+        "armorBonus": {
+          "label": "Armadura",
+          "hint": "Dano de Corpo que esta peça absorve a cada turno."
+        },
+        "wardValue": {
+          "label": "Amparo",
+          "hint": "Amparo que esta lanterna oferece enquanto empunhada."
+        }
+      }
+    },
+    "Adaptation": {
+      "Malignant": "Maligna",
+      "Awakened1": "Desperta I",
+      "Awakened2": "Desperta II",
+      "Awakened3": "Desperta III",
+      "FIELDS": {
+        "line": {
+          "label": "Linhagem",
+          "hint": "A linhagem de mutação, como Imortal ou Fortuna."
+        },
+        "tier": {
+          "label": "Grau",
+          "hint": "O quão fundo na linhagem este Desbravador foi arrastado."
+        },
+        "effects": {
+          "label": "Efeitos",
+          "malignant": {
+            "label": "Maligna",
+            "name": {
+              "label": "Nome"
+            },
+            "text": {
+              "label": "Efeito"
+            }
+          },
+          "awakened1": {
+            "label": "Desperta I",
+            "name": {
+              "label": "Nome"
+            },
+            "text": {
+              "label": "Efeito"
+            }
+          },
+          "awakened2": {
+            "label": "Desperta II",
+            "name": {
+              "label": "Nome"
+            },
+            "text": {
+              "label": "Efeito"
+            }
+          },
+          "awakened3": {
+            "label": "Desperta III",
+            "name": {
+              "label": "Nome"
+            },
+            "text": {
+              "label": "Efeito"
+            }
+          }
+        }
+      },
+      "SlotCost": "Espaços",
+      "Slots": "custa",
+      "AwakenCost": "1 XP para despertar",
+      "MalignantNote": "Maligna, e sempre prejudicial. Restaurá-la é como um Desbravador se livra dela."
+    },
+    "Condition": {
+      "Blinded": "Cego",
+      "Critical": "Crítico",
+      "Dazed": "Atordoado",
+      "Fatigued": "Fatigado",
+      "Grappled": "Agarrado",
+      "Grappling": "Agarrando",
+      "Hidden": "Oculto",
+      "Immobilized": "Imobilizado",
+      "Invigorated": "Revigorado",
+      "Muted": "Mudo",
+      "Prone": "Caído",
+      "Slowed": "Lento",
+      "Suffocating": "Sufocando",
+      "Unconscious": "Inconsciente",
+      "Vulnerable": "Vulnerável"
+    },
+    "Modifier": {
+      "BlindedSight": "Cego, e a ação depende da visão"
+    },
+    "Test": {
+      "DialogTitle": "Rolar um Teste",
+      "Trait": "Atributo",
+      "Skill": "Perícia",
+      "Difficulty": "Dificuldade",
+      "Modifier": "Modificador",
+      "Increase": "Mais difícil em uma marca",
+      "Decrease": "Mais fácil em uma marca",
+      "Harder": "Mais difícil",
+      "Easier": "Mais fácil",
+      "ConditionModifiers": "Condições",
+      "Situational": "situacional",
+      "Assist": "Aliado auxiliando",
+      "NoAssist": "Sem auxílio",
+      "AssistHint": "No máximo um aliado. Ele contribui com metade do seu valor na perícia testada, arredondado para cima.",
+      "AssistShort": "auxílio",
+      "PoolLabel": "Reserva:",
+      "Dice": "dados",
+      "Against": "contra",
+      "FlooredNote": "A dificuldade não pode cair abaixo de 1M, então o excedente vira dádivas:",
+      "BonusBoons": "dádivas bônus",
+      "Roll": "Rolar"
+    },
+    "Strain": {
+      "Title": "Esforço",
+      "Prompt": "Escolha quais dados rerrolar. Você pode rerrolar qualquer um deles, inclusive os dados de auxílio de um aliado.",
+      "Cost": "Esforçar-se custa 1 de dano de Mente, uma vez por teste.",
+      "Confirm": "Rerrolar e esforçar-se"
+    },
+    "Boon": {
+      "Title": "Gastar Dádivas",
+      "Available": "{boons} dádivas a gastar. Elas não podem ser guardadas.",
+      "NoBanking": "Tudo o que não for gasto se perde quando este momento passar.",
+      "Confirm": "Gastar",
+      "Cost": "{cost} dádiva",
+      "Spent": "Gasta {cost} dádiva em {name}.",
+      "Flurry": "Rajada",
+      "FlurryHint": "Golpeie de novo contra o mesmo alvo.",
+      "Cleave": "Talho",
+      "CleaveHint": "Leve o golpe adiante até um segundo alvo ao alcance.",
+      "Deadly": "Letal",
+      "DeadlyHint": "Some 1 de dano ao acerto.",
+      "Advantage": "Vantagem narrativa",
+      "AdvantageHint": "Assuma uma posição que a ficção não lhe concederia de outro modo.",
+      "Detail": "Descobrir um detalhe",
+      "DetailHint": "Pergunte ao Guardião uma coisa que a situação revelaria.",
+      "Project": "Progresso de projeto",
+      "ProjectHint": "Some 1 sucesso ao projeto em que você está trabalhando."
+    },
+    "Card": {
+      "DiceLabel": "Dados rolados",
+      "Pool": "Reserva",
+      "Marks": "Marcas",
+      "Boons": "Dádivas",
+      "Assist": "Auxiliado",
+      "AssistLine": "{name} soma {dice} dados.",
+      "Floored": "Limitado a 1M",
+      "FlooredLine": "Pediu {requested}M, então o teste foi 1M e concedeu {bonus} dádivas bônus.",
+      "TestSubtitle": "Dificuldade {difficulty}M",
+      "Strained": "Esforçado",
+      "Success": "Sucesso",
+      "Failure": "Fracasso",
+      "Strain": "Esforço",
+      "SpendBoons": "Gastar dádivas",
+      "Health": "Vitalidade",
+      "DamageTitle": "Dano",
+      "DamageFrom": "Dano de {source}",
+      "DamageBadge": "{applied} sofrido",
+      "DamageIncoming": "{amount} de dano de {pool} a caminho.",
+      "DamageVulnerable": "Vulnerável soma 1, totalizando {total}.",
+      "DamageAbsorbed": "A armadura absorve {absorbed}.",
+      "DamageApplied": "{applied} em {pool}: de {before} para {after}.",
+      "DamageOverkill": "{overkill} pontos de dano avassalador.",
+      "PoolEmpty": "A reserva está vazia. Role para recuperar.",
+      "Died": "Morto.",
+      "Modifiers": "Modificadores",
+      "RecoveryTitle": "Teste de Recuperação: {trait}",
+      "RecoverySubtitle": "Vontade + Sobrevivência, {difficulty}M",
+      "RecoveryOverkill": "+{overkill}M de dano avassalador.",
+      "RecoveryUnwarded": "+1M, desamparado no Desconhecido.",
+      "RecoveryPrompt": "Um teste de recuperação está pendente.",
+      "RollRecovery": "Rolar o teste de recuperação",
+      "RecoverySuccess": "De volta da beira com 1 de vitalidade.",
+      "RecoveryFailure": "Crítico, e algo criou raízes.",
+      "Manifested": "Manifestou-se",
+      "ManifestedItem": "{name}, da linhagem {line}.",
+      "ManifestedNoSlot": "Uma mutação da linhagem {line} tentou se fixar sem espaço que a contivesse. 1 de dano de Vontade em vez disso.",
+      "PuppetOfTheUnknown": "Ele se torna um fantoche do Desconhecido. Reze para que nunca mais seja visto.",
+      "RestTitle": "Descanso Seguro: três dias",
+      "RestHealed": "As três reservas de vitalidade estão cheias, e a armadura está inteira.",
+      "RestRestored": "{count} registros exaustos restaurados.",
+      "RestRefilled": "{count} registros recarregados.",
+      "RestRemoved": "{count} adaptações malignas removidas.",
+      "RestConditions": "{count} condições dissipadas.",
+      "RestDestroyed": "{count} registros destruídos continuam destruídos.",
+      "Weapon": "Arma",
+      "WeaponLine": "{damage} de dano de {type}, alcance {range}. {piercing}",
+      "Piercing": "Perfurante.",
+      "Effect": "Efeito",
+      "MarksShort": "{marks}/{difficulty}M"
+    },
+    "Recovery": {
+      "NoSlotSource": "uma adaptação sem lugar para ir",
+      "MalignantRestore": "Restaure esta adaptação para se livrar dela."
+    },
+    "AdaptationLine": {
+      "Genius": {
+        "Name": "Gênio",
+        "MalignantName": "MATUTADOR",
+        "MalignantText": "<em>Seu cérebro incha dolorosamente contra o crânio.</em> Sempre que você se esforçar, reduza sua reserva de dados em -2; mínimo de 1.",
+        "Awakened1Name": "SÁBIO",
+        "Awakened1Text": "<em>Pensar faz sua massa cinzenta latejar ruidosamente.</em> Sempre que você se esforçar, aumente sua reserva de dados em metade da sua MENTE."
+      },
+      "Scorpion": {
+        "Name": "Escorpião",
+        "MalignantName": "ESPORÃO",
+        "MalignantText": "<em>Um esporão afiado desponta do seu cóccix.</em> Sempre que você atacar sem sucesso, sofra 1 de dano perfurante de CORPO.",
+        "Awakened1Name": "ALABARDA",
+        "Awakened1Text": "<em>Uma alabarda esquelética paira sobre você o tempo todo.</em> Você pode fazer ataques corpo a corpo com sua cauda afiada. Ela causa 2 de dano de CORPO."
+      },
+      "Telekinetic": {
+        "Name": "Telecinético",
+        "MalignantName": "ARRASTO",
+        "MalignantText": "<em>Os objetos ao seu redor tremem e saltam de forma imprevisível.</em> Você precisa usar uma ação maior para equipar ou passar itens.",
+        "Awakened1Name": "FUNDA",
+        "Awakened1Text": "<em>O que quer que você busque salta para a sua mão.</em> Uma vez por rodada durante o seu turno, você pode equipar ou passar sem usar uma ação menor."
+      }
+    },
+    "Damage": {
+      "DialogTitle": "Aplicar Dano",
+      "Amount": "Quantidade",
+      "Type": "Tipo",
+      "Less": "Um a menos",
+      "More": "Um a mais",
+      "Piercing": "Perfurante",
+      "PiercingHint": "ignora armadura",
+      "Source": "Fonte",
+      "SourcePlaceholder": "Uma marreta, a névoa, uma péssima ideia",
+      "NoTargets": "Selecione ao menos um token primeiro.",
+      "VulnerablePlus": "Vulnerável +1",
+      "ArmorAbsorbs": "A armadura absorve",
+      "ToPool": "aplicado",
+      "Overkill": "Avassalador em",
+      "Lethal": "Isso mata.",
+      "Apply": "Aplicar"
+    },
+    "Rest": {
+      "Button": "Descanso Seguro",
+      "ConfirmTitle": "Descanso Seguro",
+      "ConfirmBody": "Três dias de descanso. As reservas de vitalidade se enchem, registros exaustos são restaurados, cargas voltam, condições se dissipam e adaptações malignas são descartadas. Registros destruídos continuam destruídos.",
+      "Confirm": "Descansar"
+    },
+    "Tab": {
+      "ledger": "Livro",
+      "records": "Registros",
+      "bio": "Diário",
+      "combat": "Combate"
+    },
+    "Slots": {
+      "items": "Itens",
+      "features": "Talentos",
+      "adaptations": "Adaptações"
+    },
+    "Sheet": {
+      "NamePlaceholder": "Dê um nome a este Desbravador",
+      "DelverSubtitle": "Desbravador",
+      "Traits": "Atributos",
+      "Skills": "Perícias",
+      "Armor": "Armadura",
+      "Speed": "Velocidade",
+      "Ward": "Amparo",
+      "Warded": "Amparado",
+      "Unwarded": "Desamparado",
+      "Dust": "Pó",
+      "XP": "XP",
+      "RollWith": "Rolar com",
+      "LoseHealth": "Perder 1 de vitalidade",
+      "GainHealth": "Recuperar 1 de vitalidade"
+    },
+    "Record": {
+      "Heavy": "Pesado",
+      "DoubleWielded": "Duas mãos",
+      "Piercing": "perfurante",
+      "WeaponDamage": "{damage} de {type}",
+      "Range": "alcance {range}",
+      "ArmorBonus": "Armadura {armor}",
+      "WardValue": "Amparo {ward}",
+      "Charges": "Cargas",
+      "SpendCharge": "Gastar uma carga",
+      "EmptySlot": "Vazio",
+      "Add": "Adicionar um registro",
+      "Edit": "Editar",
+      "Delete": "Apagar",
+      "NewRecord": "Novo: {type}",
+      "DeleteTitle": "Apagar Registro",
+      "DeleteBody": "Apagar {name}? Isso não pode ser desfeito."
+    },
+    "Source": {
+      "SheetAdjust": "a ficha"
+    },
+    "Action": {
+      "Refund": "Devolver esta ação",
+      "YourTurn": "Seu turno",
+      "NotInCombat": "Fora de um encontro. A economia de ações fica a cargo da mesa.",
+      "Assist": {
+        "Label": "Auxiliar",
+        "Hint": "Até o início do seu próximo turno, auxilie o teste de um aliado ao alcance de toque ou da sua arma."
+      },
+      "Attack": {
+        "Label": "Atacar",
+        "Hint": "Golpeie com uma arma empunhada, ou com o que estiver à mão.",
+        "Hit": "Acerto de {applied} de {type}.",
+        "HitNoTarget": "Acerto. Escolha quem sofre.",
+        "Miss": "Erro.",
+        "Exhausted": "{name} não foi feito para isso. Está exausto."
+      },
+      "Brace": {
+        "Label": "Firmar-se",
+        "Hint": "Corpo + Indústria. Ganhe 1 de armadura temporária até o seu próximo turno.",
+        "Boons": "+1 de armadura por dádiva.",
+        "Gained": "Ganha {armor} de armadura temporária."
+      },
+      "Dash": {
+        "Label": "Arrancar",
+        "Hint": "Corpo + Navegação. Mova-se com +1 de velocidade. Em um fracasso você ainda pode se mover normalmente.",
+        "Boons": "+1 de velocidade por dádiva.",
+        "Gained": "+{speed} de velocidade neste movimento.",
+        "Anyway": "Fracassou, mas o movimento acontece mesmo assim em velocidade normal."
+      },
+      "Direct": {
+        "Label": "Comandar",
+        "Hint": "Vontade + Cultura. Revigore um aliado a até 2 de alcance.",
+        "Boons": "+1 aliado por dádiva.",
+        "Gained": "Revigora {allies} aliado ou aliados."
+      },
+      "Grapple": {
+        "Label": "Agarrar",
+        "Hint": "Corpo + Violência. Dispute com uma criatura ao alcance para infligir Agarrado.",
+        "Gained": "O alvo está Agarrado."
+      },
+      "Hide": {
+        "Label": "Esconder-se",
+        "Hint": "Corpo + Trapaça. Torne-se Oculto.",
+        "EnemyPresent": "Um inimigo divide sua zona",
+        "CarryingWard": "Você carrega 1 ou mais de amparo",
+        "Cover": "Bosque ou cobertura densa",
+        "Shadow": "Uma zona desamparada e sombria",
+        "Gained": "Oculto."
+      },
+      "Repel": {
+        "Label": "Repelir",
+        "Hint": "Distribua seu amparo, depois Vontade + Sobrevivência. Cause 1 de dano de Vontade a cada horror nas suas zonas amparadas.",
+        "Gained": "1 de dano de Vontade a cada horror nas zonas amparadas."
+      },
+      "Search": {
+        "Label": "Procurar",
+        "Hint": "Mente + Trapaça. Detecte criaturas ocultas a até 2 de alcance."
+      },
+      "Shove": {
+        "Label": "Empurrar",
+        "Hint": "Corpo + Navegação. Empurre um inimigo ao alcance por 1 zona, ou derrube-o Caído.",
+        "Boons": "+1 zona por dádiva.",
+        "Gained": "Empurrado por {zones} zona ou zonas."
+      },
+      "Move": {
+        "Label": "Mover",
+        "Hint": "Deixe sua zona e entre em uma adjacente, até o limite da sua velocidade."
+      },
+      "Equip": {
+        "Label": "Equipar",
+        "Hint": "Equipe e desequipe quantos registros quiser, dentro dos seus limites."
+      },
+      "Pass": {
+        "Label": "Passar",
+        "Hint": "1M de Corpo + Cultura. Entregue ou arremesse um registro a um aliado a até 1 de alcance."
+      },
+      "Shine": {
+        "Label": "Iluminar",
+        "Hint": "Distribua amparo pelas zonas até o seu valor de amparo, a sua própria inclusive."
+      },
+      "BreakGrapple": {
+        "Label": "Livrar-se",
+        "Hint": "Dispute o agarrão para se soltar.",
+        "Gained": "Livre do agarrão."
+      },
+      "StandUp": {
+        "Label": "Levantar-se",
+        "Hint": "Custa 1 de velocidade, ou esta ação menor."
+      }
+    },
+    "Attack": {
+      "Label": "Atacar com {weapon}",
+      "Unarmed": "Desarmado",
+      "UnarmedBoon": "Gaste 1 dádiva para agarrar o alvo, ou empurrá-lo por 1 zona.",
+      "Improvised": "Improvisado",
+      "ImprovisedBoon": "Gaste 1 dádiva para destruir o objeto e ganhar +1 de dano.",
+      "ImprovisedHeavy": "Improvisado, pesado",
+      "ImprovisedWith": "{name} (improvisado)"
+    },
+    "Unknown": {
+      "Exposure": "O Desconhecido",
+      "Source": "o Desconhecido"
+    },
+    "Terrain": {
+      "Normal": "Aberto",
+      "Woods": "Bosque",
+      "Water": "Água",
+      "Barricade": "Barricada",
+      "Hazardous": "Perigoso"
+    },
+    "Zone": {
+      "TypeLabel": "Zona",
+      "Crowded": "Apinhada",
+      "CrowdedModifier": "Zona apinhada",
+      "CoverModifier": "Cobertura: o alvo está no bosque",
+      "WardDisrupted": "{name} foi movido. {zones} zona amparada ou zonas amparadas escureceram.",
+      "FIELDS": {
+        "terrain": {
+          "label": "Terreno",
+          "hint": "Oferecido como modificador de teste, nunca aplicado em silêncio."
+        },
+        "warded": {
+          "label": "Amparada"
+        },
+        "wardedBy": {
+          "label": "Amparada Por"
+        },
+        "adjacent": {
+          "label": "Zonas Adjacentes",
+          "hint": "Traçadas por você, não deduzidas do mapa. Duas regiões podem se tocar e ainda assim estar a um mundo de distância."
+        }
+      }
+    },
+    "Ward": {
+      "Title": "Distribuir Amparo",
+      "ZoneLead": "Acenda primeiro a sua própria zona, depois as de fora. Cada ponto cobre uma zona.",
+      "TravelLead": "Reúna as lanternas do grupo. Cada ponto protege um Desbravador durante o segmento.",
+      "Pool": "Restante",
+      "Of": "de",
+      "YourZone": "sua zona",
+      "NoOrigin": "Este Desbravador não está em nenhuma zona.",
+      "NoZones": "Esta cena não tem zonas. O amparo é o interruptor na ficha.",
+      "PoolSpent": "Não há mais amparo para gastar.",
+      "Confirm": "Acender"
+    },
+    "Travel": {
+      "ClockTitle": "A Expedição",
+      "Day": "Dia",
+      "Segment": {
+        "morning": "Manhã",
+        "afternoon": "Tarde",
+        "night": "Noite"
+      },
+      "SinceCamp": "Segmentos desde o acampamento:",
+      "CampOwed": "O acampamento está atrasado",
+      "Advance": "Avançar",
+      "AdvanceHint": "Encerra este segmento: expõe os desamparados, confere a fadiga, move o relógio.",
+      "Camp": "Acampar",
+      "CampHint": "Dormir. Dissipa Fatigado e zera o contador.",
+      "Relay": "Retorno",
+      "RelayHint": "Devolve o grupo ao seu farol sintonizado.",
+      "RelaySubtitle": "O farol os leva de volta.",
+      "RelayBody": "{names} entram na luz e desaparecem.",
+      "SegmentEnded": "O segmento termina",
+      "NowReads": "{dayName}, dia {day}, {segment}",
+      "Camped": "O grupo acampou.",
+      "Endured": "{name} aguentou.",
+      "Succumbed": "{name} não conseguiu desviar o olhar. 1 de Vontade.",
+      "Rested": "{name} resistiu a {difficulty}M.",
+      "Worn": "{name} fracassou em {difficulty}M. 1 de Vontade."
+    },
+    "Project": {
+      "Contribution": "Projeto",
+      "Gained": "+{gained} rumo a ele.",
+      "Complete": "Concluído.",
+      "BoonsAdded": "{boons} dádivas gastas, cada uma valendo um sucesso."
+    }
+  }
+}

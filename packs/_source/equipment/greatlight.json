@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000000",
+  "name": "Greatlight",
+  "type": "equipment",
+  "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+  "system": {
+    "description": "<p>A heavy, double-wielded lantern that pushes the fog back further than any other light a Delver can carry.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "lantern",
+    "heavy": true,
+    "doubleWielded": true,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 4
+  },
+  "sort": 100000,
+  "_key": "!items!twtequ0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

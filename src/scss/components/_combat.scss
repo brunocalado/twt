@@ -1,0 +1,138 @@
+@use "../utils/typography" as *;
+
+// The combat face of the Delver folio: this turn's economy, and the action list.
+//
+// The Quickstart prints this as a two-column reference table on sage paper, which is
+// what the two action groups are here. They stretch to the tab's full height so the
+// shorter minor-action column does not leave the card stock showing beneath it.
+.twt.sheet.delver {
+  .twt-combat {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.8rem;
+    min-height: 0;
+  }
+
+  .twt-economy {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    padding: 0.4rem 0.6rem;
+    background: var(--twt-ash);
+
+    &.is-my-turn {
+      border-color: var(--twt-glow);
+      background: color-mix(in srgb, var(--twt-glow) 12%, var(--twt-ash));
+    }
+  }
+
+  .twt-economy-pip {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--twt-glow);
+
+    &.is-spent { color: var(--twt-ink-dim); }
+
+    button {
+      width: auto;
+      border: none;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font-size: 0.9rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+  }
+
+  .twt-economy-label {
+    font-family: $font-data;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .twt-turn-marker {
+    margin-left: auto;
+    color: var(--twt-glow);
+    font-family: $font-data;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .twt-action-groups {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.8rem;
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  .twt-action-group {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    background: var(--twt-paper);
+    overflow: hidden;
+  }
+
+  .twt-action-list {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li { flex: 1 1 auto; display: flex; }
+  }
+
+  .twt-action-button {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--twt-rule-paper);
+    border-radius: 0;
+    padding: 0.3rem 0.6rem;
+    background: transparent;
+    color: var(--twt-ink-paper);
+    text-align: left;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--twt-green) 26%, transparent);
+      color: var(--twt-ink-paper);
+    }
+  }
+
+  .twt-action-list li:last-child .twt-action-button { border-bottom: none; }
+
+  .twt-action-name {
+    flex: 1 1 auto;
+    font-family: $font-display;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .twt-action-pair {
+    flex: 0 0 auto;
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+}

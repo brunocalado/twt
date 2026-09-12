@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000003",
+  "name": "Parade Uniform",
+  "type": "equipment",
+  "img": "icons/equipment/chest/coat-collared-red-gold.webp",
+  "system": {
+    "description": "<p>Braid, brass and a high collar. It remembers being saluted.</p>",
+    "rules": "<p>When damaged by an attack, exhaust this uniform to deal WILL damage to the attacker equal to the damage received.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "As a 1-hour action, succeed a MIND + CULTURE test to restore this uniform.",
+    "category": "armor",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "worn",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 400000,
+  "_key": "!items!twtequ0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

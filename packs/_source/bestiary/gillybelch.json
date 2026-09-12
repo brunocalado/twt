@@ -1,0 +1,104 @@
+{
+  "_id": "twtbst0000000001",
+  "name": "Gillybelch",
+  "type": "npc",
+  "img": "icons/creatures/amphibians/bullfrog-glass-teal.webp",
+  "system": {
+    "biography": "",
+    "notes": "",
+    "tactics": "<p>They use POUNCE from the shadows to leap into zones, followed by BITE to grapple and chew their prey.</p><p><strong>Party scaling.</strong> Fewer than 4 Delvers: remove 2 gillybelches from the Parlor. More than 4: add one Brute Gillybelch per additional Delver.</p>",
+    "targetDifficulty": 1,
+    "ward": {
+      "warded": false
+    },
+    "creatureType": "horror",
+    "threat": 0.5,
+    "size": 0.5,
+    "speed": 1,
+    "tagline": "These snot-covered toads leap at anything that moves, then latch on with glass shard teeth and chew their victim mercilessly.",
+    "hp": {
+      "value": 2,
+      "max": 2
+    },
+    "armor": {
+      "base": 0,
+      "current": 0
+    },
+    "traits": {
+      "body": 2,
+      "mind": 1,
+      "will": 1
+    },
+    "skills": {
+      "culture": 0,
+      "industry": 0,
+      "navigation": 1,
+      "skulduggery": 1,
+      "survival": 2,
+      "violence": 2
+    },
+    "abilities": [
+      {
+        "name": "HORROR",
+        "description": "While unwarded, your tests are -1M easier and tests targeting you are +1M harder."
+      },
+      {
+        "name": "AMPHIBIOUS",
+        "description": "You aren't slowed by water. You can breathe both water and air."
+      }
+    ],
+    "actions": [
+      {
+        "name": "BITE",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 1,
+        "damageType": "body",
+        "piercing": false,
+        "range": 0,
+        "frequency": "",
+        "description": "Melee attack.",
+        "boons": "Spend 1 boon to grapple the target. While grappling, you cannot bite other creatures."
+      },
+      {
+        "name": "POUNCE",
+        "actionType": "minor",
+        "trait": "body",
+        "skill": "navigation",
+        "difficulty": null,
+        "damage": 0,
+        "damageType": "body",
+        "piercing": false,
+        "range": 2,
+        "frequency": "",
+        "description": "Leap into the zone of an enemy within 2 range. If unsuccessful, you may still move normally.",
+        "boons": "Spend 1 boon to become invigorated."
+      }
+    ]
+  },
+  "items": [],
+  "prototypeToken": {
+    "name": "Gillybelch",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "icons/creatures/amphibians/bullfrog-glass-teal.webp"
+    }
+  },
+  "sort": 200000,
+  "_key": "!actors!twtbst0000000001",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "ptbada0000000002",
+  "name": "Telecinético — ARRASTO",
+  "type": "adaptation",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "system": {
+    "description": "<p>A linhagem Telecinético.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "line": "Telecinético",
+    "tier": "malignant",
+    "effects": {
+      "malignant": {
+        "name": "ARRASTO",
+        "text": "<em>Os objetos ao seu redor tremem e saltam de forma imprevisível.</em> Você precisa usar uma ação maior para equipar ou passar itens."
+      },
+      "awakened1": {
+        "name": "FUNDA",
+        "text": "<em>O que quer que você busque salta para a sua mão.</em> Uma vez por rodada durante o seu turno, você pode equipar ou passar sem usar uma ação menor."
+      },
+      "awakened2": {
+        "name": "",
+        "text": ""
+      },
+      "awakened3": {
+        "name": "",
+        "text": ""
+      }
+    }
+  },
+  "sort": 300000,
+  "_key": "!items!ptbada0000000002",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

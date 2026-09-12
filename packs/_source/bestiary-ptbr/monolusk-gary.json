@@ -1,0 +1,98 @@
+{
+  "_id": "ptbbst0000000000",
+  "name": "Monolusco (Gary)",
+  "type": "npc",
+  "img": "icons/creatures/abilities/mouth-teeth-rows-white.webp",
+  "system": {
+    "biography": "",
+    "notes": "",
+    "tactics": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "creatureType": "horror",
+    "threat": 2,
+    "size": 2,
+    "speed": 1,
+    "tagline": "Esses investidores blindados e desequilibrados pisoteiam a presa sob os pés. Um monolusco se atira de penhascos ou dentro de armadilhas só para continuar em movimento.",
+    "hp": {
+      "value": 7,
+      "max": 7
+    },
+    "armor": {
+      "base": 2,
+      "current": 2
+    },
+    "traits": {
+      "body": 5,
+      "mind": 1,
+      "will": 2
+    },
+    "skills": {
+      "culture": 0,
+      "industry": 0,
+      "navigation": 3,
+      "skulduggery": 0,
+      "survival": 0,
+      "violence": 2
+    },
+    "abilities": [
+      {
+        "name": "HORROR",
+        "description": "Enquanto desamparado, seus testes são -1M mais fáceis e os testes que o têm como alvo são +1M mais difíceis."
+      },
+      {
+        "name": "REPELÃO",
+        "description": "Sempre que você entra em uma zona, cada outro ocupante precisa passar em um teste de CORPO + SOBREVIVÊNCIA ou sofre 1 de dano de CORPO e cai Caído."
+      },
+      {
+        "name": "RAIO DE GIRO",
+        "description": "Quando você entra em uma zona que já ocupou nesta rodada, caia Caído."
+      },
+      {
+        "name": "VENTRE",
+        "description": "Enquanto Caído, perca toda a armadura."
+      }
+    ],
+    "actions": [
+      {
+        "name": "INVESTIDA",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "navigation",
+        "difficulty": null,
+        "damage": 0,
+        "damageType": "body",
+        "piercing": false,
+        "range": 0,
+        "frequency": "",
+        "description": "Mova-se, depois mova-se de novo. Em um fracasso, você ainda pode se mover uma vez.",
+        "boons": "Spend 2 boons to gain +1 speed for this action."
+      }
+    ]
+  },
+  "items": [],
+  "prototypeToken": {
+    "name": "Monolusco (Gary)",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "icons/creatures/abilities/mouth-teeth-rows-white.webp"
+    }
+  },
+  "sort": 100000,
+  "_key": "!actors!ptbbst0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

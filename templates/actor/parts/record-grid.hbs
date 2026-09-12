@@ -1,0 +1,39 @@
+{{!--
+  The records face: three columns, one per trait, each padded to exactly its capacity so
+  the slots a player can see always equal the slots the rules allow.
+--}}
+<section class="tab twt-records {{tab.cssClass}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+  {{#each columns}}
+  <div class="twt-column{{#if this.over}} is-over{{/if}}" data-item-type="{{this.itemType}}">
+
+    <header class="twt-column-head">
+      <h2 class="twt-column-title">{{localize this.label}}</h2>
+      <span class="twt-column-count">{{this.used}}<span class="twt-health-sep">/</span>{{this.max}}</span>
+      {{#if ../editable}}
+      <button type="button" class="twt-column-add" data-action="createRecord"
+              aria-label="{{localize 'TWT.Record.Add'}}" data-tooltip="{{localize 'TWT.Record.Add'}}">
+        <i class="fa-solid fa-plus" inert></i>
+      </button>
+      {{/if}}
+    </header>
+
+    {{#if this.over}}
+    <p class="twt-column-warning">{{localize "TWT.Warning.OverCapacity"}}</p>
+    {{/if}}
+
+    <ol class="twt-slots">
+      {{#each this.cells}}
+      <li class="twt-slot twt-slot--{{this.kind}}{{#if (gt this.span 1)}} twt-slot--wide{{/if}}">
+        {{#if (eq this.kind "record")}}
+          {{> "twt.record-card" cell=this editable=../../editable config=../../config}}
+        {{else if (eq this.kind "consumed")}}
+          <span class="twt-slot-consumed" aria-hidden="true"></span>
+        {{else}}
+          <span class="twt-slot-empty">{{localize "TWT.Record.EmptySlot"}}</span>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+  {{/each}}
+</section>

@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000004",
+  "name": "Pantufas Felpudas",
+  "type": "equipment",
+  "img": "icons/equipment/feet/boots-simple-leather-brown.webp",
+  "system": {
+    "description": "<p>Absurdas, e o único conforto em cem léguas.</p>",
+    "rules": "<p>Como uma ação de 1 hora durante o acampamento, use 1 carga para curar 1 de VONTADE.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 500000,
+  "_key": "!items!ptbequ0000000004",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,34 @@
+{{!-- Named passives and reactions. Prose: the Keeper reads and applies them. --}}
+<section class="twt-npc-list twt-npc-abilities">
+  <header class="twt-npc-list-head">
+    <h2 class="twt-block-title">{{localize "TWT.NPC.FIELDS.abilities.label"}}</h2>
+    {{#if editable}}
+    <button type="button" class="twt-list-add" data-action="addEntry" data-field="abilities"
+            data-tooltip="{{localize 'TWT.NPC.AddAbility'}}" aria-label="{{localize 'TWT.NPC.AddAbility'}}">
+      <i class="fa-solid fa-plus" inert></i>
+    </button>
+    {{/if}}
+  </header>
+
+  {{#each abilities}}
+  <article class="twt-entry" data-index="{{this.index}}">
+    <div class="twt-entry-head">
+      <input class="twt-entry-name" type="text" name="system.abilities.{{this.index}}.name"
+             value="{{this.name}}" {{disabled (not ../editable)}}>
+      {{#if ../editable}}
+      <div class="twt-entry-tools">
+        <button type="button" data-action="moveEntry" data-field="abilities" data-by="-1"
+                aria-label="{{localize 'TWT.NPC.MoveUp'}}"><i class="fa-solid fa-chevron-up" inert></i></button>
+        <button type="button" data-action="moveEntry" data-field="abilities" data-by="1"
+                aria-label="{{localize 'TWT.NPC.MoveDown'}}"><i class="fa-solid fa-chevron-down" inert></i></button>
+        <button type="button" data-action="removeEntry" data-field="abilities"
+                aria-label="{{localize 'TWT.Record.Delete'}}"><i class="fa-solid fa-trash" inert></i></button>
+      </div>
+      {{/if}}
+    </div>
+    <textarea class="twt-entry-text" name="system.abilities.{{this.index}}.description" rows="2"
+              placeholder="{{localize 'TWT.NPC.FIELDS.abilities.description.label'}}"
+              {{disabled (not ../editable)}}>{{this.description}}</textarea>
+  </article>
+  {{/each}}
+</section>

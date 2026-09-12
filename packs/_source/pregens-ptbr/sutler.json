@@ -1,0 +1,299 @@
+{
+  "_id": "ptbpre0000000004",
+  "name": "Vivandeiro",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Um nobre decaído acumulando pó para erguer a propriedade da família para fora da lama.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "mind": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "will": {
+        "score": 2,
+        "hp": {
+          "value": 2
+        }
+      }
+    },
+    "skills": {
+      "culture": 1,
+      "industry": 1,
+      "navigation": 2,
+      "skulduggery": 3,
+      "survival": 0,
+      "violence": 1
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "ptbpgi0000000400",
+      "name": "Garrote de Linha de Pesca",
+      "type": "equipment",
+      "img": "icons/sundries/survival/rope-coiled-tan.webp",
+      "system": {
+        "description": "<p>Um metro de linha entre dois cabos. Trabalho silencioso.</p>",
+        "rules": "<p>Em um acerto, você pode agarrar o alvo; agarrada desse jeito, a vítima fica Muda e Sufocando. Ocultar esta arma é -1M mais fácil.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": false,
+        "doubleWielded": true,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1500000,
+      "_key": "!actors.items!ptbpre0000000004.ptbpgi0000000400",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000401",
+      "name": "Máscara de Névoa",
+      "type": "equipment",
+      "img": "icons/equipment/head/mask-carved-scream-tan.webp",
+      "system": {
+        "description": "<p>Guta-percha e vidro fumê. Cheira ao próprio avesso.</p>",
+        "rules": "<p>Sempre que você sofreria dano de VONTADE por estar desamparado, use 1 carga para ignorá-lo.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "worn",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1600000,
+      "_key": "!actors.items!ptbpre0000000004.ptbpgi0000000401",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000402",
+      "name": "Saco de Areia",
+      "type": "equipment",
+      "img": "icons/containers/bags/pack-leather-brown.webp",
+      "system": {
+        "description": "<p>Cascalho das docas num embrulho de oleado.</p>",
+        "rules": "<p>Quando um inimigo a até 1 de alcance o toma como alvo, exaura este saco e passe em um teste de CORPO + TRAPAÇA para cegá-lo até o fim do próximo turno dele, fazendo seu ataque fracassar automaticamente.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1700000,
+      "_key": "!actors.items!ptbpre0000000004.ptbpgi0000000402",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000403",
+      "name": "Sabujo",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Uma vez por rodada, quando um inimigo sai da sua zona, você pode ficar Revigorado e se mover para segui-lo.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "navigation",
+        "tier": "junior"
+      },
+      "sort": 1000000,
+      "_key": "!actors.items!ptbpre0000000004.ptbpgi0000000403",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000404",
+      "name": "João Teimoso",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Sempre que você toma como alvo um inimigo de quem está oculto e que esteja a até 1 de alcance, atordoe-o imediatamente.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "skulduggery",
+        "tier": "junior"
+      },
+      "sort": 1100000,
+      "_key": "!actors.items!ptbpre0000000004.ptbpgi0000000404",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000405",
+      "name": "Anfíbio — RASOS",
+      "type": "adaptation",
+      "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+      "system": {
+        "description": "<p>A linhagem Anfíbio.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "line": "Anfíbio",
+        "tier": "awakened1",
+        "effects": {
+          "malignant": {
+            "name": "",
+            "text": ""
+          },
+          "awakened1": {
+            "name": "RASOS",
+            "text": "Testes de natação são -1M mais fáceis. Nadar não o deixa lento nem restringe seu limite de empunhadura. Você pode respirar debaixo d'água."
+          },
+          "awakened2": {
+            "name": "",
+            "text": ""
+          },
+          "awakened3": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "sort": 600000,
+      "_key": "!actors.items!ptbpre0000000004.ptbpgi0000000405",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Vivandeiro",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 500000,
+  "_key": "!actors!ptbpre0000000004",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

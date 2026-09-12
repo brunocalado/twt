@@ -1,0 +1,973 @@
+{
+  "TYPES": {
+    "Actor": {
+      "delver": "Delver",
+      "npc": "NPC"
+    },
+    "Item": {
+      "equipment": "Equipment",
+      "feature": "Feature",
+      "adaptation": "Adaptation"
+    },
+    "HINTS": {
+      "Actor": {
+        "delver": "A player character who ventures into the Unknown to keep the light burning.",
+        "npc": "A person, horror or construct the Keeper runs."
+      },
+      "Item": {
+        "equipment": "A weapon, a suit of armor, a lantern, or gear. Fills BODY record slots.",
+        "feature": "A special earned from a skill. Fills MIND record slots.",
+        "adaptation": "A mutation the Unknown has worked into a Delver. Fills WILL record slots."
+      }
+    }
+  },
+  "TWT": {
+    "SheetLabel": {
+      "Delver": "Delver Folio",
+      "NPC": "Statblock",
+      "Item": "Record Sheet"
+    },
+    "Placeholder": {
+      "DelverSheet": "The Delver sheet is not built yet.",
+      "NpcSheet": "The NPC statblock is not built yet.",
+      "ItemSheet": "This record sheet is not built yet."
+    },
+    "Warning": {
+      "NoActiveGM": "No Keeper is connected, so this change cannot be applied. Ask the Keeper to join.",
+      "NoQueryPermission": "Your user role cannot send requests to the Keeper. The Keeper must grant the \"Query Other Users\" permission.",
+      "DelegateFailed": "The Keeper's client could not complete that change. See the console for details.",
+      "AlreadyStrained": "This test has already been strained.",
+      "NotEnoughBoons": "There are not enough boons left for that.",
+      "WieldLimit": "Only {max} hands. That would need {cost}.",
+      "WornLimit": "Only {max} piece of armor can be worn at a time.",
+      "WrongColumn": "{name} is a {type}. It does not go in the {column} column.",
+      "NoRoom": "No room for {name}: {group} is at {used} of {max}, and it needs {cost}.",
+      "OverCapacity": "Over capacity. Records past the limit do not work.",
+      "DestroyedIsForever": "A destroyed record cannot be restored. Delete it instead.",
+      "ActionSpent": "Your {cost} is already spent this turn.",
+      "NoBoonOptions": "Nothing those boons can buy here."
+    },
+    "Migration": {
+      "Started": "Time Without Tide is migrating this world. Do not close the browser.",
+      "Complete": "Time Without Tide finished migrating this world.",
+      "Failed": "Time Without Tide could not finish migrating this world. See the console and restore a backup."
+    },
+    "Setting": {
+      "AutoRecoveryTest": {
+        "Name": "Roll recovery tests automatically",
+        "Hint": "When a health pool reaches 0, roll the recovery test at once. Off prompts for it instead."
+      },
+      "AutoArmorRefill": {
+        "Name": "Refill armor each turn",
+        "Hint": "Restore armor to its full value at the start of each combatant's turn."
+      },
+      "AutoUnknownExposure": {
+        "Name": "Prompt unwarded exposure",
+        "Hint": "Check unwarded actors against the Unknown at the end of each combat turn and each travel segment."
+      },
+      "EnforceSlotLimits": {
+        "Name": "Enforce record slot limits",
+        "Hint": "Refuse a record that would overflow its slot group. Off warns and allows it."
+      },
+      "SheetTheme": {
+        "Name": "Sheet theme",
+        "Hint": "Which surface the sheets are painted on. Affects only your own client.",
+        "Soot": "Soot",
+        "Parchment": "Parchment"
+      }
+    },
+    "Trait": {
+      "Body": "Body",
+      "BodyAbbr": "BOD",
+      "Mind": "Mind",
+      "MindAbbr": "MND",
+      "Will": "Will",
+      "WillAbbr": "WIL"
+    },
+    "Skill": {
+      "Culture": "Culture",
+      "CultureAbbr": "CUL",
+      "Industry": "Industry",
+      "IndustryAbbr": "IND",
+      "Navigation": "Navigation",
+      "NavigationAbbr": "NAV",
+      "Skulduggery": "Skulduggery",
+      "SkulduggeryAbbr": "SKU",
+      "Survival": "Survival",
+      "SurvivalAbbr": "SUR",
+      "Violence": "Violence",
+      "ViolenceAbbr": "VIO"
+    },
+    "Category": {
+      "Weapon": "Weapon",
+      "Armor": "Armor",
+      "Lantern": "Lantern",
+      "Gear": "Gear"
+    },
+    "EquipState": {
+      "Stored": "Stored",
+      "Wielded": "Wielded",
+      "Worn": "Worn"
+    },
+    "State": {
+      "Normal": "Normal",
+      "Exhausted": "Exhausted",
+      "Destroyed": "Destroyed"
+    },
+    "CreatureType": {
+      "Human": "Human",
+      "Horror": "Horror",
+      "Construct": "Construct"
+    },
+    "Feature": {
+      "Junior": "Junior",
+      "Veteran": "Veteran",
+      "FIELDS": {
+        "skill": {
+          "label": "Skill",
+          "hint": "The skill this feature was earned from. Leave blank for a background feature."
+        },
+        "tier": {
+          "label": "Tier",
+          "hint": "Junior is earned at skill 2, veteran at skill 4."
+        }
+      },
+      "NoSkill": "No skill (background)"
+    },
+    "ActionType": {
+      "Major": "Major Action",
+      "Minor": "Minor Action",
+      "Free": "Free Action"
+    },
+    "Speed": {
+      "None": "0",
+      "Half": "½",
+      "Standard": "1",
+      "Fast": "2"
+    },
+    "Threat": {
+      "Mook": "Mook",
+      "Equal": "Equal",
+      "Elite": "Elite",
+      "Boss": "Boss"
+    },
+    "Actor": {
+      "FIELDS": {
+        "biography": {
+          "label": "Biography"
+        },
+        "notes": {
+          "label": "Notes"
+        },
+        "targetDifficulty": {
+          "label": "Target Difficulty",
+          "hint": "The marks an attacker needs to hit this actor. The standard is 2."
+        },
+        "ward": {
+          "label": "Ward",
+          "warded": {
+            "label": "Warded",
+            "hint": "Whether this actor currently stands in warded light."
+          }
+        }
+      }
+    },
+    "Delver": {
+      "FIELDS": {
+        "traits": {
+          "label": "Traits",
+          "body": {
+            "label": "Body",
+            "score": {
+              "label": "Body Score",
+              "hint": "1 to 5. Also the size of the Body health pool."
+            },
+            "hp": {
+              "label": "Body Health",
+              "value": {
+                "label": "Body Health"
+              }
+            }
+          },
+          "mind": {
+            "label": "Mind",
+            "score": {
+              "label": "Mind Score",
+              "hint": "1 to 5. Also the size of the Mind health pool."
+            },
+            "hp": {
+              "label": "Mind Health",
+              "value": {
+                "label": "Mind Health"
+              }
+            }
+          },
+          "will": {
+            "label": "Will",
+            "score": {
+              "label": "Will Score",
+              "hint": "1 to 5. Also the size of the Will health pool."
+            },
+            "hp": {
+              "label": "Will Health",
+              "value": {
+                "label": "Will Health"
+              }
+            }
+          }
+        },
+        "skills": {
+          "label": "Skills",
+          "culture": {
+            "label": "Culture"
+          },
+          "industry": {
+            "label": "Industry"
+          },
+          "navigation": {
+            "label": "Navigation"
+          },
+          "skulduggery": {
+            "label": "Skulduggery"
+          },
+          "survival": {
+            "label": "Survival"
+          },
+          "violence": {
+            "label": "Violence"
+          }
+        },
+        "armor": {
+          "label": "Armor",
+          "current": {
+            "label": "Armor Remaining",
+            "hint": "Refills to its full value at the start of each of this Delver's combat turns."
+          },
+          "temp": {
+            "label": "Bonus Armor",
+            "hint": "Armor granted on top of what the worn piece provides."
+          }
+        },
+        "speed": {
+          "label": "Speed",
+          "base": {
+            "label": "Speed",
+            "hint": "Zones moved with a single move action, before conditions."
+          }
+        },
+        "progression": {
+          "label": "Progression",
+          "xp": {
+            "label": "Experience"
+          },
+          "dust": {
+            "label": "Dust"
+          }
+        }
+      }
+    },
+    "NPC": {
+      "FIELDS": {
+        "creatureType": {
+          "label": "Creature Type"
+        },
+        "threat": {
+          "label": "Threat",
+          "hint": "How dangerous this creature is relative to one Delver."
+        },
+        "size": {
+          "label": "Size",
+          "hint": "In zones. Half a zone and up."
+        },
+        "speed": {
+          "label": "Speed"
+        },
+        "tagline": {
+          "label": "Tagline",
+          "hint": "The one line printed under the name in the statblock."
+        },
+        "tactics": {
+          "label": "Tactics"
+        },
+        "hp": {
+          "label": "Health",
+          "value": {
+            "label": "Health"
+          },
+          "max": {
+            "label": "Maximum Health"
+          }
+        },
+        "armor": {
+          "label": "Armor",
+          "base": {
+            "label": "Armor",
+            "hint": "Body damage this creature absorbs each turn."
+          },
+          "current": {
+            "label": "Armor Remaining"
+          }
+        },
+        "traits": {
+          "label": "Traits",
+          "body": {
+            "label": "Body"
+          },
+          "mind": {
+            "label": "Mind"
+          },
+          "will": {
+            "label": "Will"
+          }
+        },
+        "skills": {
+          "label": "Skills",
+          "culture": {
+            "label": "Culture"
+          },
+          "industry": {
+            "label": "Industry"
+          },
+          "navigation": {
+            "label": "Navigation"
+          },
+          "skulduggery": {
+            "label": "Skulduggery"
+          },
+          "survival": {
+            "label": "Survival"
+          },
+          "violence": {
+            "label": "Violence"
+          }
+        },
+        "abilities": {
+          "label": "Abilities",
+          "element": {
+            "label": "Ability"
+          },
+          "name": {
+            "label": "Name"
+          },
+          "description": {
+            "label": "Description"
+          }
+        },
+        "actions": {
+          "label": "Actions",
+          "element": {
+            "label": "Action"
+          },
+          "name": {
+            "label": "Name"
+          },
+          "actionType": {
+            "label": "Action Cost"
+          },
+          "trait": {
+            "label": "Trait"
+          },
+          "skill": {
+            "label": "Skill"
+          },
+          "difficulty": {
+            "label": "Difficulty",
+            "hint": "Leave blank to use the target's own target difficulty."
+          },
+          "damage": {
+            "label": "Damage"
+          },
+          "damageType": {
+            "label": "Damage Type"
+          },
+          "piercing": {
+            "label": "Piercing",
+            "hint": "Ignores armor."
+          },
+          "range": {
+            "label": "Range",
+            "hint": "In zones. 0 is melee."
+          },
+          "frequency": {
+            "label": "Frequency",
+            "hint": "once per round"
+          },
+          "description": {
+            "label": "Description"
+          },
+          "boons": {
+            "label": "Boons",
+            "hint": "Spend 2 boons to gain +1 speed for this action."
+          }
+        }
+      },
+      "NamePlaceholder": "Name this creature",
+      "TargetDifficulty": "Target",
+      "ApplyDamage": "Apply damage",
+      "Dice": "dice",
+      "UseTarget": "target's",
+      "RollAction": "Roll this action",
+      "AddAbility": "Add an ability",
+      "AddAction": "Add an action",
+      "NewAbility": "New Ability",
+      "NewAction": "New Action",
+      "MoveUp": "Move up",
+      "MoveDown": "Move down",
+      "KeeperPanel": "Keeper's Notes",
+      "Damage": "Damage",
+      "Range": "Range",
+      "Target": "Target"
+    },
+    "Item": {
+      "FIELDS": {
+        "description": {
+          "label": "Description"
+        },
+        "rules": {
+          "label": "Rules",
+          "hint": "Mechanical text the Keeper adjudicates. The system does not automate it."
+        },
+        "state": {
+          "label": "State"
+        },
+        "charges": {
+          "label": "Charges",
+          "enabled": {
+            "label": "Tracks Charges"
+          },
+          "value": {
+            "label": "Charges"
+          },
+          "max": {
+            "label": "Maximum Charges"
+          }
+        },
+        "restoreTrigger": {
+          "label": "Restored By",
+          "hint": "What restores this record. For example: as a 1-hour action, succeed a Mind + Culture test."
+        }
+      },
+      "NamePlaceholder": "Name this record",
+      "Classification": "Classification",
+      "CycleState": "Cycle: normal, exhausted, destroyed",
+      "Restore": "Restore",
+      "Share": "Show to the table",
+      "RegainCharge": "Regain a charge",
+      "DestroyedBanner": "Destroyed. This record is gone for good; a Safe Rest will not bring it back.",
+      "ExhaustedBanner": "Exhausted. Restore it before it can be used again.",
+      "WeaponModeHint": "Range 0 with Body is melee. Range 1 or more with Mind is ranged, with Body it is thrown.",
+      "RestoreMalignantTitle": "Restore Adaptation",
+      "RestoreMalignantBody": "Restoring {name} removes it entirely. A malignant adaptation is shed, not repaired. This cannot be undone."
+    },
+    "Equipment": {
+      "FIELDS": {
+        "category": {
+          "label": "Category"
+        },
+        "heavy": {
+          "label": "Heavy",
+          "hint": "Fills two Body record slots instead of one."
+        },
+        "doubleWielded": {
+          "label": "Double-Wielded",
+          "hint": "Commits both wield slots."
+        },
+        "consumable": {
+          "label": "Consumable",
+          "hint": "Destroyed on use."
+        },
+        "equipState": {
+          "label": "Carried As"
+        },
+        "price": {
+          "label": "Price"
+        },
+        "weapon": {
+          "label": "Weapon",
+          "attackTrait": {
+            "label": "Attack Trait",
+            "hint": "Body for melee and thrown, Mind for ranged."
+          },
+          "damage": {
+            "label": "Damage"
+          },
+          "damageType": {
+            "label": "Damage Type"
+          },
+          "range": {
+            "label": "Range",
+            "hint": "In zones. 0 is melee."
+          },
+          "piercing": {
+            "label": "Piercing",
+            "hint": "Ignores armor."
+          }
+        },
+        "armorBonus": {
+          "label": "Armor",
+          "hint": "Body damage this piece absorbs each turn."
+        },
+        "wardValue": {
+          "label": "Ward",
+          "hint": "Ward this lantern provides while wielded."
+        }
+      }
+    },
+    "Adaptation": {
+      "Malignant": "Malignant",
+      "Awakened1": "Awakened I",
+      "Awakened2": "Awakened II",
+      "Awakened3": "Awakened III",
+      "FIELDS": {
+        "line": {
+          "label": "Line",
+          "hint": "The mutation line, such as Undying or Fortune."
+        },
+        "tier": {
+          "label": "Tier",
+          "hint": "How far down the line this Delver has been dragged."
+        },
+        "effects": {
+          "label": "Effects",
+          "malignant": {
+            "label": "Malignant",
+            "name": {
+              "label": "Name"
+            },
+            "text": {
+              "label": "Effect"
+            }
+          },
+          "awakened1": {
+            "label": "Awakened I",
+            "name": {
+              "label": "Name"
+            },
+            "text": {
+              "label": "Effect"
+            }
+          },
+          "awakened2": {
+            "label": "Awakened II",
+            "name": {
+              "label": "Name"
+            },
+            "text": {
+              "label": "Effect"
+            }
+          },
+          "awakened3": {
+            "label": "Awakened III",
+            "name": {
+              "label": "Name"
+            },
+            "text": {
+              "label": "Effect"
+            }
+          }
+        }
+      },
+      "SlotCost": "Slots",
+      "Slots": "costs",
+      "AwakenCost": "1 XP to awaken",
+      "MalignantNote": "Malignant, and always detrimental. Restoring it is how a Delver is rid of it."
+    },
+    "Condition": {
+      "Blinded": "Blinded",
+      "Critical": "Critical",
+      "Dazed": "Dazed",
+      "Fatigued": "Fatigued",
+      "Grappled": "Grappled",
+      "Grappling": "Grappling",
+      "Hidden": "Hidden",
+      "Immobilized": "Immobilized",
+      "Invigorated": "Invigorated",
+      "Muted": "Muted",
+      "Prone": "Prone",
+      "Slowed": "Slowed",
+      "Suffocating": "Suffocating",
+      "Unconscious": "Unconscious",
+      "Vulnerable": "Vulnerable"
+    },
+    "Modifier": {
+      "BlindedSight": "Blinded, and the action depends on sight"
+    },
+    "Test": {
+      "DialogTitle": "Roll a Test",
+      "Trait": "Trait",
+      "Skill": "Skill",
+      "Difficulty": "Difficulty",
+      "Modifier": "Modifier",
+      "Increase": "Harder by one mark",
+      "Decrease": "Easier by one mark",
+      "Harder": "Harder",
+      "Easier": "Easier",
+      "ConditionModifiers": "Conditions",
+      "Situational": "situational",
+      "Assist": "Assisting ally",
+      "NoAssist": "No assistance",
+      "AssistHint": "One ally at most. They contribute half their score in the tested skill, rounded up.",
+      "AssistShort": "assist",
+      "PoolLabel": "Pool:",
+      "Dice": "dice",
+      "Against": "against",
+      "FlooredNote": "Difficulty cannot fall below 1M, so the surplus becomes boons instead:",
+      "BonusBoons": "bonus boons",
+      "Roll": "Roll"
+    },
+    "Strain": {
+      "Title": "Strain",
+      "Prompt": "Choose which dice to reroll. You may reroll any of them, including an ally's assist dice.",
+      "Cost": "Straining costs 1 Mind damage, once per test.",
+      "Confirm": "Reroll and strain"
+    },
+    "Boon": {
+      "Title": "Spend Boons",
+      "Available": "{boons} boons to spend. They cannot be banked.",
+      "NoBanking": "Anything unspent is lost when this moment passes.",
+      "Confirm": "Spend",
+      "Cost": "{cost} boon",
+      "Spent": "Spends {cost} boon on {name}.",
+      "Flurry": "Flurry",
+      "FlurryHint": "Strike again against the same target.",
+      "Cleave": "Cleave",
+      "CleaveHint": "Carry the blow into a second target within reach.",
+      "Deadly": "Deadly",
+      "DeadlyHint": "Add 1 damage to the hit.",
+      "Advantage": "Narrative advantage",
+      "AdvantageHint": "Take a position the fiction would not otherwise grant you.",
+      "Detail": "Learn a detail",
+      "DetailHint": "Ask the Keeper one thing the situation would reveal.",
+      "Project": "Project progress",
+      "ProjectHint": "Add 1 success to the project you are working on."
+    },
+    "Card": {
+      "DiceLabel": "Dice rolled",
+      "Pool": "Pool",
+      "Marks": "Marks",
+      "Boons": "Boons",
+      "Assist": "Assisted",
+      "AssistLine": "{name} adds {dice} dice.",
+      "Floored": "Floored at 1M",
+      "FlooredLine": "Requested {requested}M, so the test was 1M and granted {bonus} bonus boons.",
+      "TestSubtitle": "Difficulty {difficulty}M",
+      "Strained": "Strained",
+      "Success": "Success",
+      "Failure": "Failure",
+      "Strain": "Strain",
+      "SpendBoons": "Spend boons",
+      "Health": "Health",
+      "DamageTitle": "Damage",
+      "DamageFrom": "Damage from {source}",
+      "DamageBadge": "{applied} taken",
+      "DamageIncoming": "{amount} {pool} damage incoming.",
+      "DamageVulnerable": "Vulnerable adds 1, for {total}.",
+      "DamageAbsorbed": "Armor absorbs {absorbed}.",
+      "DamageApplied": "{applied} to {pool}: {before} to {after}.",
+      "DamageOverkill": "{overkill} points of overwhelming damage.",
+      "PoolEmpty": "The pool is empty. Roll to recover.",
+      "Died": "Dead.",
+      "Modifiers": "Modifiers",
+      "RecoveryTitle": "Recovery Test: {trait}",
+      "RecoverySubtitle": "Will + Survival, {difficulty}M",
+      "RecoveryOverkill": "+{overkill}M from overwhelming damage.",
+      "RecoveryUnwarded": "+1M, unwarded in the Unknown.",
+      "RecoveryPrompt": "A recovery test is owed.",
+      "RollRecovery": "Roll the recovery test",
+      "RecoverySuccess": "Back from the brink at 1 health.",
+      "RecoveryFailure": "Critical, and something has taken root.",
+      "Manifested": "Manifested",
+      "ManifestedItem": "{name}, from the {line} line.",
+      "ManifestedNoSlot": "A {line} mutation tried to take hold with no slot to hold it. 1 Will damage instead.",
+      "PuppetOfTheUnknown": "They become a puppet of the Unknown. Pray they are never seen again.",
+      "RestTitle": "Safe Rest: three days",
+      "RestHealed": "All three health pools are full, and armor is whole.",
+      "RestRestored": "{count} exhausted records restored.",
+      "RestRefilled": "{count} records recharged.",
+      "RestRemoved": "{count} malignant adaptations removed.",
+      "RestConditions": "{count} conditions cleared.",
+      "RestDestroyed": "{count} destroyed records stay destroyed.",
+      "Weapon": "Weapon",
+      "WeaponLine": "{damage} {type} damage, range {range}. {piercing}",
+      "Piercing": "Piercing.",
+      "Effect": "Effect",
+      "MarksShort": "{marks}/{difficulty}M"
+    },
+    "Recovery": {
+      "NoSlotSource": "an adaptation with nowhere to go",
+      "MalignantRestore": "Restore this adaptation to be rid of it."
+    },
+    "AdaptationLine": {
+      "Genius": {
+        "Name": "Genius",
+        "MalignantName": "OVERTHINKER",
+        "MalignantText": "<em>Your brain is painfully swelling against your skull.</em> Whenever you strain, reduce your dice pool by -2; minimum 1.",
+        "Awakened1Name": "SAVANT",
+        "Awakened1Text": "<em>Thinking causes your grey matter to loudly throb.</em> Whenever you strain, increase your dice pool by half your MIND."
+      },
+      "Scorpion": {
+        "Name": "Scorpion",
+        "MalignantName": "SPUR",
+        "MalignantText": "<em>A sharp knuckle-spur juts from your tailbone.</em> Whenever you unsuccessfully attack, take 1 piercing BODY damage.",
+        "Awakened1Name": "GLAIVE",
+        "Awakened1Text": "<em>A skeletal halberd looms above you at all times.</em> You can make melee attacks using your sharp tail. It deals 2 BODY damage."
+      },
+      "Telekinetic": {
+        "Name": "Telekinetic",
+        "MalignantName": "DRAG",
+        "MalignantText": "<em>Objects around you twitch and jump unpredictably.</em> You must use a major action to equip or pass items.",
+        "Awakened1Name": "SLING",
+        "Awakened1Text": "<em>Whatever you reach for leaps into your hand.</em> Once per round during your turn, you can equip or pass without using a minor action."
+      }
+    },
+    "Damage": {
+      "DialogTitle": "Apply Damage",
+      "Amount": "Amount",
+      "Type": "Type",
+      "Less": "One less",
+      "More": "One more",
+      "Piercing": "Piercing",
+      "PiercingHint": "ignores armor",
+      "Source": "Source",
+      "SourcePlaceholder": "A sledgehammer, the fog, a bad idea",
+      "NoTargets": "Select at least one token first.",
+      "VulnerablePlus": "Vulnerable +1",
+      "ArmorAbsorbs": "Armor absorbs",
+      "ToPool": "applied",
+      "Overkill": "Overwhelming by",
+      "Lethal": "This kills.",
+      "Apply": "Apply"
+    },
+    "Rest": {
+      "Button": "Safe Rest",
+      "ConfirmTitle": "Safe Rest",
+      "ConfirmBody": "Three days of rest. Health pools refill, exhausted records are restored, charges come back, conditions clear, and malignant adaptations are shed. Destroyed records stay destroyed.",
+      "Confirm": "Rest"
+    },
+    "Tab": {
+      "ledger": "Ledger",
+      "records": "Records",
+      "bio": "Journal",
+      "combat": "Combat"
+    },
+    "Slots": {
+      "items": "Items",
+      "features": "Features",
+      "adaptations": "Adaptations"
+    },
+    "Sheet": {
+      "NamePlaceholder": "Name this Delver",
+      "DelverSubtitle": "Delver",
+      "Traits": "Traits",
+      "Skills": "Skills",
+      "Armor": "Armor",
+      "Speed": "Speed",
+      "Ward": "Ward",
+      "Warded": "Warded",
+      "Unwarded": "Unwarded",
+      "Dust": "Dust",
+      "XP": "XP",
+      "RollWith": "Roll with",
+      "LoseHealth": "Lose 1 health",
+      "GainHealth": "Recover 1 health"
+    },
+    "Record": {
+      "Heavy": "Heavy",
+      "DoubleWielded": "Two-handed",
+      "Piercing": "piercing",
+      "WeaponDamage": "{damage} {type}",
+      "Range": "range {range}",
+      "ArmorBonus": "Armor {armor}",
+      "WardValue": "Ward {ward}",
+      "Charges": "Charges",
+      "SpendCharge": "Spend a charge",
+      "EmptySlot": "Empty",
+      "Add": "Add a record",
+      "Edit": "Edit",
+      "Delete": "Delete",
+      "NewRecord": "New {type}",
+      "DeleteTitle": "Delete Record",
+      "DeleteBody": "Delete {name}? This cannot be undone."
+    },
+    "Source": {
+      "SheetAdjust": "the sheet"
+    },
+    "Action": {
+      "Refund": "Hand this action back",
+      "YourTurn": "Your turn",
+      "NotInCombat": "Not in an encounter. The action economy is the table's to track.",
+      "Assist": {
+        "Label": "Assist",
+        "Hint": "Until your next turn starts, assist one ally's test within reach or weapon range."
+      },
+      "Attack": {
+        "Label": "Attack",
+        "Hint": "Strike with a wielded weapon, or with whatever is to hand.",
+        "Hit": "Hit for {applied} {type}.",
+        "HitNoTarget": "Hit. Pick who takes it.",
+        "Miss": "Miss.",
+        "Exhausted": "{name} was not built for this. It is exhausted."
+      },
+      "Brace": {
+        "Label": "Brace",
+        "Hint": "Body + Industry. Gain 1 temporary armor until your next turn.",
+        "Boons": "+1 armor per boon.",
+        "Gained": "Gains {armor} temporary armor."
+      },
+      "Dash": {
+        "Label": "Dash",
+        "Hint": "Body + Navigation. Move with +1 speed. On a failure you may still move normally.",
+        "Boons": "+1 speed per boon.",
+        "Gained": "+{speed} speed for this move.",
+        "Anyway": "Failed, but the move still happens at normal speed."
+      },
+      "Direct": {
+        "Label": "Direct",
+        "Hint": "Will + Culture. Invigorate one ally within 2 range.",
+        "Boons": "+1 ally per boon.",
+        "Gained": "Invigorates {allies} ally or allies."
+      },
+      "Grapple": {
+        "Label": "Grapple",
+        "Hint": "Body + Violence. Contest a creature in reach to inflict Grappled.",
+        "Gained": "The target is Grappled."
+      },
+      "Hide": {
+        "Label": "Hide",
+        "Hint": "Body + Skulduggery. Become Hidden.",
+        "EnemyPresent": "An enemy shares your zone",
+        "CarryingWard": "You carry 1 or more ward",
+        "Cover": "Woods or heavy cover",
+        "Shadow": "An unwarded, shadowy zone",
+        "Gained": "Hidden."
+      },
+      "Repel": {
+        "Label": "Repel",
+        "Hint": "Assign your ward, then Will + Survival. Deal 1 Will damage to each horror in your warded zones.",
+        "Gained": "1 Will damage to each horror in the warded zones."
+      },
+      "Search": {
+        "Label": "Search",
+        "Hint": "Mind + Skulduggery. Detect hidden creatures within 2 range."
+      },
+      "Shove": {
+        "Label": "Shove",
+        "Hint": "Body + Navigation. Push an enemy in reach 1 zone, or knock them Prone.",
+        "Boons": "+1 zone per boon.",
+        "Gained": "Pushed {zones} zone or zones."
+      },
+      "Move": {
+        "Label": "Move",
+        "Hint": "Leave your zone and enter an adjacent one, up to your speed."
+      },
+      "Equip": {
+        "Label": "Equip",
+        "Hint": "Equip and unequip any number of records within your limits."
+      },
+      "Pass": {
+        "Label": "Pass",
+        "Hint": "1M Body + Culture. Hand or throw one record to an ally within 1 range."
+      },
+      "Shine": {
+        "Label": "Shine",
+        "Hint": "Assign ward to zones up to your ward value, your own included."
+      },
+      "BreakGrapple": {
+        "Label": "Break Grapple",
+        "Hint": "Contest the grapple to break free.",
+        "Gained": "Free of the grapple."
+      },
+      "StandUp": {
+        "Label": "Stand Up",
+        "Hint": "Costs 1 speed, or this minor action."
+      }
+    },
+    "Attack": {
+      "Label": "Attack with {weapon}",
+      "Unarmed": "Unarmed",
+      "UnarmedBoon": "Spend 1 boon to grapple the target, or push them 1 zone.",
+      "Improvised": "Improvised",
+      "ImprovisedBoon": "Spend 1 boon to destroy the object for +1 damage.",
+      "ImprovisedHeavy": "Improvised, heavy",
+      "ImprovisedWith": "{name} (improvised)"
+    },
+    "Unknown": {
+      "Exposure": "The Unknown",
+      "Source": "the Unknown"
+    },
+    "Terrain": {
+      "Normal": "Open",
+      "Woods": "Woods",
+      "Water": "Water",
+      "Barricade": "Barricade",
+      "Hazardous": "Hazardous"
+    },
+    "Zone": {
+      "TypeLabel": "Zone",
+      "Crowded": "Crowded",
+      "CrowdedModifier": "Crowded zone",
+      "CoverModifier": "Cover: the target is in woods",
+      "WardDisrupted": "{name} was moved. {zones} warded zone or zones went dark.",
+      "FIELDS": {
+        "terrain": {
+          "label": "Terrain",
+          "hint": "Offered as a test modifier, never applied silently."
+        },
+        "warded": {
+          "label": "Warded"
+        },
+        "wardedBy": {
+          "label": "Warded By"
+        },
+        "adjacent": {
+          "label": "Adjacent Zones",
+          "hint": "Drawn by you, not inferred from the map. Two regions can touch and still be a world apart."
+        }
+      }
+    },
+    "Ward": {
+      "Title": "Assign Ward",
+      "ZoneLead": "Light your own zone first, then outward. Each point covers one zone.",
+      "TravelLead": "Pool the party's lanterns. Each point protects one Delver for the segment.",
+      "Pool": "Remaining",
+      "Of": "of",
+      "YourZone": "your zone",
+      "NoOrigin": "This Delver is not standing in a zone.",
+      "NoZones": "This scene has no zones. Ward is the toggle on the sheet.",
+      "PoolSpent": "No ward left to spend.",
+      "Confirm": "Light them"
+    },
+    "Travel": {
+      "ClockTitle": "The Expedition",
+      "Day": "Day",
+      "Segment": {
+        "morning": "Morning",
+        "afternoon": "Afternoon",
+        "night": "Night"
+      },
+      "SinceCamp": "Segments since camp:",
+      "CampOwed": "Camp is overdue",
+      "Advance": "Advance",
+      "AdvanceHint": "End this segment: expose the unwarded, check fatigue, move the clock.",
+      "Camp": "Make Camp",
+      "CampHint": "Sleep. Clears Fatigued and resets the counter.",
+      "Relay": "Relay",
+      "RelayHint": "Return the party to its attuned beacon.",
+      "RelaySubtitle": "The beacon takes them back.",
+      "RelayBody": "{names} step into the light and are gone.",
+      "SegmentEnded": "The segment ends",
+      "NowReads": "{dayName}, day {day}, {segment}",
+      "Camped": "The party made camp.",
+      "Endured": "{name} endured it.",
+      "Succumbed": "{name} could not look away. 1 Will.",
+      "Rested": "{name} held up against {difficulty}M.",
+      "Worn": "{name} failed {difficulty}M. 1 Will."
+    },
+    "Project": {
+      "Contribution": "Project",
+      "Gained": "+{gained} toward it.",
+      "Complete": "Finished.",
+      "BoonsAdded": "{boons} boons spent, each worth a success."
+    }
+  }
+}

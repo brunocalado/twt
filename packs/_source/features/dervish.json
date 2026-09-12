@@ -1,0 +1,27 @@
+{
+  "_id": "twtfea0000000006",
+  "name": "Dervish",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+    "rules": "<p>Reduce your flurry effect's boon cost by -1, to a minimum of 0.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "violence",
+    "tier": "junior"
+  },
+  "sort": 700000,
+  "_key": "!items!twtfea0000000006",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

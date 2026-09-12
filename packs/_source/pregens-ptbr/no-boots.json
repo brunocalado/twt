@@ -1,0 +1,272 @@
+{
+  "_id": "ptbpre0000000002",
+  "name": "Sem-Botas",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Órfã de rua sortuda, contratada por uma aptidão rara com faróis antigos.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "mind": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "will": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      }
+    },
+    "skills": {
+      "culture": 1,
+      "industry": 1,
+      "navigation": 1,
+      "skulduggery": 1,
+      "survival": 1,
+      "violence": 2
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "ptbpgi0000000200",
+      "name": "Machadinha",
+      "type": "equipment",
+      "img": "icons/weapons/axes/axe-broad-brown.webp",
+      "system": {
+        "description": "<p>Para lenha, para corda, e para o que quer que saia do bosque.</p>",
+        "rules": "<p>Pode ser arremessada com 1 de alcance.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 900000,
+      "_key": "!actors.items!ptbpre0000000002.ptbpgi0000000200",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000201",
+      "name": "Revólver de Percussão",
+      "type": "equipment",
+      "img": "icons/weapons/guns/gun-pistol-brass.webp",
+      "system": {
+        "description": "<p>Seis câmaras, um cão duro e cheiro de papel queimado.</p>",
+        "rules": "<p>Sempre que você usa Rajada com este revólver, pode tratá-lo como uma arma diferente para atacar com ele de novo.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "mind",
+          "damage": 1,
+          "damageType": "body",
+          "range": 2,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1000000,
+      "_key": "!actors.items!ptbpre0000000002.ptbpgi0000000201",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000202",
+      "name": "Jogo Bem Jogado",
+      "type": "equipment",
+      "img": "icons/sundries/gaming/chess-bishop-gray.webp",
+      "system": {
+        "description": "<p>Um tabuleiro dobrável, peças gastas e um placar corrente que ninguém admite manter.</p>",
+        "rules": "<p>Como uma ação de 1 hora, exaura este jogo e inicie uma disputa de MENTE + CULTURA com um aliado. Vencedor e perdedor curam 1 de MENTE (o perdedor precisa elogiar a tática superior do vencedor).</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1100000,
+      "_key": "!actors.items!ptbpre0000000002.ptbpgi0000000202",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000203",
+      "name": "Dervixe",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Reduza em -1 o custo em dádivas do seu efeito Rajada, até um mínimo de 0.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "violence",
+        "tier": "junior"
+      },
+      "sort": 700000,
+      "_key": "!actors.items!ptbpre0000000002.ptbpgi0000000203",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000204",
+      "name": "Fortuna — AZAR",
+      "type": "adaptation",
+      "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+      "system": {
+        "description": "<p>A linhagem Fortuna.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "Como uma ação de 10 minutos, sofra 1 de dano de VONTADE para restaurar 2 cargas.",
+        "line": "Fortuna",
+        "tier": "awakened1",
+        "effects": {
+          "malignant": {
+            "name": "",
+            "text": ""
+          },
+          "awakened1": {
+            "name": "AZAR",
+            "text": "Quando você faz um teste, gaste cargas para transformar 1 dado sem marca (resultado 4 ou menor) em uma marca por carga gasta."
+          },
+          "awakened2": {
+            "name": "",
+            "text": ""
+          },
+          "awakened3": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "sort": 400000,
+      "_key": "!actors.items!ptbpre0000000002.ptbpgi0000000204",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Sem-Botas",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 300000,
+  "_key": "!actors!ptbpre0000000002",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

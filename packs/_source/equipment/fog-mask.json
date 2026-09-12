@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000015",
+  "name": "Fog Mask",
+  "type": "equipment",
+  "img": "icons/equipment/head/mask-carved-scream-tan.webp",
+  "system": {
+    "description": "<p>Gutta-percha and smoked glass. It smells of the inside of itself.</p>",
+    "rules": "<p>Whenever you would take WILL damage from being unwarded, use 1 charge to ignore it.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "worn",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1600000,
+  "_key": "!items!twtequ0000000015",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

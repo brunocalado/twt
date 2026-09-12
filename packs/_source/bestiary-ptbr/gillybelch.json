@@ -1,0 +1,104 @@
+{
+  "_id": "ptbbst0000000001",
+  "name": "Guelrarroto",
+  "type": "npc",
+  "img": "icons/creatures/amphibians/bullfrog-glass-teal.webp",
+  "system": {
+    "biography": "",
+    "notes": "",
+    "tactics": "<p>Eles usam BOTE das sombras para saltar para dentro das zonas, seguido de MORDIDA para agarrar e mastigar a presa.</p><p><strong>Ajuste ao grupo.</strong> Menos de 4 Desbravadores: remova 2 guelrarrotos do Salão. Mais de 4: acrescente um Guelrarroto Brutamontes por Desbravador adicional.</p>",
+    "targetDifficulty": 1,
+    "ward": {
+      "warded": false
+    },
+    "creatureType": "horror",
+    "threat": 0.5,
+    "size": 0.5,
+    "speed": 1,
+    "tagline": "Esses sapos cobertos de muco saltam sobre qualquer coisa que se mexa, depois se agarram com dentes de caco de vidro e mastigam a vítima sem piedade.",
+    "hp": {
+      "value": 2,
+      "max": 2
+    },
+    "armor": {
+      "base": 0,
+      "current": 0
+    },
+    "traits": {
+      "body": 2,
+      "mind": 1,
+      "will": 1
+    },
+    "skills": {
+      "culture": 0,
+      "industry": 0,
+      "navigation": 1,
+      "skulduggery": 1,
+      "survival": 2,
+      "violence": 2
+    },
+    "abilities": [
+      {
+        "name": "HORROR",
+        "description": "Enquanto desamparado, seus testes são -1M mais fáceis e os testes que o têm como alvo são +1M mais difíceis."
+      },
+      {
+        "name": "ANFÍBIO",
+        "description": "A água não o deixa lento. Você pode respirar tanto na água quanto no ar."
+      }
+    ],
+    "actions": [
+      {
+        "name": "MORDIDA",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 1,
+        "damageType": "body",
+        "piercing": false,
+        "range": 0,
+        "frequency": "",
+        "description": "Ataque corpo a corpo.",
+        "boons": "Spend 1 boon to grapple the target. While grappling, you cannot bite other creatures."
+      },
+      {
+        "name": "BOTE",
+        "actionType": "minor",
+        "trait": "body",
+        "skill": "navigation",
+        "difficulty": null,
+        "damage": 0,
+        "damageType": "body",
+        "piercing": false,
+        "range": 2,
+        "frequency": "",
+        "description": "Salte para a zona de um inimigo a até 2 de alcance. Se não tiver sucesso, você ainda pode se mover normalmente.",
+        "boons": "Spend 1 boon to become invigorated."
+      }
+    ]
+  },
+  "items": [],
+  "prototypeToken": {
+    "name": "Guelrarroto",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "icons/creatures/amphibians/bullfrog-glass-teal.webp"
+    }
+  },
+  "sort": 200000,
+  "_key": "!actors!ptbbst0000000001",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

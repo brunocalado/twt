@@ -1,0 +1,185 @@
+{
+  "_id": "twtjrn0000000001",
+  "name": "Quick Reference",
+  "pages": [
+    {
+      "_id": "twtjpg0000000100",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000100",
+      "name": "The Test",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Roll (Trait + Skill) six-sided dice. Every 5 or 6 is a <strong>Mark</strong>. Compare your marks to the difficulty in M. Meet or beat it and you succeed.</p><p>Surplus marks are <strong>boons</strong>, spent immediately. They cannot be banked.</p><p>Difficulty never falls below 1M. A test eased below 1M is rolled at 1M and grants 1 bonus boon per point of the reduction that was lost, if it succeeds.</p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000101",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000101",
+      "name": "Assisting",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>One ally may assist, adding half their score in the tested skill, rounded up. Assist dice are part of your pool and may be rerolled when you strain.</p>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000102",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000102",
+      "name": "Straining",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Once per test a Delver may reroll any number of dice, then takes 1 MIND damage. You may strain a test you have already passed, to fish for boons. NPCs cannot strain.</p>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000103",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000103",
+      "name": "Damage",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>BODY damage is reduced by armor unless it is piercing. MIND and WILL damage always bypasses armor. A creature's single pool takes MIND and WILL damage as piercing BODY damage.</p><p>0 damage: blistered by new shoes. 1: slashed by a knife. 2: hit by a sledgehammer. 3: crushed by a building.</p>"
+      },
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000104",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000104",
+      "name": "Dying",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>When damage reduces a trait's health to 0, roll a <strong>recovery test</strong>: WILL + SURVIVAL at 2M, +1M if unwarded in the Unknown, and +1M per point of overwhelming damage.</p><p>Succeed and heal that trait to 1. Fail and you manifest a random malignant adaptation and gain <strong>critical</strong>.</p>"
+      },
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000105",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000105",
+      "name": "Major Actions",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Assist, Attack, Brace, Dash, Direct, Grapple, Hide, Repel, Search, Shove.</p>"
+      },
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000106",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000106",
+      "name": "Minor Actions",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Move, Equip, Pass, Shine, Break Grapple, Stand Up.</p>"
+      },
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000107",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000107",
+      "name": "Attack Boons",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Flurry</strong> (1 boon): strike again with another equipped weapon, once per turn.</p><p><strong>Cleave</strong> (2 boons): with a heavy weapon, deal weapon damage to another creature in the target's zone.</p><p><strong>Deadly</strong> (2 boons): +1 damage on this attack.</p>"
+      },
+      "sort": 800000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000108",
+      "_key": "!journal.pages!twtjrn0000000001.twtjpg0000000108",
+      "name": "Travel",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>A round is 10 seconds. A segment is 8 hours, three to a day: morning, afternoon, night. A sixday is 6 days; a month is 4 sixdays.</p><p>Camp is owed once a day. Miss it and the party is Fatigued.</p>"
+      },
+      "sort": 900000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "sort": 200000,
+  "_key": "!journal!twtjrn0000000001",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

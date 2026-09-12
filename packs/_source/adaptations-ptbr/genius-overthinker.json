@@ -1,0 +1,45 @@
+{
+  "_id": "ptbada0000000000",
+  "name": "Gênio — MATUTADOR",
+  "type": "adaptation",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "system": {
+    "description": "<p>A linhagem Gênio.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "line": "Gênio",
+    "tier": "malignant",
+    "effects": {
+      "malignant": {
+        "name": "MATUTADOR",
+        "text": "<em>Seu cérebro incha dolorosamente contra o crânio.</em> Sempre que você se esforçar, reduza sua reserva de dados em -2; mínimo de 1."
+      },
+      "awakened1": {
+        "name": "SÁBIO",
+        "text": "<em>Pensar faz sua massa cinzenta latejar ruidosamente.</em> Sempre que você se esforçar, aumente sua reserva de dados em metade da sua MENTE."
+      },
+      "awakened2": {
+        "name": "",
+        "text": ""
+      },
+      "awakened3": {
+        "name": "",
+        "text": ""
+      }
+    }
+  },
+  "sort": 100000,
+  "_key": "!items!ptbada0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,41 @@
+// Self-hosted webfaces.
+//
+// The Quickstart's own type — NoyhA Bistro Rough over Adobe Aldine — is proprietary
+// and is not here. These are the two closest faces under the SIL Open Font License,
+// chosen by rendering each candidate beside a 300dpi crop of the book rather than
+// from memory: `Archivo Black` for the heavy flat-terminalled display caps, and
+// `Crimson Pro` for the old-style body serif. Small uppercase labels stay on
+// `Signika`, which Foundry already loads, so no third file ships for them.
+//
+// Each family's `OFL.txt` sits beside its `.woff2` in `fonts/`, which is what the
+// licence requires and what `tools/build-release.mjs` copies into the zip.
+//
+// Paths are relative to the compiled stylesheet at `css/twt.css`, never absolute:
+// `/systems/twt/...` would hard-code the system id that `SYSTEM_ID` exists to own.
+
+@font-face {
+  font-family: "Archivo Black";
+  // The family ships one weight, and that weight is already black. Declaring it as
+  // 400 keeps a `font-weight: 700` elsewhere from triggering a synthesised faux-bold.
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/archivo-black/archivo-black.woff2") format("woff2");
+}
+
+// Crimson Pro ships as a variable font, so one file covers the whole range.
+@font-face {
+  font-family: "Crimson Pro";
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/crimson-pro/crimson-pro.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Crimson Pro";
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  src: url("../fonts/crimson-pro/crimson-pro-italic.woff2") format("woff2-variations");
+}

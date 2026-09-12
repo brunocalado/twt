@@ -1,0 +1,328 @@
+{
+  "id": "twt",
+  "title": "Time Without Tide",
+  "description": "A Victorian apocalypse TTRPG where the moon shattered and eldritch fog consumes the world. Unofficial fan-made system. Time Without Tide is copyright Chaosium Studios LLC; this system is not published, endorsed, or approved by Chaosium Inc.",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [],
+  "esmodules": [
+    "module/twt.mjs"
+  ],
+  "styles": [
+    "css/twt.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "socket": true,
+  "initiative": "1d6",
+  "grid": {
+    "type": 0,
+    "distance": 1,
+    "units": "zone"
+  },
+  "documentTypes": {
+    "Actor": {
+      "delver": {
+        "htmlFields": [
+          "biography",
+          "notes"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "biography",
+          "notes",
+          "tactics"
+        ]
+      }
+    },
+    "Item": {
+      "equipment": {
+        "htmlFields": [
+          "description",
+          "rules"
+        ]
+      },
+      "feature": {
+        "htmlFields": [
+          "description",
+          "rules"
+        ]
+      },
+      "adaptation": {
+        "htmlFields": [
+          "description",
+          "rules"
+        ]
+      }
+    },
+    "RegionBehavior": {
+      "zone": {}
+    }
+  },
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "css",
+        "templates",
+        "lang"
+      ]
+    }
+  },
+  "license": "LICENSE",
+  "url": "https://github.com/brunocalado/twt",
+  "manifest": "https://github.com/brunocalado/twt/releases/latest/download/system.json",
+  "download": "https://github.com/brunocalado/twt/releases/download/v0.0.1/twt.zip",
+  "packs": [
+    {
+      "name": "equipment",
+      "label": "Equipment",
+      "path": "packs/equipment",
+      "type": "Item",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "features",
+      "label": "Features",
+      "path": "packs/features",
+      "type": "Item",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "adaptations",
+      "label": "Adaptations",
+      "path": "packs/adaptations",
+      "type": "Item",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "pregens",
+      "label": "Pre-Generated Delvers",
+      "path": "packs/pregens",
+      "type": "Actor",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "bestiary",
+      "label": "Bestiary",
+      "path": "packs/bestiary",
+      "type": "Actor",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "rules",
+      "label": "Rules Reference",
+      "path": "packs/rules",
+      "type": "JournalEntry",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "scenario",
+      "label": "Lonely Phareflaw",
+      "path": "packs/scenario",
+      "type": "JournalEntry",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "equipment-ptbr",
+      "label": "Equipamentos (pt-BR)",
+      "path": "packs/equipment-ptbr",
+      "type": "Item",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "features-ptbr",
+      "label": "Talentos (pt-BR)",
+      "path": "packs/features-ptbr",
+      "type": "Item",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "adaptations-ptbr",
+      "label": "Adaptações (pt-BR)",
+      "path": "packs/adaptations-ptbr",
+      "type": "Item",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "pregens-ptbr",
+      "label": "Desbravadores Prontos (pt-BR)",
+      "path": "packs/pregens-ptbr",
+      "type": "Actor",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "bestiary-ptbr",
+      "label": "Bestiário (pt-BR)",
+      "path": "packs/bestiary-ptbr",
+      "type": "Actor",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "rules-ptbr",
+      "label": "Referência de Regras (pt-BR)",
+      "path": "packs/rules-ptbr",
+      "type": "JournalEntry",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "scenario-ptbr",
+      "label": "Phareflaw Solitário (pt-BR)",
+      "path": "packs/scenario-ptbr",
+      "type": "JournalEntry",
+      "system": "twt",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Time Without Tide",
+      "sorting": "m",
+      "color": "#d99d3f",
+      "packs": [
+        "pregens",
+        "rules"
+      ],
+      "folders": [
+        {
+          "name": "Records",
+          "sorting": "m",
+          "color": "#4f8a8b",
+          "packs": [
+            "equipment",
+            "features",
+            "adaptations"
+          ]
+        },
+        {
+          "name": "Keeper",
+          "sorting": "m",
+          "color": "#a33a3a",
+          "packs": [
+            "bestiary",
+            "scenario"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Time Without Tide (pt-BR)",
+      "sorting": "m",
+      "color": "#d99d3f",
+      "packs": [
+        "pregens-ptbr",
+        "rules-ptbr"
+      ],
+      "folders": [
+        {
+          "name": "Registros",
+          "sorting": "m",
+          "color": "#4f8a8b",
+          "packs": [
+            "equipment-ptbr",
+            "features-ptbr",
+            "adaptations-ptbr"
+          ]
+        },
+        {
+          "name": "Guardião",
+          "sorting": "m",
+          "color": "#a33a3a",
+          "packs": [
+            "bestiary-ptbr",
+            "scenario-ptbr"
+          ]
+        }
+      ]
+    }
+  ],
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md"
+}

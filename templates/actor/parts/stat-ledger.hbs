@@ -1,0 +1,82 @@
+{{!-- The stat face: traits with their health pools, skills, and the vitals strip. --}}
+<section class="tab twt-ledger {{tab.cssClass}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+
+  <div class="twt-ledger-columns">
+
+    <div class="twt-block twt-traits">
+      <h2 class="twt-block-title">{{localize "TWT.Sheet.Traits"}}</h2>
+      {{#each traits}}
+      <div class="twt-stat-row twt-trait-row{{#if this.empty}} is-empty{{/if}}">
+        <button type="button" class="twt-stat-roll" data-action="rollTest" data-trait="{{this.key}}"
+                data-tooltip="{{localize 'TWT.Sheet.RollWith'}} {{localize this.label}}">
+          <img class="twt-stat-icon" src="{{this.img}}" alt="">
+          <span class="twt-stat-name">{{localize this.label}}</span>
+        </button>
+
+        <input class="twt-stat-score" type="number" name="system.traits.{{this.key}}.score"
+               value="{{this.score}}" min="1" max="5" step="1" {{disabled (not ../editable)}}
+               aria-label="{{localize this.label}}">
+
+        <div class="twt-health">
+          <button type="button" class="twt-health-step" data-action="adjustHealth"
+                  data-trait="{{this.key}}" data-by="-1" {{disabled (not ../editable)}}
+                  aria-label="{{localize 'TWT.Sheet.LoseHealth'}}">&minus;</button>
+          <span class="twt-health-value">{{this.hp.value}}<span class="twt-health-sep">/</span>{{this.hp.max}}</span>
+          <button type="button" class="twt-health-step" data-action="adjustHealth"
+                  data-trait="{{this.key}}" data-by="1" {{disabled (not ../editable)}}
+                  aria-label="{{localize 'TWT.Sheet.GainHealth'}}">+</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="twt-block twt-skills">
+      <h2 class="twt-block-title">{{localize "TWT.Sheet.Skills"}}</h2>
+      {{#each skills}}
+      <div class="twt-stat-row twt-skill-row">
+        <button type="button" class="twt-stat-roll" data-action="rollTest" data-skill="{{this.key}}"
+                data-tooltip="{{localize 'TWT.Sheet.RollWith'}} {{localize this.label}}">
+          <img class="twt-stat-icon" src="{{this.img}}" alt="">
+          <span class="twt-stat-name">{{localize this.label}}</span>
+        </button>
+        <input class="twt-stat-score" type="number" name="system.skills.{{this.key}}"
+               value="{{this.score}}" min="0" max="5" step="1" {{disabled (not ../editable)}}
+               aria-label="{{localize this.label}}">
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+  <div class="twt-vitals">
+    <div class="twt-vital">
+      <span class="twt-vital-label">{{localize "TWT.Sheet.Armor"}}</span>
+      <span class="twt-vital-value">{{vitals.armor.current}}<span class="twt-health-sep">/</span>{{vitals.armor.base}}
+        {{#if vitals.armor.temp}}<em class="twt-vital-bonus">+{{vitals.armor.temp}}</em>{{/if}}
+      </span>
+    </div>
+
+    <div class="twt-vital">
+      <span class="twt-vital-label">{{localize "TWT.Sheet.Speed"}}</span>
+      <span class="twt-vital-value">{{localize vitals.speedLabel}}</span>
+    </div>
+
+    <div class="twt-vital">
+      <span class="twt-vital-label">{{localize "TWT.Sheet.Ward"}}</span>
+      <span class="twt-vital-value">{{vitals.ward.value}}</span>
+      <button type="button" class="twt-ward-toggle{{#if vitals.ward.warded}} is-on{{/if}}"
+              data-action="toggleWarded" {{disabled (not editable)}}
+              data-tooltip="{{localize 'TWT.Actor.FIELDS.ward.warded.hint'}}">
+        <i class="fa-solid {{#if vitals.ward.warded}}fa-fire{{else}}fa-fire-flame-simple{{/if}}" inert></i>
+        {{#if vitals.ward.warded}}{{localize "TWT.Sheet.Warded"}}{{else}}{{localize "TWT.Sheet.Unwarded"}}{{/if}}
+      </button>
+    </div>
+
+    {{#each columns}}
+    <div class="twt-vital twt-slot-counter{{#if this.over}} is-over{{/if}}">
+      <span class="twt-vital-label">{{localize this.label}}</span>
+      <span class="twt-vital-value">{{this.used}}<span class="twt-health-sep">/</span>{{this.max}}</span>
+    </div>
+    {{/each}}
+  </div>
+</section>

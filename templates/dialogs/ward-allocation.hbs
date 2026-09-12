@@ -1,0 +1,48 @@
+{{!-- Spending a finite pool of light, on zones in combat or on people on the road. --}}
+<div class="twt-dialog-body">
+
+  <p class="twt-dialog-lead">
+    {{#if (eq mode "travel")}}{{localize "TWT.Ward.TravelLead"}}{{else}}{{localize "TWT.Ward.ZoneLead"}}{{/if}}
+  </p>
+
+  <p class="twt-ward-pool">
+    {{localize "TWT.Ward.Pool"}}
+    <strong class="twt-pool-total">{{remaining}}</strong>
+    {{localize "TWT.Ward.Of"}} {{pool}}
+  </p>
+
+  {{#unless hasOrigin}}
+  <p class="twt-dialog-note">{{localize "TWT.Ward.NoOrigin"}}</p>
+  {{/unless}}
+
+  <ul class="twt-ward-targets">
+    {{#each targets}}
+    <li>
+      <button type="button" class="twt-ward-target{{#if this.picked}} is-picked{{/if}}{{#if this.isOrigin}} is-origin{{/if}}"
+              data-action="toggleTarget" data-target-id="{{this.id}}">
+        {{#if this.img}}<img class="twt-ward-img" src="{{this.img}}" alt="">{{/if}}
+        <span class="twt-ward-name">{{this.name}}</span>
+
+        {{#if (eq ../mode "travel")}}
+        <span class="twt-ward-meta">+{{this.contributes}}</span>
+        {{else}}
+        <span class="twt-ward-meta">
+          {{localize this.terrainLabel}}
+          {{#if this.crowded}}· {{localize "TWT.Zone.Crowded"}}{{/if}}
+          {{#if this.isOrigin}}· {{localize "TWT.Ward.YourZone"}}{{/if}}
+        </span>
+        {{/if}}
+
+        <i class="fa-solid {{#if this.picked}}fa-fire{{else}}fa-fire-flame-simple{{/if}}" inert></i>
+      </button>
+    </li>
+    {{/each}}
+  </ul>
+
+  <footer class="twt-dialog-footer">
+    <button type="submit" class="twt-primary">
+      <i class="fa-solid fa-fire" inert></i>
+      {{localize "TWT.Ward.Confirm"}}
+    </button>
+  </footer>
+</div>

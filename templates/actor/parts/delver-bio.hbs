@@ -1,0 +1,18 @@
+{{!--
+  Everything the rules do not touch. Both fields are HTMLFields, so they get the
+  `prose-mirror` element directly: `toggled` shows the enriched text until it is
+  clicked, which is what keeps the page readable rather than a wall of editors.
+--}}
+<section class="tab twt-bio {{tab.cssClass}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+  <div class="twt-prose-block">
+    <h2 class="twt-block-title">{{localize "TWT.Actor.FIELDS.biography.label"}}</h2>
+    <prose-mirror name="system.biography" value="{{system.biography}}" toggled
+                  {{#unless editable}}disabled{{/unless}}>{{{enrichedBiography}}}</prose-mirror>
+  </div>
+
+  <div class="twt-prose-block">
+    <h2 class="twt-block-title">{{localize "TWT.Actor.FIELDS.notes.label"}}</h2>
+    <prose-mirror name="system.notes" value="{{system.notes}}" toggled
+                  {{#unless editable}}disabled{{/unless}}>{{{enrichedNotes}}}</prose-mirror>
+  </div>
+</section>

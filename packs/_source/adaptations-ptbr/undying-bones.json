@@ -1,0 +1,45 @@
+{
+  "_id": "ptbada0000000006",
+  "name": "Imortal — OSSOS",
+  "type": "adaptation",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "system": {
+    "description": "<p>A linhagem Imortal.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "line": "Imortal",
+    "tier": "awakened2",
+    "effects": {
+      "malignant": {
+        "name": "",
+        "text": ""
+      },
+      "awakened1": {
+        "name": "CINZAS",
+        "text": "Imune a sufocamento, fadiga e inconsciência. Você não consegue dormir nem sonhar, e não precisa de comida ou água. Perfeitamente imóvel, você é indistinguível de um cadáver inanimado."
+      },
+      "awakened2": {
+        "name": "OSSOS",
+        "text": "Como uma ação de 1 segmento, gaste 1 carga para curar 1 de CORPO, 1 de MENTE e 1 de VONTADE."
+      },
+      "awakened3": {
+        "name": "",
+        "text": ""
+      }
+    }
+  },
+  "sort": 700000,
+  "_key": "!items!ptbada0000000006",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

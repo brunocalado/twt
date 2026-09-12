@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000003",
+  "name": "Uniforme de Parada",
+  "type": "equipment",
+  "img": "icons/equipment/chest/coat-collared-red-gold.webp",
+  "system": {
+    "description": "<p>Galões, latão e uma gola alta. Ele se lembra de ter sido saudado.</p>",
+    "rules": "<p>Ao ser danificado por um ataque, exaura este uniforme para causar ao atacante dano de VONTADE igual ao dano recebido.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "Como uma ação de 1 hora, passe em um teste de MENTE + CULTURA para restaurar este uniforme.",
+    "category": "armor",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "worn",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 400000,
+  "_key": "!items!ptbequ0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

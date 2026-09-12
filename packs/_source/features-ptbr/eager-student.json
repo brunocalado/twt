@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000003",
+  "name": "Aluno Aplicado",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Sempre que um aliado o auxilia, se o valor de perícia dele for maior que o seu, você pode usar o valor dele no lugar.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "culture",
+    "tier": "junior"
+  },
+  "sort": 400000,
+  "_key": "!items!ptbfea0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

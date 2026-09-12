@@ -1,0 +1,27 @@
+{
+  "_id": "twtfea0000000010",
+  "name": "Jack in the Box",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+    "rules": "<p>Whenever you target an enemy that you are hidden from and is within 1 range, immediately daze them.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "skulduggery",
+    "tier": "junior"
+  },
+  "sort": 1100000,
+  "_key": "!items!twtfea0000000010",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

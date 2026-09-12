@@ -1,0 +1,71 @@
+{
+  "_id": "twtjrn0000000002",
+  "name": "Lonely Phareflaw",
+  "pages": [
+    {
+      "_id": "twtjpg0000000200",
+      "_key": "!journal.pages!twtjrn0000000002.twtjpg0000000200",
+      "name": "Introduction",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Cold broke Phareflaw. Winter frost breached the heavy glass of the lantern room, letting the writhing Unknown pour inside. Wicktender Mortimer, an elderly veteran keeper of 76 years, fought bravely to repair the damage, but the fog claimed him.</p><p>Mortimer was warped into <strong>Not-Papa</strong>. His nine-year-old granddaughter, Muesli, barricaded herself in the refrigerated pantry with her teddy bear, Plum. A brood of frog-like horrors called <strong>gillybelches</strong> now infests the cottage.</p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000201",
+      "_key": "!journal.pages!twtjrn0000000002.twtjpg0000000201",
+      "name": "Muesli &amp; Plum",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Impression:</strong> a mousy nine-year-old girl clutching a raggedy, one-eared teddy bear that she speaks through.</p><p><strong>Drive:</strong> keep each other safe.</p><p>To coax Muesli out of hiding, succeed a WILL + CULTURE test. If failed, Plum demands a bribe: fetch the jar of black candy beetles hidden in Mortimer's bedroom.</p><p>If befriended, Muesli provides the lighthouse key, a warning that the monster upstairs talks with Mortimer's voice, and the reminder that the brightroom engine will flood the tower with blinding light.</p><p><em>Muesli has no statblock; she is a person, not an encounter.</em></p>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000202",
+      "_key": "!journal.pages!twtjrn0000000002.twtjpg0000000202",
+      "name": "Conclusion",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Brilliant light cleanses the fog from the brightroom. The once-wicktender's monstrous corpse writhes in screaming agony as it burns to cinders. Phareflaw is safe again.</p>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "sort": 300000,
+  "_key": "!journal!twtjrn0000000002",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

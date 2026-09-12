@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000008",
+  "name": "Hatchet",
+  "type": "equipment",
+  "img": "icons/weapons/axes/axe-broad-brown.webp",
+  "system": {
+    "description": "<p>For wood, for rope, and for whatever comes out of the wood.</p>",
+    "rules": "<p>It can be thrown with 1 range.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "weapon",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 900000,
+  "_key": "!items!twtequ0000000008",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

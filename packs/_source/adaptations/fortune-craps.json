@@ -1,0 +1,45 @@
+{
+  "_id": "twtada0000000003",
+  "name": "Fortune — CRAPS",
+  "type": "adaptation",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "system": {
+    "description": "<p>The Fortune line.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "As a 10-minute action, take 1 WILL damage to restore 2 charges.",
+    "line": "Fortune",
+    "tier": "awakened1",
+    "effects": {
+      "malignant": {
+        "name": "",
+        "text": ""
+      },
+      "awakened1": {
+        "name": "CRAPS",
+        "text": "When you make a test, spend charges to change 1 non-mark die (a result of 4 or lower) into a mark per charge spent."
+      },
+      "awakened2": {
+        "name": "",
+        "text": ""
+      },
+      "awakened3": {
+        "name": "",
+        "text": ""
+      }
+    }
+  },
+  "sort": 400000,
+  "_key": "!items!twtada0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,122 @@
+{
+  "_id": "twtbst0000000003",
+  "name": "Not-Papa",
+  "type": "npc",
+  "img": "icons/creatures/unholy/demon-fire-horned-clawed.webp",
+  "system": {
+    "biography": "",
+    "notes": "",
+    "tactics": "<p>“I can't fix it… I'm sorry.” Mortimer's voice, in the wrong mouth.</p>",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "creatureType": "horror",
+    "threat": 4,
+    "size": 1,
+    "speed": 2,
+    "tagline": "An elderly man's broken corpse held aloft by oily black flesh, bulging with cloudy eyes and gibbering mouths.",
+    "hp": {
+      "value": 7,
+      "max": 7
+    },
+    "armor": {
+      "base": 2,
+      "current": 2
+    },
+    "traits": {
+      "body": 4,
+      "mind": 2,
+      "will": 3
+    },
+    "skills": {
+      "culture": 1,
+      "industry": 0,
+      "navigation": 2,
+      "skulduggery": 2,
+      "survival": 3,
+      "violence": 4
+    },
+    "abilities": [
+      {
+        "name": "HORROR",
+        "description": "While unwarded, your tests are -1M easier and tests targeting you are +1M harder."
+      },
+      {
+        "name": "DARK ARMOR",
+        "description": "Whenever you end your turn in an unwarded zone, heal +1 BODY. Whenever you start your turn in a warded zone, your armor does not refill."
+      },
+      {
+        "name": "SLIPPERY QUICK",
+        "description": "You move freely through barricades and obstacles, and can carry creatures you are grappling without penalty."
+      }
+    ],
+    "actions": [
+      {
+        "name": "FALSE-SONG",
+        "actionType": "major",
+        "trait": "will",
+        "skill": "culture",
+        "difficulty": null,
+        "damage": 0,
+        "damageType": "body",
+        "piercing": false,
+        "range": 3,
+        "frequency": "once per segment",
+        "description": "Invigorate yourself. Each enemy within 3 range that hears your song must succeed a WILL + SURVIVAL test or take 1 WILL damage and become dazed.",
+        "boons": ""
+      },
+      {
+        "name": "BITE",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 1,
+        "damageType": "body",
+        "piercing": false,
+        "range": 0,
+        "frequency": "",
+        "description": "Melee attack.",
+        "boons": "Spend 1 boon to grapple the target in one of your many mouths."
+      },
+      {
+        "name": "DEVOUR",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 2,
+        "damageType": "body",
+        "piercing": true,
+        "range": 0,
+        "frequency": "",
+        "description": "Bite a creature you are grappling. Deals 2 piercing BODY damage and heals Not-Papa for 1 BODY.",
+        "boons": ""
+      }
+    ]
+  },
+  "items": [],
+  "prototypeToken": {
+    "name": "Not-Papa",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "icons/creatures/unholy/demon-fire-horned-clawed.webp"
+    }
+  },
+  "sort": 400000,
+  "_key": "!actors!twtbst0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

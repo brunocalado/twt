@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000016",
+  "name": "Saco de Areia",
+  "type": "equipment",
+  "img": "icons/containers/bags/pack-leather-brown.webp",
+  "system": {
+    "description": "<p>Cascalho das docas num embrulho de oleado.</p>",
+    "rules": "<p>Quando um inimigo a até 1 de alcance o toma como alvo, exaura este saco e passe em um teste de CORPO + TRAPAÇA para cegá-lo até o fim do próximo turno dele, fazendo seu ataque fracassar automaticamente.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1700000,
+  "_key": "!items!ptbequ0000000016",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

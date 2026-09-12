@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000011",
+  "name": "Sob Pressão",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Quando você se esforça em um teste, gaste 1 carga para não sofrer dano de MENTE.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "skulduggery",
+    "tier": "junior"
+  },
+  "sort": 1200000,
+  "_key": "!items!ptbfea0000000011",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

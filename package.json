@@ -1,0 +1,23 @@
+{
+  "name": "twt",
+  "version": "0.0.1",
+  "description": "Time Without Tide — Foundry VTT v14 game system",
+  "scripts": {
+    "build": "sass src/scss/twt.scss css/twt.css --style=expanded --no-source-map",
+    "watch": "sass src/scss/twt.scss css/twt.css --style=expanded --source-map --watch",
+    "packs:build": "node tools/packs.mjs pack",
+    "packs:extract": "node tools/packs.mjs unpack",
+    "release": "node tools/build-release.mjs",
+    "ship": "node tools/ship.mjs"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "",
+  "license": "GPL-3.0",
+  "private": true,
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.4",
+    "sass": "^1.71.0"
+  }
+}

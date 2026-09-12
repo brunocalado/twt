@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000006",
+  "name": "Dervixe",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Reduza em -1 o custo em dádivas do seu efeito Rajada, até um mínimo de 0.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "violence",
+    "tier": "junior"
+  },
+  "sort": 700000,
+  "_key": "!items!ptbfea0000000006",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,31 @@
+{{!-- The folio's masthead: portrait, name, and the two ledger boxes. --}}
+<header class="twt-delver-header">
+  <img class="twt-portrait" src="{{actor.img}}" alt="{{actor.name}}" data-edit="img">
+
+  <div class="twt-identity">
+    <input class="twt-name" type="text" name="name" value="{{actor.name}}"
+           placeholder="{{localize 'TWT.Sheet.NamePlaceholder'}}" {{disabled (not editable)}}>
+    <p class="twt-identity-sub">{{localize "TWT.Sheet.DelverSubtitle"}}</p>
+  </div>
+
+  <dl class="twt-ledger-boxes">
+    <div class="twt-ledger-box">
+      <dt>{{localize "TWT.Sheet.Dust"}}</dt>
+      <dd><input type="number" name="system.progression.dust" value="{{system.progression.dust}}"
+                 min="0" step="1" {{disabled (not editable)}}></dd>
+    </div>
+    <div class="twt-ledger-box">
+      <dt>{{localize "TWT.Sheet.XP"}}</dt>
+      <dd><input type="number" name="system.progression.xp" value="{{system.progression.xp}}"
+                 min="0" step="1" {{disabled (not editable)}}></dd>
+    </div>
+  </dl>
+
+  {{#if editable}}
+  <button type="button" class="twt-rest-button" data-action="safeRest"
+          data-tooltip="{{localize 'TWT.Rest.ConfirmBody'}}">
+    <i class="fa-solid fa-bed" inert></i>
+    {{localize "TWT.Rest.Button"}}
+  </button>
+  {{/if}}
+</header>

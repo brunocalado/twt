@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000018",
+  "name": "Injeções Estimulantes",
+  "type": "equipment",
+  "img": "icons/tools/laboratory/injector-needle-syringe-plunger.webp",
+  "system": {
+    "description": "<p>Três ampolas de vidro com algo que o rótulo não nomeia.</p>",
+    "rules": "<p>Como uma ação maior, injete em um aliado ao alcance. Ele ganha um turno extra imediato, mas depois precisa passar em um teste de VONTADE + SOBREVIVÊNCIA ou cai Inconsciente até o fim do próximo turno dele.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1900000,
+  "_key": "!items!ptbequ0000000018",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,16 @@
+// Visually hidden but still read by assistive technology.
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
+// A single hairline rule in the palette's own colour.
+@mixin hairline($side: bottom) {
+  border-#{$side}: 1px solid var(--twt-rule);
+}

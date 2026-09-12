@@ -1,0 +1,62 @@
+{{!--
+  An Adaptation: one Item per mutation line, all four tiers always present and editable.
+  Effects accumulate, so every tier at or below the current one is marked active, and
+  `slotCost` is the total for the current tier rather than a sum of the ones below it.
+--}}
+<div class="twt-item-body">
+  <fieldset class="twt-fieldset">
+    <legend>{{localize "TWT.Item.Classification"}}</legend>
+
+    <div class="twt-field-row">
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Adaptation.FIELDS.line.label"}}</span>
+        <input type="text" name="system.line" value="{{system.line}}"
+               placeholder="{{localize 'TWT.Adaptation.FIELDS.line.hint'}}" {{disabled (not editable)}}>
+      </label>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Adaptation.FIELDS.tier.label"}}</span>
+        <select name="system.tier" {{disabled (not editable)}}>
+          {{#each tiers}}
+          <option value="{{this.tier}}" {{#if this.current}}selected{{/if}}>{{localize this.label}}</option>
+          {{/each}}
+        </select>
+      </label>
+
+      <div class="twt-field twt-slot-cost">
+        <span class="twt-field-label">{{localize "TWT.Adaptation.SlotCost"}}</span>
+        <span class="twt-slot-cost-value">{{slotCost}}</span>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="twt-tier-list">
+    {{#each tiers}}
+    <fieldset class="twt-fieldset twt-tier{{#if this.active}} is-active{{/if}}{{#if this.current}} is-current{{/if}}">
+      <legend>
+        {{localize this.label}}
+        <em class="twt-tier-cost">{{localize "TWT.Adaptation.Slots"}} {{this.slotCost}}</em>
+        {{#unless this.active}}<em class="twt-tier-locked">{{localize "TWT.Adaptation.AwakenCost"}}</em>{{/unless}}
+      </legend>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Adaptation.FIELDS.effects.malignant.name.label"}}</span>
+        <input type="text" name="system.effects.{{this.tier}}.name" value="{{this.effect.name}}"
+               {{disabled (not ../editable)}}>
+      </label>
+
+      <label class="twt-field">
+        <span class="twt-field-label">{{localize "TWT.Adaptation.FIELDS.effects.malignant.text.label"}}</span>
+        <textarea name="system.effects.{{this.tier}}.text" rows="2"
+                  {{disabled (not ../editable)}}>{{this.effect.text}}</textarea>
+      </label>
+    </fieldset>
+    {{/each}}
+  </div>
+
+  {{#if isMalignant}}
+  <p class="twt-item-banner is-malignant">{{localize "TWT.Adaptation.MalignantNote"}}</p>
+  {{/if}}
+
+  {{> "twt.item-charges"}}
+</div>

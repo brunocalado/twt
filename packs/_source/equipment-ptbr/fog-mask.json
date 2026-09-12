@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000015",
+  "name": "Máscara de Névoa",
+  "type": "equipment",
+  "img": "icons/equipment/head/mask-carved-scream-tan.webp",
+  "system": {
+    "description": "<p>Guta-percha e vidro fumê. Cheira ao próprio avesso.</p>",
+    "rules": "<p>Sempre que você sofreria dano de VONTADE por estar desamparado, use 1 carga para ignorá-lo.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "worn",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1600000,
+  "_key": "!items!ptbequ0000000015",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

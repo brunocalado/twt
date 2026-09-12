@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000009",
+  "name": "Sabujo",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Uma vez por rodada, quando um inimigo sai da sua zona, você pode ficar Revigorado e se mover para segui-lo.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "navigation",
+    "tier": "junior"
+  },
+  "sort": 1000000,
+  "_key": "!items!ptbfea0000000009",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

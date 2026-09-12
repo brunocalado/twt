@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000002",
+  "name": "Stalwart Icon",
+  "type": "equipment",
+  "img": "icons/commodities/treasure/token-brass-round.webp",
+  "system": {
+    "description": "<p>A small devotional token, worn smooth by thumbs.</p>",
+    "rules": "<p>Whenever you make a WILL test to resist an effect, use 1 charge to make the test -1M easier.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 300000,
+  "_key": "!items!twtequ0000000002",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000005",
+  "name": "Hand? Gun!",
+  "type": "equipment",
+  "img": "icons/weapons/guns/gun-pistol-flintlock.webp",
+  "system": {
+    "description": "<p>It is not entirely clear which part is the hand.</p>",
+    "rules": "<p>After you attack with this gun, it cannot be used again until reloaded as a minor action. Tests to conceal the gun are -1M easier.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "weapon",
+    "heavy": false,
+    "doubleWielded": true,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "mind",
+      "damage": 2,
+      "damageType": "body",
+      "range": 1,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 600000,
+  "_key": "!items!twtequ0000000005",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

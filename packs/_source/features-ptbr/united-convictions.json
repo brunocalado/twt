@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000000",
+  "name": "Convicções Unidas",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Quando você ou uma criatura alvejável a até 2 de alcance sofre dano, exaura este talento para reduzir o dano a 0.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "Como uma ação de 10 minutos, sofra 1 de dano de MENTE para restaurar este talento.",
+    "skill": "culture",
+    "tier": "junior"
+  },
+  "sort": 100000,
+  "_key": "!items!ptbfea0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

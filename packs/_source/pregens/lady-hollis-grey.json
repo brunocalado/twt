@@ -1,0 +1,321 @@
+{
+  "_id": "twtpre0000000001",
+  "name": "Lady Hollis Grey",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Mercantile dilettante, free-thinker and demolitionist.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 2,
+        "hp": {
+          "value": 2
+        }
+      },
+      "mind": {
+        "score": 4,
+        "hp": {
+          "value": 4
+        }
+      },
+      "will": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      }
+    },
+    "skills": {
+      "culture": 3,
+      "industry": 2,
+      "navigation": 1,
+      "skulduggery": 0,
+      "survival": 0,
+      "violence": 2
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "twtpgi0000000100",
+      "name": "Lantern",
+      "type": "equipment",
+      "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+      "system": {
+        "description": "<p>The standard-issue light every Delver is handed on their first contract.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "lantern",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 2
+      },
+      "sort": 200000,
+      "_key": "!actors.items!twtpre0000000001.twtpgi0000000100",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000101",
+      "name": "Hand? Gun!",
+      "type": "equipment",
+      "img": "icons/weapons/guns/gun-pistol-flintlock.webp",
+      "system": {
+        "description": "<p>It is not entirely clear which part is the hand.</p>",
+        "rules": "<p>After you attack with this gun, it cannot be used again until reloaded as a minor action. Tests to conceal the gun are -1M easier.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": false,
+        "doubleWielded": true,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "mind",
+          "damage": 2,
+          "damageType": "body",
+          "range": 1,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 600000,
+      "_key": "!actors.items!twtpre0000000001.twtpgi0000000101",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000102",
+      "name": "Gift Hamper",
+      "type": "equipment",
+      "img": "icons/containers/bags/pack-leather-brown.webp",
+      "system": {
+        "description": "<p>Preserves, ribbon, and an implication of good breeding.</p>",
+        "rules": "<p>When you make a social test, use 1 charge to make the test -1M easier.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 700000,
+      "_key": "!actors.items!twtpre0000000001.twtpgi0000000102",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000103",
+      "name": "Percolator",
+      "type": "equipment",
+      "img": "icons/consumables/drinks/coffee.webp",
+      "system": {
+        "description": "<p>Brass, temperamental, and worth its weight in dust.</p>",
+        "rules": "<p>As a 1-hour action, use 1 charge and succeed a MIND + CULTURE test to brew 2 caffeinated drinks. Each drinker cannot sleep and is immune to fatigue for 3 segments.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 800000,
+      "_key": "!actors.items!twtpre0000000001.twtpgi0000000103",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000104",
+      "name": "Eager Student",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Whenever an ally assists you, if that ally's skill score is higher than yours, you may use their score instead.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "culture",
+        "tier": "junior"
+      },
+      "sort": 400000,
+      "_key": "!actors.items!twtpre0000000001.twtpgi0000000104",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000105",
+      "name": "Puncture",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Whenever you deal BODY damage, you may make it piercing.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "industry",
+        "tier": "junior"
+      },
+      "sort": 500000,
+      "_key": "!actors.items!twtpre0000000001.twtpgi0000000105",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000106",
+      "name": "Precision Training",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Your ranged attacks gain +2 range.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "violence",
+        "tier": "junior"
+      },
+      "sort": 600000,
+      "_key": "!actors.items!twtpre0000000001.twtpgi0000000106",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Lady Hollis Grey",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 200000,
+  "_key": "!actors!twtpre0000000001",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

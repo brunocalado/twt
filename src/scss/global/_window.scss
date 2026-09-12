@@ -1,0 +1,101 @@
+@use "../utils/typography" as *;
+
+// Sheet chrome. Scoped to the system class so no rule reaches another module's UI.
+//
+// Everything this system opens — sheets, dialogs, the clock — has to land on the
+// same surface. Foundry themes a window from the *user's* colour scheme, so an app
+// that only styles its own contents comes out light for one player and dark for the
+// next; the test dialog used to render as cream parchment beside a black sheet for
+// exactly that reason. Declaring `color-scheme` and painting the window ourselves
+// settles it in one place.
+.twt {
+  color-scheme: dark;
+  color: var(--twt-ink);
+  font-family: $font-body;
+
+  .window-content {
+    background: var(--twt-soot);
+    color: var(--twt-ink);
+  }
+
+  .twt-sheet-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .twt-doc-name {
+    margin: 0;
+    border: none;
+    font-family: $font-display;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+  }
+
+  .twt-placeholder {
+    margin: 0;
+    color: var(--twt-ink-dim);
+    font-style: italic;
+  }
+
+  /* ---- Form controls ----
+   *
+   * Core's inputs inherit a theme colour this system does not set, which left
+   * every select and number field printing near-black text on the dark ground —
+   * legible only by selecting it. These are the baseline; a component that wants
+   * a control on sage paper overrides them locally. */
+
+  input[type="text"],
+  input[type="number"],
+  input[type="search"],
+  select,
+  textarea {
+    border: 1px solid var(--twt-rule);
+    border-radius: 3px;
+    background: var(--twt-ash);
+    // Core sunk every field with an inset shadow. It is invisible on the card stock
+    // and reads as a grey smudge on the sage panels, so the system draws its own edge.
+    box-shadow: none;
+    color: var(--twt-ink);
+    font-family: $font-data;
+
+    &::placeholder { color: color-mix(in srgb, var(--twt-ink-dim) 70%, transparent); }
+
+    &:hover:not(:disabled) { border-color: var(--twt-slate); }
+
+    &:focus {
+      border-color: var(--twt-glow);
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:disabled {
+      color: var(--twt-ink-dim);
+      opacity: 1; // core dims disabled controls into illegibility on this ground
+    }
+  }
+
+  select option {
+    background: var(--twt-ash);
+    color: var(--twt-ink);
+  }
+
+  // Core draws the tick as a pseudo-element in its own orange, so `accent-color`
+  // never reaches it and the box has to be coloured through `::after`.
+  input[type="checkbox"] {
+    accent-color: var(--twt-glow);
+
+    &::after { color: var(--twt-glow); }
+  }
+
+  /* ---- Prose ---- */
+
+  prose-mirror {
+    color: var(--twt-ink);
+
+    a.content-link { color: var(--twt-glow); }
+  }
+
+  hr { border-color: var(--twt-rule); }
+}

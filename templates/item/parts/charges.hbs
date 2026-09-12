@@ -1,0 +1,41 @@
+{{!--
+  Charges. The controls only unfold once the record actually tracks them, so a record
+  that does not is not cluttered with three inert fields.
+--}}
+<fieldset class="twt-fieldset twt-charges-block">
+  <legend>{{localize "TWT.Item.FIELDS.charges.label"}}</legend>
+
+  <label class="twt-check">
+    <input type="checkbox" name="system.charges.enabled" {{checked system.charges.enabled}}
+           {{disabled (not editable)}}>
+    <span>{{localize "TWT.Item.FIELDS.charges.enabled.label"}}</span>
+  </label>
+
+  {{#if system.charges.enabled}}
+  <div class="twt-field-row">
+    <div class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Item.FIELDS.charges.value.label"}}</span>
+      <div class="twt-stepper">
+        <button type="button" data-action="adjustCharge" data-by="-1" {{disabled (not editable)}}
+                aria-label="{{localize 'TWT.Record.SpendCharge'}}">&minus;</button>
+        <input type="number" name="system.charges.value" value="{{system.charges.value}}"
+               min="0" step="1" {{disabled (not editable)}}>
+        <button type="button" data-action="adjustCharge" data-by="1" {{disabled (not editable)}}
+                aria-label="{{localize 'TWT.Item.RegainCharge'}}">+</button>
+      </div>
+    </div>
+
+    <label class="twt-field">
+      <span class="twt-field-label">{{localize "TWT.Item.FIELDS.charges.max.label"}}</span>
+      <input type="number" name="system.charges.max" value="{{system.charges.max}}"
+             min="0" step="1" {{disabled (not editable)}}>
+    </label>
+  </div>
+  {{/if}}
+
+  <label class="twt-field">
+    <span class="twt-field-label">{{localize "TWT.Item.FIELDS.restoreTrigger.label"}}</span>
+    <input type="text" name="system.restoreTrigger" value="{{system.restoreTrigger}}"
+           placeholder="{{localize 'TWT.Item.FIELDS.restoreTrigger.hint'}}" {{disabled (not editable)}}>
+  </label>
+</fieldset>

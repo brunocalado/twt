@@ -1,0 +1,41 @@
+{{!--
+  Shared record header: artwork, name, type, lifecycle controls, and the state banner.
+
+  All of it lives inside one wrapper because a Handlebars part must render exactly one
+  root element — the banner as a sibling of <header> made the whole sheet fail to render
+  the moment a record became exhausted or destroyed.
+--}}
+<div class="twt-item-top">
+  <header class="twt-item-header">
+    <img class="twt-item-img" src="{{item.img}}" alt="{{item.name}}" data-edit="img">
+
+    <div class="twt-item-identity">
+      <input class="twt-item-name" type="text" name="name" value="{{item.name}}"
+             placeholder="{{localize 'TWT.Item.NamePlaceholder'}}" {{disabled (not editable)}}>
+      <p class="twt-item-type">{{localize typeLabel}}</p>
+    </div>
+
+    <div class="twt-item-state">
+      <button type="button" class="twt-state-chip is-{{system.state}}" data-action="cycleState"
+              {{disabled (not editable)}} data-tooltip="{{localize 'TWT.Item.CycleState'}}">
+        {{localize stateLabel}}
+      </button>
+      {{#if editable}}
+      <button type="button" class="twt-item-tool" data-action="restoreRecord"
+              data-tooltip="{{localize 'TWT.Item.Restore'}}" aria-label="{{localize 'TWT.Item.Restore'}}">
+        <i class="fa-solid fa-wrench" inert></i>
+      </button>
+      {{/if}}
+      <button type="button" class="twt-item-tool" data-action="shareRecord"
+              data-tooltip="{{localize 'TWT.Item.Share'}}" aria-label="{{localize 'TWT.Item.Share'}}">
+        <i class="fa-solid fa-comment" inert></i>
+      </button>
+    </div>
+  </header>
+
+  {{#if isDestroyed}}
+  <p class="twt-item-banner is-destroyed">{{localize "TWT.Item.DestroyedBanner"}}</p>
+  {{else if isExhausted}}
+  <p class="twt-item-banner is-exhausted">{{localize "TWT.Item.ExhaustedBanner"}}</p>
+  {{/if}}
+</div>

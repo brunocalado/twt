@@ -1,0 +1,299 @@
+{
+  "_id": "ptbjrn0000000000",
+  "name": "Condições",
+  "pages": [
+    {
+      "_id": "ptbjpg0000000000",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000000",
+      "name": "Cego",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Ações que dependem da visão são +1M mais difíceis.</p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000001",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000001",
+      "name": "Crítico",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Todos os seus testes são +1M mais difíceis. Se o atributo com 0 de vitalidade sofrer mais dano, você morre.</p>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000002",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000002",
+      "name": "Atordoado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Seu próximo teste é +1M mais difícil. Dissipa-se depois de um teste, ou ao fim do seu turno.</p>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000003",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000003",
+      "name": "Fatigado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Ao fim de cada segmento sem dormir, role VONTADE + SOBREVIVÊNCIA contra uma dificuldade crescente que começa em 1M e sobe 1M por segmento. O fracasso custa 1 de dano de VONTADE.</p>"
+      },
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000004",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000004",
+      "name": "Agarrado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Você está Imobilizado. Ações ao alcance que tenham outros como alvo são -1M. Solte-se como uma ação menor.</p>"
+      },
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000005",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000005",
+      "name": "Agarrando",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Você está Lento, e compromete 1 espaço de empunhadura por criatura presa.</p>"
+      },
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000006",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000006",
+      "name": "Oculto",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Você não pode ser tomado como alvo nem localizado. Rompe-se com uma ação barulhenta ou um ataque.</p>"
+      },
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000007",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000007",
+      "name": "Imobilizado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Sua velocidade é 0.</p>"
+      },
+      "sort": 800000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000008",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000008",
+      "name": "Revigorado",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Seu próximo teste é -1M mais fácil. Dissipa-se depois de um teste, ou ao fim do seu turno.</p>"
+      },
+      "sort": 900000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000009",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000009",
+      "name": "Mudo",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Você não pode falar, gritar nem usar efeitos verbais.</p>"
+      },
+      "sort": 1000000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000010",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000010",
+      "name": "Caído",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Você está Lento. Testes de CORPO são +1M mais difíceis. Ataques corpo a corpo contra você são -1M mais fáceis e ataques à distância +1M mais difíceis. Levante-se por 1 de velocidade ou uma ação menor.</p>"
+      },
+      "sort": 1100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000011",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000011",
+      "name": "Lento",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Sua velocidade cai um degrau: de 2 para 1, de 1 para ½, de ½ para 0.</p>"
+      },
+      "sort": 1200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000012",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000012",
+      "name": "Sufocando",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>No início do seu turno, role 1M de CORPO + SOBREVIVÊNCIA ou sofra 1 de dano de CORPO.</p>"
+      },
+      "sort": 1300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000013",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000013",
+      "name": "Inconsciente",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Você está Cego e não pode agir. Todos os testes que o têm como alvo têm sucesso automático.</p>"
+      },
+      "sort": 1400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000014",
+      "_key": "!journal.pages!ptbjrn0000000000.ptbjpg0000000014",
+      "name": "Vulnerável",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Todo dano que você sofre é aumentado em 1.</p>"
+      },
+      "sort": 1500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "sort": 100000,
+  "_key": "!journal!ptbjrn0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

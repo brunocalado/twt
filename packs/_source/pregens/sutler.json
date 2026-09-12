@@ -1,0 +1,299 @@
+{
+  "_id": "twtpre0000000004",
+  "name": "Sutler",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>A fallen noble hoarding dust to hoist his family's estate out of the muck.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "mind": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      },
+      "will": {
+        "score": 2,
+        "hp": {
+          "value": 2
+        }
+      }
+    },
+    "skills": {
+      "culture": 1,
+      "industry": 1,
+      "navigation": 2,
+      "skulduggery": 3,
+      "survival": 0,
+      "violence": 1
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "twtpgi0000000400",
+      "name": "Fishline Garrote",
+      "type": "equipment",
+      "img": "icons/sundries/survival/rope-coiled-tan.webp",
+      "system": {
+        "description": "<p>A yard of line between two toggles. Quiet work.</p>",
+        "rules": "<p>On a hit, you may grapple the target; while grappled this way, the victim is muted and suffocating. Concealing this weapon is -1M easier.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": false,
+        "doubleWielded": true,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1500000,
+      "_key": "!actors.items!twtpre0000000004.twtpgi0000000400",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000401",
+      "name": "Fog Mask",
+      "type": "equipment",
+      "img": "icons/equipment/head/mask-carved-scream-tan.webp",
+      "system": {
+        "description": "<p>Gutta-percha and smoked glass. It smells of the inside of itself.</p>",
+        "rules": "<p>Whenever you would take WILL damage from being unwarded, use 1 charge to ignore it.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": true,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "worn",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1600000,
+      "_key": "!actors.items!twtpre0000000004.twtpgi0000000401",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000402",
+      "name": "Bag of Sand",
+      "type": "equipment",
+      "img": "icons/containers/bags/pack-leather-brown.webp",
+      "system": {
+        "description": "<p>Dockside grit in a twist of oilcloth.</p>",
+        "rules": "<p>When an enemy within 1 range targets you, exhaust this bag and succeed a BODY + SKULDUGGERY test to blind them until their next turn ends, causing their attack to automatically fail.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1700000,
+      "_key": "!actors.items!twtpre0000000004.twtpgi0000000402",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000403",
+      "name": "Hound",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Once per round, when an enemy exits your zone, you may become invigorated and move to follow them.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "navigation",
+        "tier": "junior"
+      },
+      "sort": 1000000,
+      "_key": "!actors.items!twtpre0000000004.twtpgi0000000403",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000404",
+      "name": "Jack in the Box",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+        "rules": "<p>Whenever you target an enemy that you are hidden from and is within 1 range, immediately daze them.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "skulduggery",
+        "tier": "junior"
+      },
+      "sort": 1100000,
+      "_key": "!actors.items!twtpre0000000004.twtpgi0000000404",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtpgi0000000405",
+      "name": "Amphibious — SHALLOWS",
+      "type": "adaptation",
+      "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+      "system": {
+        "description": "<p>The Amphibious line.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "line": "Amphibious",
+        "tier": "awakened1",
+        "effects": {
+          "malignant": {
+            "name": "",
+            "text": ""
+          },
+          "awakened1": {
+            "name": "SHALLOWS",
+            "text": "Swimming tests are -1M easier. Swimming does not slow you or restrict your wield limit. You can breathe underwater."
+          },
+          "awakened2": {
+            "name": "",
+            "text": ""
+          },
+          "awakened3": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "sort": 600000,
+      "_key": "!actors.items!twtpre0000000004.twtpgi0000000405",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Sutler",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 500000,
+  "_key": "!actors!twtpre0000000004",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

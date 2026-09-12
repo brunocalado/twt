@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000013",
+  "name": "Chave Torta",
+  "type": "equipment",
+  "img": "icons/tools/hand/screwdriver-flat-steel-black.webp",
+  "system": {
+    "description": "<p>Nunca bem a ferramenta certa, e de algum jeito sempre a ferramenta certa.</p>",
+    "rules": "<p>Esta ferramenta torna consertar, remontar, desarmar e mexer em objetos -1M mais fácil.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1400000,
+  "_key": "!items!ptbequ0000000013",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

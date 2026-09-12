@@ -1,0 +1,299 @@
+{
+  "_id": "twtjrn0000000000",
+  "name": "Conditions",
+  "pages": [
+    {
+      "_id": "twtjpg0000000000",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000000",
+      "name": "Blinded",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Sight-dependent actions are +1M harder.</p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000001",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000001",
+      "name": "Critical",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>All your tests are +1M harder. If your 0-health trait is damaged further, you die.</p>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000002",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000002",
+      "name": "Dazed",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Your next test is +1M harder. Clears after a test, or at the end of your turn.</p>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000003",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000003",
+      "name": "Fatigued",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>At the end of each segment without sleep, roll WILL + SURVIVAL at an escalating difficulty starting at 1M and rising 1M per segment. Failure costs 1 WILL damage.</p>"
+      },
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000004",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000004",
+      "name": "Grappled",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You are immobilized. Reach actions targeting others are -1M. Break free as a minor action.</p>"
+      },
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000005",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000005",
+      "name": "Grappling",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You are slowed, and commit 1 wield slot per creature held.</p>"
+      },
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000006",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000006",
+      "name": "Hidden",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You cannot be targeted or located. Broken by a noisy action or an attack.</p>"
+      },
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000007",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000007",
+      "name": "Immobilized",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Your speed is 0.</p>"
+      },
+      "sort": 800000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000008",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000008",
+      "name": "Invigorated",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Your next test is -1M easier. Clears after a test, or at the end of your turn.</p>"
+      },
+      "sort": 900000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000009",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000009",
+      "name": "Muted",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You cannot speak, shout, or use verbal effects.</p>"
+      },
+      "sort": 1000000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000010",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000010",
+      "name": "Prone",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You are slowed. BODY tests are +1M harder. Melee attacks against you are -1M easier and ranged attacks +1M harder. Stand for 1 speed or a minor action.</p>"
+      },
+      "sort": 1100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000011",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000011",
+      "name": "Slowed",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Your speed drops one step: 2 to 1, 1 to ½, ½ to 0.</p>"
+      },
+      "sort": 1200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000012",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000012",
+      "name": "Suffocating",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>At the start of your turn, roll 1M BODY + SURVIVAL or take 1 BODY damage.</p>"
+      },
+      "sort": 1300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000013",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000013",
+      "name": "Unconscious",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You are blinded and cannot act. All tests targeting you succeed automatically.</p>"
+      },
+      "sort": 1400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "twtjpg0000000014",
+      "_key": "!journal.pages!twtjrn0000000000.twtjpg0000000014",
+      "name": "Vulnerable",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>All damage you take is increased by 1.</p>"
+      },
+      "sort": 1500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "sort": 100000,
+  "_key": "!journal!twtjrn0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,78 @@
+{{!--
+  The combat face: what is left of this turn, and every action that can spend it.
+
+  The economy pips only appear inside an encounter. Outside one there is no turn to
+  spend, and the rules leave that to the table rather than the system.
+--}}
+<section class="tab twt-combat {{tab.cssClass}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+
+  {{#if inCombat}}
+  <div class="twt-economy{{#if isMyTurn}} is-my-turn{{/if}}">
+    <div class="twt-economy-pip{{#unless majorAvailable}} is-spent{{/unless}}">
+      <span class="twt-economy-label">{{localize "TWT.ActionType.Major"}}</span>
+      {{#if editable}}
+      <button type="button" data-action="refundAction" data-cost="major"
+              data-tooltip="{{localize 'TWT.Action.Refund'}}">
+        <i class="fa-solid {{#if majorAvailable}}fa-circle{{else}}fa-circle-xmark{{/if}}" inert></i>
+      </button>
+      {{/if}}
+    </div>
+
+    <div class="twt-economy-pip{{#unless minorAvailable}} is-spent{{/unless}}">
+      <span class="twt-economy-label">{{localize "TWT.ActionType.Minor"}}</span>
+      {{#if editable}}
+      <button type="button" data-action="refundAction" data-cost="minor"
+              data-tooltip="{{localize 'TWT.Action.Refund'}}">
+        <i class="fa-solid {{#if minorAvailable}}fa-circle{{else}}fa-circle-xmark{{/if}}" inert></i>
+      </button>
+      {{/if}}
+    </div>
+
+    {{#if isMyTurn}}
+    <span class="twt-turn-marker">{{localize "TWT.Action.YourTurn"}}</span>
+    {{/if}}
+  </div>
+  {{else}}
+  <p class="twt-dialog-note">{{localize "TWT.Action.NotInCombat"}}</p>
+  {{/if}}
+
+  <div class="twt-action-groups">
+    <div class="twt-action-group">
+      <h2 class="twt-block-title">{{localize "TWT.ActionType.Major"}}</h2>
+      <ul class="twt-action-list">
+        {{#each majorActions}}
+        <li>
+          <button type="button" class="twt-action-button" data-action="combatAction"
+                  data-action-id="{{this.id}}" {{disabled (not ../editable)}}
+                  data-tooltip="{{localize this.hint}}">
+            <span class="twt-action-name">{{localize this.label}}</span>
+            {{#if this.trait}}
+            <span class="twt-action-pair">{{localize (lookup (lookup ../config.traits this.trait) "abbr")}}
+              + {{localize (lookup (lookup ../config.skills this.skill) "abbr")}}</span>
+            {{/if}}
+          </button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="twt-action-group">
+      <h2 class="twt-block-title">{{localize "TWT.ActionType.Minor"}}</h2>
+      <ul class="twt-action-list">
+        {{#each minorActions}}
+        <li>
+          <button type="button" class="twt-action-button" data-action="combatAction"
+                  data-action-id="{{this.id}}" {{disabled (not ../editable)}}
+                  data-tooltip="{{localize this.hint}}">
+            <span class="twt-action-name">{{localize this.label}}</span>
+            {{#if this.trait}}
+            <span class="twt-action-pair">{{localize (lookup (lookup ../config.traits this.trait) "abbr")}}
+              + {{localize (lookup (lookup ../config.skills this.skill) "abbr")}}</span>
+            {{/if}}
+          </button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</section>

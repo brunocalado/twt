@@ -1,0 +1,27 @@
+{
+  "_id": "ptbfea0000000004",
+  "name": "Perfuração",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+    "rules": "<p>Sempre que você causa dano de CORPO, pode torná-lo perfurante.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "industry",
+    "tier": "junior"
+  },
+  "sort": 500000,
+  "_key": "!items!ptbfea0000000004",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

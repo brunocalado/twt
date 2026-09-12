@@ -1,0 +1,57 @@
+{{!--
+  One record in a slot column. Rendered from the padded cell, so the template does no
+  arithmetic of its own — the cell already knows whether it holds a record, a second
+  half of a heavy one, or nothing.
+--}}
+<article class="twt-record is-{{cell.card.state}}{{#if cell.card.badgeHeavy}} is-heavy{{/if}}"
+         data-item-id="{{cell.item.id}}" draggable="true">
+  <header class="twt-record-head">
+    <img class="twt-record-img" src="{{cell.item.img}}" alt="">
+    <h3 class="twt-record-name">{{cell.item.name}}</h3>
+    {{#if editable}}
+    <div class="twt-record-tools">
+      <button type="button" data-action="editRecord" aria-label="{{localize 'TWT.Record.Edit'}}"
+              data-tooltip="{{localize 'TWT.Record.Edit'}}"><i class="fa-solid fa-pen" inert></i></button>
+      <button type="button" data-action="deleteRecord" aria-label="{{localize 'TWT.Record.Delete'}}"
+              data-tooltip="{{localize 'TWT.Record.Delete'}}"><i class="fa-solid fa-trash" inert></i></button>
+    </div>
+    {{/if}}
+  </header>
+
+  {{#if cell.card.summary}}
+  <p class="twt-record-summary">{{cell.card.summary}}</p>
+  {{/if}}
+
+  {{#if cell.card.badges.length}}
+  <ul class="twt-record-badges">
+    {{#each cell.card.badges}}
+    <li class="twt-badge twt-badge--{{this.key}}">{{localize this.label}}</li>
+    {{/each}}
+  </ul>
+  {{/if}}
+
+  {{#if cell.card.charges}}
+  <ol class="twt-charges" aria-label="{{localize 'TWT.Record.Charges'}}">
+    {{#each cell.card.charges}}
+    <li><button type="button" class="twt-charge{{#if this.spent}} is-spent{{/if}}"
+                data-action="spendCharge" {{disabled (not ../editable)}}
+                aria-label="{{localize 'TWT.Record.SpendCharge'}}"></button></li>
+    {{/each}}
+  </ol>
+  {{/if}}
+
+  {{#if editable}}
+  <footer class="twt-record-foot">
+    {{#if (eq cell.item.type "equipment")}}
+    <button type="button" class="twt-record-action" data-action="cycleEquip">
+      <i class="fa-solid fa-hand-fist" inert></i>
+      {{localize (lookup ../config.equipStates cell.item.system.equipState)}}
+    </button>
+    {{/if}}
+    <button type="button" class="twt-record-action" data-action="toggleState">
+      <i class="fa-solid fa-arrows-rotate" inert></i>
+      {{localize (lookup ../config.recordStates cell.card.state)}}
+    </button>
+  </footer>
+  {{/if}}
+</article>

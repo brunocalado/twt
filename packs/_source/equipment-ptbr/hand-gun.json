@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000005",
+  "name": "Mão? Arma!",
+  "type": "equipment",
+  "img": "icons/weapons/guns/gun-pistol-flintlock.webp",
+  "system": {
+    "description": "<p>Não está de todo claro qual parte é a mão.</p>",
+    "rules": "<p>Depois de atacar com esta arma, ela não pode ser usada de novo até ser recarregada como uma ação menor. Testes para ocultar a arma são -1M mais fáceis.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "weapon",
+    "heavy": false,
+    "doubleWielded": true,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "mind",
+      "damage": 2,
+      "damageType": "body",
+      "range": 1,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 600000,
+  "_key": "!items!ptbequ0000000005",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

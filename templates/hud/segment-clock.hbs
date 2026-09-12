@@ -1,0 +1,46 @@
+{{!-- The expedition's clock. Read-only for everyone but the Keeper. --}}
+<div class="twt-clock-body">
+  <p class="twt-clock-date">
+    <strong>{{clock.dayName}}</strong>
+    <span class="twt-clock-day">{{localize "TWT.Travel.Day"}} {{clock.day}}</span>
+  </p>
+
+  <ol class="twt-clock-segments">
+    {{#each segments}}
+    <li class="twt-clock-segment{{#if this.active}} is-active{{/if}}">{{localize this.label}}</li>
+    {{/each}}
+  </ol>
+
+  <p class="twt-clock-camp{{#if clock.campOwed}} is-owed{{/if}}">
+    {{#if clock.campOwed}}
+      {{localize "TWT.Travel.CampOwed"}}
+    {{else}}
+      {{localize "TWT.Travel.SinceCamp"}} {{clock.segmentsSinceCamp}}
+    {{/if}}
+  </p>
+
+  {{#if party.length}}
+  <ul class="twt-clock-party">
+    {{#each party}}
+    <li class="twt-clock-member{{#unless this.warded}} is-unwarded{{/unless}}">
+      <i class="fa-solid {{#if this.warded}}fa-fire{{else}}fa-fire-flame-simple{{/if}}" inert></i>
+      {{this.name}}
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+
+  {{#if isGM}}
+  <footer class="twt-clock-controls">
+    <button type="button" data-action="advance" data-tooltip="{{localize 'TWT.Travel.AdvanceHint'}}">
+      <i class="fa-solid fa-forward" inert></i> {{localize "TWT.Travel.Advance"}}
+    </button>
+    <button type="button" data-action="camp" data-tooltip="{{localize 'TWT.Travel.CampHint'}}">
+      <i class="fa-solid fa-campground" inert></i> {{localize "TWT.Travel.Camp"}}
+    </button>
+    <button type="button" data-action="relay" data-tooltip="{{localize 'TWT.Travel.RelayHint'}}">
+      <i class="fa-solid fa-tower-observation" inert></i> {{localize "TWT.Travel.Relay"}}
+    </button>
+  </footer>
+  {{/if}}
+</div>

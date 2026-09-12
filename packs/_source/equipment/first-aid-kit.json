@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000017",
+  "name": "First Aid Kit",
+  "type": "equipment",
+  "img": "icons/tools/cooking/mortar-herbs-yellow.webp",
+  "system": {
+    "description": "<p>Lint, catgut, and a bottle of something that stings.</p>",
+    "rules": "<p>As a major action, spend 1 charge and succeed a MIND + SURVIVAL test to heal 1 BODY (+1 per boon) to an ally within reach.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1800000,
+  "_key": "!items!twtequ0000000017",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

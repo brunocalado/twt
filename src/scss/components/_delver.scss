@@ -1,0 +1,415 @@
+@use "../utils/typography" as *;
+
+// The Delver folio: masthead, stat ledger, vitals strip.
+//
+// The printed sheet is black card stock with pale sage panels pasted onto it, label
+// ink in dark green and every number in rose. That is the arrangement here: the
+// chrome (masthead, tab strip, vitals) stays on the card stock, and everything a
+// player reads a value off of sits on paper.
+.twt.sheet.delver {
+  background: var(--twt-soot);
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    background: var(--twt-soot);
+  }
+
+  /* ---- Masthead ---- */
+
+  .twt-delver-header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 2px solid var(--twt-green);
+    padding: 0.7rem 0.85rem;
+    background: linear-gradient(to bottom, var(--twt-iron), var(--twt-ash));
+  }
+
+  .twt-portrait {
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--twt-green-deep);
+    border-radius: 3px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .twt-identity { min-width: 0; }
+
+  .twt-name {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--twt-ink);
+    font-family: $font-display;
+    font-size: 1.7rem;
+    letter-spacing: 0.03em;
+    line-height: 1.15;
+    text-transform: uppercase;
+
+    &:hover:not(:disabled),
+    &:focus { border-bottom-color: var(--twt-green); background: transparent; }
+  }
+
+  .twt-identity-sub {
+    margin: 0;
+    color: var(--twt-green);
+    font-family: $font-data;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .twt-ledger-boxes {
+    display: flex;
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  // Dust and XP are printed on the sheet's paper, in its rose numerals.
+  .twt-ledger-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 4.2rem;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    padding: 0.2rem 0.35rem 0.3rem;
+    background: var(--twt-paper);
+
+    dt {
+      color: var(--twt-ink-paper-dim);
+      font-family: $font-data;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    dd { margin: 0; width: 100%; }
+
+    input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--twt-wine);
+      font-family: $font-body;
+      font-size: 1.35rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+
+      &:hover:not(:disabled), &:focus { background: transparent; }
+      &:disabled { color: var(--twt-wine); }
+    }
+  }
+
+  .twt-rest-button {
+    width: auto;
+    border: 1px solid var(--twt-green-deep);
+    border-radius: 3px;
+    padding: 0.35rem 0.65rem;
+    background: transparent;
+    color: var(--twt-green);
+    font-family: $font-data;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--twt-glow);
+      background: color-mix(in srgb, var(--twt-glow) 14%, transparent);
+      color: var(--twt-glow);
+    }
+  }
+
+  /* ---- Tab strip ---- */
+
+  > .window-content > .sheet-tabs {
+    flex: 0 0 auto;
+    border-bottom: 1px solid var(--twt-slate);
+    background: var(--twt-ash);
+
+    > a {
+      padding: 0.4rem 0.9rem;
+      border-bottom: 2px solid transparent;
+      color: var(--twt-ink-dim);
+      font-family: $font-display;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      &:hover { color: var(--twt-ink); }
+
+      &.active {
+        border-bottom-color: var(--twt-glow);
+        color: var(--twt-glow);
+        text-shadow: none;
+      }
+    }
+  }
+
+  // Every tab fills the window, so a short tab leaves no dead band under it. The
+  // panels inside take the slack rather than the window's background showing through.
+  //
+  // `display` is named per face rather than set once here: a blanket `flex` on the
+  // active tab outranked the records grid and collapsed its three columns into one.
+  > .window-content > .tab {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+
+    &:not(.active) { display: none; }
+
+    &.active {
+      &.twt-ledger,
+      &.twt-combat,
+      &.twt-bio { display: flex; flex-direction: column; }
+
+      &.twt-records { display: grid; }
+    }
+  }
+
+  /* ---- Stat ledger ---- */
+
+  .twt-ledger {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.8rem;
+  }
+
+  .twt-ledger-columns {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.8rem;
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  // A sage panel with the book's green banner across its head.
+  .twt-block {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    background: var(--twt-paper);
+    overflow: hidden;
+  }
+
+  .twt-block-title {
+    flex: 0 0 auto;
+    margin: 0;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    background: var(--twt-green-deep);
+    color: var(--twt-cream);
+    font-family: $font-display;
+    font-size: 0.86rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  // Rows take a share of the panel's spare height, but only up to a readable line —
+  // without the cap, a three-row Traits panel stretched each row to 130px. What is
+  // left over stays sage paper, which is what a printed sheet's margin looks like.
+  .twt-stat-row {
+    flex: 1 1 auto;
+    max-height: 2.9rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--twt-rule-paper);
+    padding: 0.25rem 0.6rem;
+
+    &:last-child { border-bottom: none; }
+    &.is-empty { background: color-mix(in srgb, var(--twt-wine) 18%, transparent); }
+  }
+
+  .twt-trait-row { max-height: 3.8rem; }
+
+  // `justify-content` is explicit because core centres every button's contents, which
+  // pushed each trait name to the right-hand edge of its row.
+  .twt-stat-roll {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: auto;
+    border: none;
+    padding: 0.15rem 0;
+    background: transparent;
+    color: var(--twt-ink-paper);
+    font-family: $font-display;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover { color: var(--twt-wine); }
+  }
+
+  // `assets/icons/*.svg` are stroked in the ink colour rather than tinted here,
+  // because they are loaded as `<img>` and CSS cannot reach inside one.
+  .twt-stat-icon {
+    flex: 0 0 auto;
+    width: 19px;
+    height: 19px;
+    border: none;
+  }
+
+  .twt-stat-score {
+    width: 2.5rem;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    background: var(--twt-paper-sunk);
+    color: var(--twt-wine);
+    font-family: $font-body;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+
+    &:hover:not(:disabled) { border-color: var(--twt-green-deep); }
+    &:focus { border-color: var(--twt-green-deep); background: var(--twt-paper-sunk); }
+    &:disabled { color: var(--twt-wine); }
+  }
+
+  .twt-health {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .twt-health-step {
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    background: var(--twt-paper-sunk);
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover:not(:disabled) { border-color: var(--twt-wine); color: var(--twt-wine); }
+  }
+
+  .twt-health-value {
+    min-width: 3rem;
+    color: var(--twt-ink-paper);
+    font-family: $font-body;
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+  }
+
+  .twt-health-sep { color: var(--twt-ink-paper-dim); padding: 0 0.1rem; }
+
+  /* ---- Vitals strip ---- */
+
+  .twt-vitals {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .twt-vital {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    padding: 0.28rem 0.55rem;
+    background: var(--twt-ash);
+
+    &.is-over {
+      border-color: var(--twt-wine);
+      background: color-mix(in srgb, var(--twt-wine) 20%, var(--twt-ash));
+    }
+  }
+
+  .twt-vital-label {
+    color: var(--twt-ink-dim);
+    font-family: $font-data;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .twt-vital-value {
+    color: var(--twt-ink);
+    font-family: $font-data;
+    font-variant-numeric: tabular-nums;
+
+    .twt-health-sep { color: var(--twt-ink-dim); }
+  }
+
+  .twt-vital-bonus { color: var(--twt-unknown); font-style: normal; }
+
+  .twt-ward-toggle {
+    width: auto;
+    border: 1px solid var(--twt-slate);
+    border-radius: 2px;
+    padding: 0.05rem 0.35rem;
+    background: transparent;
+    color: var(--twt-ink-dim);
+    font-family: $font-data;
+    font-size: 0.68rem;
+    cursor: pointer;
+
+    &.is-on {
+      border-color: var(--twt-glow);
+      color: var(--twt-glow);
+      text-shadow: 0 0 6px color-mix(in srgb, var(--twt-glow) 50%, transparent);
+    }
+  }
+
+  /* ---- Bio ---- */
+
+  // Two editors splitting the tab evenly. Left to their own height they sat as two
+  // short boxes with half the window empty beneath them.
+  .twt-bio {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    min-height: 0;
+  }
+
+  .twt-prose-block {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 8rem;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    background: var(--twt-paper);
+    overflow: hidden;
+
+    prose-mirror {
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 0.5rem 0.7rem;
+      color: var(--twt-ink-paper);
+      overflow-y: auto;
+
+      a.content-link { color: var(--twt-green-deep); }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000009",
+  "name": "Percussion Revolver",
+  "type": "equipment",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+    "description": "<p>Six chambers, a stiff hammer, and a smell of burnt paper.</p>",
+    "rules": "<p>Whenever you flurry with this revolver, you can treat it as a different weapon to attack with it again.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "weapon",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "mind",
+      "damage": 1,
+      "damageType": "body",
+      "range": 2,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1000000,
+  "_key": "!items!twtequ0000000009",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

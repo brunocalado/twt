@@ -1,0 +1,122 @@
+{
+  "_id": "ptbbst0000000003",
+  "name": "Não-Papai",
+  "type": "npc",
+  "img": "icons/creatures/unholy/demon-fire-horned-clawed.webp",
+  "system": {
+    "biography": "",
+    "notes": "",
+    "tactics": "<p>“Eu não consigo consertar… Me perdoe.” A voz de Mortimer, na boca errada.</p>",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "creatureType": "horror",
+    "threat": 4,
+    "size": 1,
+    "speed": 2,
+    "tagline": "O cadáver quebrado de um ancião erguido por uma carne negra e oleosa, inchada de olhos turvos e bocas tagarelas.",
+    "hp": {
+      "value": 7,
+      "max": 7
+    },
+    "armor": {
+      "base": 2,
+      "current": 2
+    },
+    "traits": {
+      "body": 4,
+      "mind": 2,
+      "will": 3
+    },
+    "skills": {
+      "culture": 1,
+      "industry": 0,
+      "navigation": 2,
+      "skulduggery": 2,
+      "survival": 3,
+      "violence": 4
+    },
+    "abilities": [
+      {
+        "name": "HORROR",
+        "description": "Enquanto desamparado, seus testes são -1M mais fáceis e os testes que o têm como alvo são +1M mais difíceis."
+      },
+      {
+        "name": "ARMADURA ESCURA",
+        "description": "Sempre que você termina seu turno em uma zona desamparada, cure +1 de CORPO. Sempre que você começa seu turno em uma zona amparada, sua armadura não se recompõe."
+      },
+      {
+        "name": "ESCORREGADIO",
+        "description": "Você se move livremente por barricadas e obstáculos, e pode carregar sem penalidade as criaturas que estiver agarrando."
+      }
+    ],
+    "actions": [
+      {
+        "name": "CANTO-FALSO",
+        "actionType": "major",
+        "trait": "will",
+        "skill": "culture",
+        "difficulty": null,
+        "damage": 0,
+        "damageType": "body",
+        "piercing": false,
+        "range": 3,
+        "frequency": "once per segment",
+        "description": "Revigore a si mesmo. Cada inimigo a até 3 de alcance que ouvir seu canto precisa passar em um teste de VONTADE + SOBREVIVÊNCIA ou sofre 1 de dano de VONTADE e fica Atordoado.",
+        "boons": ""
+      },
+      {
+        "name": "MORDIDA",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 1,
+        "damageType": "body",
+        "piercing": false,
+        "range": 0,
+        "frequency": "",
+        "description": "Ataque corpo a corpo.",
+        "boons": "Spend 1 boon to grapple the target in one of your many mouths."
+      },
+      {
+        "name": "DEVORAR",
+        "actionType": "major",
+        "trait": "body",
+        "skill": "violence",
+        "difficulty": null,
+        "damage": 2,
+        "damageType": "body",
+        "piercing": true,
+        "range": 0,
+        "frequency": "",
+        "description": "Morda uma criatura que você está agarrando. Causa 2 de dano perfurante de CORPO e cura 1 de CORPO em Não-Papai.",
+        "boons": ""
+      }
+    ]
+  },
+  "items": [],
+  "prototypeToken": {
+    "name": "Não-Papai",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "icons/creatures/unholy/demon-fire-horned-clawed.webp"
+    }
+  },
+  "sort": 400000,
+  "_key": "!actors!ptbbst0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

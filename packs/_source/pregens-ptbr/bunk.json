@@ -1,0 +1,299 @@
+{
+  "_id": "ptbpre0000000003",
+  "name": "Beliche",
+  "type": "delver",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p><em>Brigão ferreiro de esgoto, criado dentro de uma caldeira vazia.</em></p>",
+    "notes": "",
+    "targetDifficulty": 2,
+    "ward": {
+      "warded": false
+    },
+    "traits": {
+      "body": {
+        "score": 4,
+        "hp": {
+          "value": 4
+        }
+      },
+      "mind": {
+        "score": 2,
+        "hp": {
+          "value": 2
+        }
+      },
+      "will": {
+        "score": 3,
+        "hp": {
+          "value": 3
+        }
+      }
+    },
+    "skills": {
+      "culture": 0,
+      "industry": 2,
+      "navigation": 1,
+      "skulduggery": 0,
+      "survival": 1,
+      "violence": 3
+    },
+    "armor": {
+      "current": 0,
+      "temp": 0
+    },
+    "speed": {
+      "base": 1
+    },
+    "progression": {
+      "xp": 0,
+      "dust": 0
+    }
+  },
+  "items": [
+    {
+      "_id": "ptbpgi0000000300",
+      "name": "Picareta",
+      "type": "equipment",
+      "img": "icons/tools/hand/pickaxe-steel-grey.webp",
+      "system": {
+        "description": "<p>Padrão dos ferreiros de esgoto. Mais pesada do que parece, e já parece pesada.</p>",
+        "rules": "<p>Danificar objetos com esta picareta é -1M mais fácil.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "weapon",
+        "heavy": true,
+        "doubleWielded": true,
+        "consumable": false,
+        "equipState": "wielded",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 2,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1200000,
+      "_key": "!actors.items!ptbpre0000000003.ptbpgi0000000300",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000301",
+      "name": "Couraça",
+      "type": "equipment",
+      "img": "icons/equipment/chest/breastplate-banded-steel.webp",
+      "system": {
+        "description": "<p>Uma caldeira martelada até virar peitoral, e ainda morna.</p>",
+        "rules": "<p>Testes de movimento e de esconder-se são +1M mais difíceis.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "armor",
+        "heavy": true,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "worn",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 1,
+        "wardValue": 0
+      },
+      "sort": 1300000,
+      "_key": "!actors.items!ptbpre0000000003.ptbpgi0000000301",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000302",
+      "name": "Chave Torta",
+      "type": "equipment",
+      "img": "icons/tools/hand/screwdriver-flat-steel-black.webp",
+      "system": {
+        "description": "<p>Nunca bem a ferramenta certa, e de algum jeito sempre a ferramenta certa.</p>",
+        "rules": "<p>Esta ferramenta torna consertar, remontar, desarmar e mexer em objetos -1M mais fácil.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "category": "gear",
+        "heavy": false,
+        "doubleWielded": false,
+        "consumable": false,
+        "equipState": "stored",
+        "price": 0,
+        "weapon": {
+          "attackTrait": "body",
+          "damage": 1,
+          "damageType": "body",
+          "range": 0,
+          "piercing": false
+        },
+        "armorBonus": 0,
+        "wardValue": 0
+      },
+      "sort": 1400000,
+      "_key": "!actors.items!ptbpre0000000003.ptbpgi0000000302",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000303",
+      "name": "Escudo de Carne",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Uma vez por rodada, quando um aliado na sua zona é atacado, você pode se tornar o alvo do ataque e reduzir em -1 o dano que ele causa.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "industry",
+        "tier": "junior"
+      },
+      "sort": 800000,
+      "_key": "!actors.items!ptbpre0000000003.ptbpgi0000000303",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000304",
+      "name": "Sanguinário",
+      "type": "feature",
+      "img": "icons/skills/trades/academics-book-study-purple.webp",
+      "system": {
+        "description": "<p><em>O Quickstart não rotula seus talentos como iniciante ou veterano. Este foi registrado como iniciante porque o valor de perícia de seu dono está abaixo de 4, que é onde os talentos veteranos são conquistados.</em></p>",
+        "rules": "<p>Sempre que você mata uma criatura, fique Revigorado. Depois você pode se mover.</p>",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "skill": "violence",
+        "tier": "junior"
+      },
+      "sort": 900000,
+      "_key": "!actors.items!ptbpre0000000003.ptbpgi0000000304",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbpgi0000000305",
+      "name": "Subterrâneo — CROSTA",
+      "type": "adaptation",
+      "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+      "system": {
+        "description": "<p>A linhagem Subterrâneo.</p>",
+        "rules": "",
+        "state": "normal",
+        "charges": {
+          "enabled": false,
+          "value": 3,
+          "max": 3
+        },
+        "restoreTrigger": "",
+        "line": "Subterrâneo",
+        "tier": "awakened1",
+        "effects": {
+          "malignant": {
+            "name": "",
+            "text": ""
+          },
+          "awakened1": {
+            "name": "CROSTA",
+            "text": "Você ganha um sentido extra que interpreta vibrações sísmicas pelo solo e pelas estruturas a até 2 de alcance. Ele percebe formas e movimento, mas não detecta cor nem objetos no ar."
+          },
+          "awakened2": {
+            "name": "",
+            "text": ""
+          },
+          "awakened3": {
+            "name": "",
+            "text": ""
+          }
+        }
+      },
+      "sort": 500000,
+      "_key": "!actors.items!ptbpre0000000003.ptbpgi0000000305",
+      "effects": [],
+      "folder": null,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {}
+    }
+  ],
+  "prototypeToken": {
+    "name": "Beliche",
+    "actorLink": true,
+    "disposition": 1,
+    "sight": {
+      "enabled": true
+    },
+    "bar1": {
+      "attribute": "traits.body.hp"
+    },
+    "bar2": {
+      "attribute": "traits.will.hp"
+    },
+    "texture": {
+      "src": "icons/svg/mystery-man.svg"
+    }
+  },
+  "sort": 400000,
+  "_key": "!actors!ptbpre0000000003",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

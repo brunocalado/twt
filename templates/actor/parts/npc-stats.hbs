@@ -1,0 +1,31 @@
+{{!--
+  Traits and skills. Scores carry no maximum: non-human monsters routinely exceed the
+  human limit of 5. Clicking any of them rolls it.
+--}}
+<div class="twt-npc-stats">
+  <div class="twt-npc-grid twt-npc-traits">
+    {{#each traits}}
+    <div class="twt-npc-stat">
+      <button type="button" class="twt-npc-stat-roll" data-action="rollTest" data-trait="{{this.key}}"
+              data-tooltip="{{localize 'TWT.Sheet.RollWith'}} {{localize this.label}}">
+        {{localize this.abbr}}
+      </button>
+      <input type="number" name="system.traits.{{this.key}}" value="{{this.score}}" min="0" step="1"
+             {{disabled (not ../editable)}} aria-label="{{localize this.label}}">
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="twt-npc-grid twt-npc-skills">
+    {{#each skills}}
+    <div class="twt-npc-stat">
+      <button type="button" class="twt-npc-stat-roll" data-action="rollTest" data-skill="{{this.key}}"
+              data-tooltip="{{localize 'TWT.Sheet.RollWith'}} {{localize this.label}}">
+        {{localize this.abbr}}
+      </button>
+      <input type="number" name="system.skills.{{this.key}}" value="{{this.score}}" min="0" step="1"
+             {{disabled (not ../editable)}} aria-label="{{localize this.label}}">
+    </div>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000001",
+  "name": "Lantern",
+  "type": "equipment",
+  "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+  "system": {
+    "description": "<p>The standard-issue light every Delver is handed on their first contract.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "lantern",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 2
+  },
+  "sort": 200000,
+  "_key": "!items!twtequ0000000001",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

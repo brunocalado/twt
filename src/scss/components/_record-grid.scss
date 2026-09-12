@@ -1,0 +1,297 @@
+@use "../utils/typography" as *;
+
+// The records face: three fixed-capacity columns of slot cells.
+//
+// The column is a grid of exactly `max` cells. A heavy record spans two rows and is
+// followed by a `consumed` cell, so what a player counts on screen is always what the
+// rules allow — that is the whole point of padding the column in the sheet class rather
+// than letting the template do arithmetic.
+//
+// The Quickstart prints this band as "3/6 BODY RECORDS" in rose over black, with each
+// record a card of sage paper below it. Same arrangement here.
+.twt.sheet.delver {
+  .twt-records {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+    padding: 0.8rem;
+    align-items: start;
+    align-content: start;
+  }
+
+  .twt-column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    background: var(--twt-ash);
+
+    &.is-over { border-color: var(--twt-wine); }
+  }
+
+  .twt-column-head {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-bottom: 2px solid var(--twt-green-deep);
+    padding: 0.3rem 0.5rem;
+    background: var(--twt-soot);
+  }
+
+  .twt-column-title {
+    flex: 1 1 auto;
+    margin: 0;
+    border: none;
+    color: var(--twt-cream);
+    font-family: $font-display;
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .twt-column-count {
+    color: var(--twt-wine);
+    font-family: $font-display;
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+
+    .twt-health-sep { color: var(--twt-ink-dim); }
+  }
+
+  .twt-column-add {
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--twt-ink-dim);
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover { border-color: var(--twt-glow); color: var(--twt-glow); }
+  }
+
+  .twt-column-warning {
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+    background: color-mix(in srgb, var(--twt-wine) 30%, transparent);
+    color: var(--twt-ink);
+    font-size: 0.74rem;
+  }
+
+  .twt-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0.45rem;
+    list-style: none;
+  }
+
+  .twt-slot {
+    min-height: 2.6rem;
+    border: 1px dashed color-mix(in srgb, var(--twt-slate) 90%, transparent);
+    border-radius: 3px;
+
+    &.twt-slot--record { border: none; }
+
+    // The second half of a heavy record. It is pulled up over the list's gap and drops
+    // its top border so the pair reads as one tall card — as its own box with a gap
+    // above it, it looked like an empty field rather than a claimed slot.
+    &.twt-slot--consumed {
+      min-height: 1.5rem;
+      margin-top: -0.35rem;
+      border: none;
+      border-radius: 0 0 3px 3px;
+      background: repeating-linear-gradient(
+        135deg,
+        var(--twt-paper-sunk),
+        var(--twt-paper-sunk) 5px,
+        var(--twt-paper) 5px,
+        var(--twt-paper) 10px
+      );
+    }
+  }
+
+  .twt-slot-empty {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    min-height: 2.6rem;
+    color: color-mix(in srgb, var(--twt-ink-dim) 70%, transparent);
+    font-family: $font-data;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* ---- The record card ---- */
+
+  .twt-record {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-radius: 3px;
+    padding: 0.4rem 0.45rem;
+    background: var(--twt-paper);
+    color: var(--twt-ink-paper);
+    cursor: grab;
+
+    &.is-heavy { border-radius: 3px 3px 0 0; }
+
+    &.is-exhausted {
+      background: repeating-linear-gradient(
+        135deg,
+        var(--twt-paper-sunk),
+        var(--twt-paper-sunk) 6px,
+        var(--twt-paper) 6px,
+        var(--twt-paper) 12px
+      );
+      color: var(--twt-ink-paper-dim);
+    }
+
+    // Destroyed has to read as different from exhausted at a glance, not just dimmer.
+    &.is-destroyed {
+      background: color-mix(in srgb, var(--twt-wine) 26%, var(--twt-paper));
+      opacity: 0.75;
+
+      .twt-record-name { text-decoration: line-through; }
+    }
+  }
+
+  .twt-record-head {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .twt-record-img {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 2px;
+    object-fit: cover;
+  }
+
+  .twt-record-name {
+    flex: 1 1 auto;
+    margin: 0;
+    border: none;
+    color: var(--twt-ink-paper);
+    font-family: $font-display;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .twt-record-tools {
+    display: flex;
+    gap: 0.15rem;
+    opacity: 0;
+    transition: opacity 120ms ease;
+
+    button {
+      width: 1.3rem;
+      height: 1.3rem;
+      border: none;
+      background: transparent;
+      color: var(--twt-ink-paper-dim);
+      font-size: 0.7rem;
+      line-height: 1;
+      cursor: pointer;
+
+      &:hover { color: var(--twt-wine); }
+    }
+  }
+
+  .twt-record:hover .twt-record-tools,
+  .twt-record:focus-within .twt-record-tools { opacity: 1; }
+
+  .twt-record-summary {
+    margin: 0;
+    color: var(--twt-ink-paper-dim);
+    font-size: 0.76rem;
+  }
+
+  .twt-record-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .twt-badge {
+    border: 1px solid var(--twt-rule-paper);
+    border-radius: 2px;
+    padding: 0 0.25rem;
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    &.twt-badge--wielded,
+    &.twt-badge--worn {
+      border-color: var(--twt-green-deep);
+      background: var(--twt-green-deep);
+      color: var(--twt-cream);
+    }
+
+    &.twt-badge--heavy { border-color: var(--twt-wine); color: var(--twt-wine); }
+  }
+
+  .twt-charges {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  // `min-*` are explicit because core gives every button a minimum square, which
+  // stretched each charge pip into a tall oval.
+  .twt-charge {
+    flex: 0 0 auto;
+    width: 0.75rem;
+    min-width: 0;
+    height: 0.75rem;
+    min-height: 0;
+    border: 1px solid var(--twt-green-deep);
+    border-radius: 50%;
+    padding: 0;
+    background: var(--twt-green-deep);
+    cursor: pointer;
+
+    &.is-spent { background: transparent; }
+  }
+
+  .twt-record-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+
+  .twt-record-action {
+    width: auto;
+    border: 1px solid var(--twt-rule-paper);
+    border-radius: 2px;
+    padding: 0 0.3rem;
+    background: transparent;
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.65rem;
+    line-height: 1.5;
+    cursor: pointer;
+
+    &:hover { border-color: var(--twt-green-deep); color: var(--twt-ink-paper); }
+  }
+}

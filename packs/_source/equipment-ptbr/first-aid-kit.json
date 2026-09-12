@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000017",
+  "name": "Kit de Primeiros Socorros",
+  "type": "equipment",
+  "img": "icons/tools/cooking/mortar-herbs-yellow.webp",
+  "system": {
+    "description": "<p>Fiapos, categute e um frasco de algo que arde.</p>",
+    "rules": "<p>Como uma ação maior, gaste 1 carga e passe em um teste de MENTE + SOBREVIVÊNCIA para curar 1 de CORPO (+1 por dádiva) em um aliado ao alcance.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1800000,
+  "_key": "!items!ptbequ0000000017",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

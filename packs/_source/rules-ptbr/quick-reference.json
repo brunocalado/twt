@@ -1,0 +1,185 @@
+{
+  "_id": "ptbjrn0000000001",
+  "name": "Referência Rápida",
+  "pages": [
+    {
+      "_id": "ptbjpg0000000100",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000100",
+      "name": "O Teste",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Role (Atributo + Perícia) dados de seis faces. Todo 5 ou 6 é uma <strong>Marca</strong>. Compare suas marcas com a dificuldade em M. Iguale ou supere e você tem sucesso.</p><p>Marcas excedentes são <strong>dádivas</strong>, gastas de imediato. Elas não podem ser guardadas.</p><p>A dificuldade nunca cai abaixo de 1M. Um teste facilitado abaixo de 1M é rolado a 1M e concede 1 dádiva bônus por ponto de redução perdido, se tiver sucesso.</p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000101",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000101",
+      "name": "Auxiliar",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Um aliado pode auxiliar, somando metade do valor dele na perícia testada, arredondado para cima. Os dados de auxílio fazem parte da sua reserva e podem ser rerrolados quando você se esforça.</p>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000102",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000102",
+      "name": "Esforçar-se",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Uma vez por teste, um Desbravador pode rerrolar qualquer número de dados e então sofre 1 de dano de MENTE. Você pode se esforçar em um teste que já passou, para pescar dádivas. NPCs não podem se esforçar.</p>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000103",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000103",
+      "name": "Dano",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O dano de CORPO é reduzido pela armadura, a menos que seja perfurante. O dano de MENTE e de VONTADE sempre ignora a armadura. A reserva única de uma criatura sofre dano de MENTE e de VONTADE como dano perfurante de CORPO.</p><p>0 de dano: bolha de sapato novo. 1: talho de faca. 2: golpe de marreta. 3: esmagado por um prédio.</p>"
+      },
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000104",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000104",
+      "name": "Morrer",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Quando o dano reduz a vitalidade de um atributo a 0, role um <strong>teste de recuperação</strong>: VONTADE + SOBREVIVÊNCIA a 2M, +1M se desamparado no Desconhecido, e +1M por ponto de dano avassalador.</p><p>Com sucesso, cure aquele atributo até 1. Com fracasso, você manifesta uma adaptação maligna aleatória e fica <strong>Crítico</strong>.</p>"
+      },
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000105",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000105",
+      "name": "Ações Maiores",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Auxiliar, Atacar, Firmar-se, Arrancar, Comandar, Agarrar, Esconder-se, Repelir, Procurar, Empurrar.</p>"
+      },
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000106",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000106",
+      "name": "Ações Menores",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Mover, Equipar, Passar, Iluminar, Livrar-se, Levantar-se.</p>"
+      },
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000107",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000107",
+      "name": "Dádivas de Ataque",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Rajada</strong> (1 dádiva): golpeie de novo com outra arma equipada, uma vez por turno.</p><p><strong>Talho</strong> (2 dádivas): com uma arma pesada, cause o dano da arma a outra criatura na zona do alvo.</p><p><strong>Letal</strong> (2 dádivas): +1 de dano neste ataque.</p>"
+      },
+      "sort": 800000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ptbjpg0000000108",
+      "_key": "!journal.pages!ptbjrn0000000001.ptbjpg0000000108",
+      "name": "Viagem",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Uma rodada tem 10 segundos. Um segmento tem 8 horas, três por dia: manhã, tarde e noite. Uma seisdia tem 6 dias; um mês tem 4 seisdias.</p><p>O acampamento é devido uma vez por dia. Perca-o e o grupo fica Fatigado.</p>"
+      },
+      "sort": 900000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "sort": 200000,
+  "_key": "!journal!ptbjrn0000000001",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

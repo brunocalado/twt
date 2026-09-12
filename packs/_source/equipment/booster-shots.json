@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000018",
+  "name": "Booster Shots",
+  "type": "equipment",
+  "img": "icons/tools/laboratory/injector-needle-syringe-plunger.webp",
+  "system": {
+    "description": "<p>Three glass ampoules of something the label does not name.</p>",
+    "rules": "<p>As a major action, inject an ally within reach. The recipient takes an immediate extra turn, but must then pass a WILL + SURVIVAL test or fall unconscious until their next turn ends.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": true,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1900000,
+  "_key": "!items!twtequ0000000018",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

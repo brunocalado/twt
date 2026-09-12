@@ -1,0 +1,40 @@
+{
+  "_id": "twtequ0000000010",
+  "name": "Well-Played Game",
+  "type": "equipment",
+  "img": "icons/sundries/gaming/chess-bishop-gray.webp",
+  "system": {
+    "description": "<p>A folding board, worn pieces, and a running score nobody admits to keeping.</p>",
+    "rules": "<p>As a 1-hour action, exhaust this game and start a MIND + CULTURE contest with an ally. Both winner and loser heal 1 MIND (the loser must praise the winner's superior tactics).</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "gear",
+    "heavy": false,
+    "doubleWielded": false,
+    "consumable": false,
+    "equipState": "stored",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1100000,
+  "_key": "!items!twtequ0000000010",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

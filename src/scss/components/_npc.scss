@@ -1,0 +1,496 @@
+@use "../utils/typography" as *;
+
+// The statblock. One column, no tabs: a statblock is read at a glance, not navigated.
+//
+// Same two surfaces as the Delver folio — black card stock for the chrome, sage paper
+// for anything carrying a number — but the masthead and every hostile control take the
+// rose the Quickstart reserves for what can hurt you, so a creature never reads as a
+// Delver at a glance.
+.twt.sheet.npc {
+  background: var(--twt-soot);
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    background: var(--twt-soot);
+    overflow-y: auto;
+  }
+
+  /* ---- Masthead ---- */
+
+  .twt-npc-top {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid var(--twt-wine);
+    background: linear-gradient(to bottom, var(--twt-iron), var(--twt-ash));
+  }
+
+  .twt-npc-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.7rem 0.35rem;
+  }
+
+  .twt-npc-img {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .twt-npc-identity {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .twt-npc-name {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--twt-ink);
+    font-family: $font-display;
+    font-size: 1.45rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &:hover:not(:disabled),
+    &:focus { border-bottom-color: var(--twt-wine); background: transparent; }
+  }
+
+  .twt-npc-tagline {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--twt-ink-dim);
+    font-family: $font-body;
+    font-size: 0.82rem;
+    font-style: italic;
+
+    &:hover:not(:disabled), &:focus { background: transparent; }
+  }
+
+  .twt-type-pill {
+    flex: 0 0 auto;
+    width: auto;
+    border: 1px solid var(--twt-wine);
+    border-radius: 999px;
+    padding: 0.1rem 0.6rem;
+    background: color-mix(in srgb, var(--twt-wine) 24%, transparent);
+    color: var(--twt-ink);
+    font-family: $font-data;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  // The three numbers a Keeper reads mid-combat, printed on paper like the Delver's.
+  .twt-npc-badges {
+    display: flex;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0 0.7rem;
+  }
+
+  .twt-npc-badge {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    padding: 0.2rem 0.3rem 0.25rem;
+    background: var(--twt-paper);
+
+    dt {
+      color: var(--twt-ink-paper-dim);
+      font-family: $font-data;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--twt-ink-paper);
+      font-family: $font-body;
+      font-size: 1.4rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .twt-health-sep { color: var(--twt-ink-paper-dim); }
+
+    &.is-clickable button {
+      width: auto;
+      border: none;
+      padding: 0;
+      background: transparent;
+      color: var(--twt-wine);
+      font-family: $font-body;
+      font-size: 1.4rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      cursor: pointer;
+
+      &:hover:not(:disabled) { text-decoration: underline; }
+    }
+  }
+
+  .twt-npc-ratings {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.3rem;
+    padding: 0.45rem 0.7rem 0.6rem;
+  }
+
+  .twt-rating {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+
+    input, select {
+      border: 1px solid var(--twt-slate);
+      border-radius: 3px;
+      background: var(--twt-soot);
+      color: var(--twt-ink);
+      font-family: $font-data;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+
+  .twt-rating-label {
+    color: var(--twt-ink-dim);
+    font-family: $font-data;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  /* ---- Trait and skill grid ---- */
+
+  .twt-npc-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--twt-slate);
+    padding: 0.6rem 0.7rem;
+  }
+
+  .twt-npc-grid {
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .twt-npc-traits { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .twt-npc-skills { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+  .twt-npc-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .twt-npc-stat-roll {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    padding: 0.15rem 0;
+    background: var(--twt-green-deep);
+    color: var(--twt-cream);
+    font-family: $font-data;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+
+    &:hover { background: var(--twt-green); }
+  }
+
+  .twt-npc-stat input {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background: var(--twt-paper);
+    color: var(--twt-wine);
+    font-family: $font-body;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+
+    &:hover:not(:disabled), &:focus { background: var(--twt-paper-sunk); }
+    &:disabled { color: var(--twt-wine); }
+  }
+
+  /* ---- Lists ---- */
+
+  .twt-npc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border-bottom: 1px solid var(--twt-slate);
+    padding: 0.6rem 0.7rem;
+  }
+
+  .twt-npc-list-head {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .twt-block-title {
+    flex: 1 1 auto;
+    margin: 0;
+    border: none;
+    color: var(--twt-green);
+    font-family: $font-display;
+    font-size: 0.9rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .twt-list-add {
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--twt-ink-dim);
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover { border-color: var(--twt-glow); color: var(--twt-glow); }
+  }
+
+  // Abilities and actions are prose, so they stay on paper — this is the part of the
+  // statblock a Keeper actually reads aloud.
+  .twt-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border: 1px solid var(--twt-paper-edge);
+    border-left: 3px solid var(--twt-green-deep);
+    border-radius: 3px;
+    padding: 0.4rem 0.5rem;
+    background: var(--twt-paper);
+    color: var(--twt-ink-paper);
+  }
+
+  .twt-action { border-left-color: var(--twt-wine); }
+
+  .twt-entry-head {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .twt-entry-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--twt-ink-paper);
+    font-family: $font-display;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    &:hover:not(:disabled),
+    &:focus { border-bottom-color: var(--twt-green-deep); background: transparent; }
+    &:disabled { color: var(--twt-ink-paper); }
+  }
+
+  .twt-entry-tools {
+    display: flex;
+    gap: 0.1rem;
+    opacity: 0;
+    transition: opacity 120ms ease;
+
+    button {
+      width: 1.2rem;
+      height: 1.2rem;
+      border: none;
+      background: transparent;
+      color: var(--twt-ink-paper-dim);
+      font-size: 0.62rem;
+      line-height: 1;
+      cursor: pointer;
+
+      &:hover { color: var(--twt-wine); }
+    }
+  }
+
+  .twt-entry:hover .twt-entry-tools,
+  .twt-entry:focus-within .twt-entry-tools { opacity: 1; }
+
+  .twt-entry-text {
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: transparent;
+    color: var(--twt-ink-paper);
+    font-family: $font-body;
+    font-size: 0.84rem;
+    resize: vertical;
+
+    &:hover:not(:disabled),
+    &:focus { border-color: var(--twt-rule-paper); background: var(--twt-paper-sunk); }
+    &:disabled { color: var(--twt-ink-paper); }
+  }
+
+  .twt-action-boons { color: var(--twt-wine); font-style: italic; }
+
+  .twt-action-roll {
+    flex: 0 0 auto;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid var(--twt-wine);
+    border-radius: 3px;
+    background: color-mix(in srgb, var(--twt-wine) 18%, transparent);
+    color: var(--twt-wine);
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover { background: color-mix(in srgb, var(--twt-wine) 34%, transparent); }
+  }
+
+  .twt-action-formula {
+    margin: 0;
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .twt-action-pool { color: var(--twt-wine); }
+
+  .twt-action-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.3rem;
+  }
+
+  .twt-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .twt-field-label {
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .twt-action-fields input,
+  .twt-action-fields select {
+    border-color: var(--twt-rule-paper);
+    background: var(--twt-paper-sunk);
+    color: var(--twt-ink-paper);
+  }
+
+  .twt-check {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+
+    input[type="checkbox"] {
+      accent-color: var(--twt-green-deep);
+
+      &::after { color: var(--twt-green-deep); }
+    }
+  }
+
+  .twt-badge {
+    flex: 0 0 auto;
+    border: 1px solid var(--twt-rule-paper);
+    border-radius: 2px;
+    padding: 0 0.3rem;
+    color: var(--twt-ink-paper-dim);
+    font-family: $font-data;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &.twt-badge--major {
+      border-color: var(--twt-wine);
+      background: var(--twt-wine);
+      color: var(--twt-cream);
+    }
+  }
+
+  /* ---- Keeper panel ---- */
+
+  .twt-keeper-panel {
+    border-top: 1px solid var(--twt-slate);
+    background: color-mix(in srgb, var(--twt-steel) 12%, var(--twt-soot));
+  }
+
+  // The Quickstart flags every Keeper aside with a steel-blue bar. Same signal here.
+  .twt-keeper-summary {
+    padding: 0.45rem 0.7rem;
+    background: var(--twt-steel);
+    color: var(--twt-cream);
+    font-family: $font-display;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .twt-keeper-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.6rem 0.7rem 0.7rem;
+  }
+
+  .twt-prose-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    padding: 0.4rem 0.5rem;
+    background: var(--twt-paper);
+
+    .twt-block-title { color: var(--twt-ink-paper-dim); font-size: 0.75rem; }
+
+    prose-mirror {
+      min-height: 4rem;
+      color: var(--twt-ink-paper);
+
+      a.content-link { color: var(--twt-green-deep); }
+    }
+  }
+}

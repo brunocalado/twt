@@ -1,0 +1,30 @@
+{{!--
+  Keeper-only. Gated on isGM in `_configureRenderParts`, so this part is not rendered at
+  all for a player — a player who somehow owns an NPC still should not read its tactics.
+--}}
+<details class="twt-keeper-panel">
+  <summary class="twt-keeper-summary">
+    <i class="fa-solid fa-eye-slash" inert></i>
+    {{localize "TWT.NPC.KeeperPanel"}}
+  </summary>
+
+  <div class="twt-keeper-body">
+    <div class="twt-prose-block">
+      <h3 class="twt-block-title">{{localize "TWT.NPC.FIELDS.tactics.label"}}</h3>
+      <prose-mirror name="system.tactics" value="{{system.tactics}}" toggled
+                    {{#unless editable}}disabled{{/unless}}>{{{enrichedTactics}}}</prose-mirror>
+    </div>
+
+    <div class="twt-prose-block">
+      <h3 class="twt-block-title">{{localize "TWT.Actor.FIELDS.biography.label"}}</h3>
+      <prose-mirror name="system.biography" value="{{system.biography}}" toggled
+                    {{#unless editable}}disabled{{/unless}}>{{{enrichedBiography}}}</prose-mirror>
+    </div>
+
+    <div class="twt-prose-block">
+      <h3 class="twt-block-title">{{localize "TWT.Actor.FIELDS.notes.label"}}</h3>
+      <prose-mirror name="system.notes" value="{{system.notes}}" toggled
+                    {{#unless editable}}disabled{{/unless}}>{{{enrichedNotes}}}</prose-mirror>
+    </div>
+  </div>
+</details>

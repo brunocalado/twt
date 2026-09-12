@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000000",
+  "name": "Grandeluz",
+  "type": "equipment",
+  "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+  "system": {
+    "description": "<p>Uma lanterna pesada, de duas mãos, que empurra a névoa mais longe do que qualquer outra luz que um Desbravador consiga carregar.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "lantern",
+    "heavy": true,
+    "doubleWielded": true,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 4
+  },
+  "sort": 100000,
+  "_key": "!items!ptbequ0000000000",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

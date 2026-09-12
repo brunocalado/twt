@@ -1,0 +1,15 @@
+{{!-- Rules the Keeper adjudicates, then flavour. Both are HTMLFields. --}}
+<div class="twt-item-prose">
+  <div class="twt-prose-block">
+    <h2 class="twt-block-title">{{localize "TWT.Item.FIELDS.rules.label"}}</h2>
+    <p class="twt-field-hint">{{localize "TWT.Item.FIELDS.rules.hint"}}</p>
+    <prose-mirror name="system.rules" value="{{system.rules}}" toggled
+                  {{#unless editable}}disabled{{/unless}}>{{{enrichedRules}}}</prose-mirror>
+  </div>
+
+  <div class="twt-prose-block">
+    <h2 class="twt-block-title">{{localize "TWT.Item.FIELDS.description.label"}}</h2>
+    <prose-mirror name="system.description" value="{{system.description}}" toggled
+                  {{#unless editable}}disabled{{/unless}}>{{{enrichedDescription}}}</prose-mirror>
+  </div>
+</div>

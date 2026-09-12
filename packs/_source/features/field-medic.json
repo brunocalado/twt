@@ -1,0 +1,27 @@
+{
+  "_id": "twtfea0000000012",
+  "name": "Field Medic",
+  "type": "feature",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "system": {
+    "description": "<p><em>The Quickstart does not label its features junior or veteran. This one is recorded as junior because its owner's skill score is below 4, which is where veteran features are earned.</em></p>",
+    "rules": "<p>Whenever an ally within 2 range is damaged, you may immediately move towards them. Whenever you heal another creature, you may invigorate them.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "skill": "survival",
+    "tier": "junior"
+  },
+  "sort": 1300000,
+  "_key": "!items!twtfea0000000012",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

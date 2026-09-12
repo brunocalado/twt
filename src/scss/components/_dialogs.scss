@@ -1,0 +1,277 @@
+@use "../utils/typography" as *;
+
+// The system's own dialogs: the test prompt, the strain die picker, the boon menu and
+// the damage preview. All scoped under `.twt`, so nothing reaches core's own dialogs.
+//
+// The window surface itself comes from `global/_window.scss`: a dialog that styled
+// only its contents inherited the *user's* colour scheme for the frame, so the test
+// prompt used to open as cream parchment next to a black character sheet.
+.twt.twt-dialog {
+  .twt-dialog-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .twt-dialog-lead {
+    margin: 0;
+    color: var(--twt-ink);
+    font-size: 0.92rem;
+  }
+
+  .twt-dialog-note {
+    margin: 0;
+    color: var(--twt-ink-dim);
+    font-size: 0.82rem;
+    font-style: italic;
+  }
+
+  .twt-field-row {
+    display: flex;
+    gap: 0.6rem;
+
+    > * { flex: 1 1 0; min-width: 0; }
+  }
+
+  .twt-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .twt-field-label {
+    color: var(--twt-green);
+    font-family: $font-data;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .twt-field-hint {
+    color: var(--twt-ink-dim);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  // Stepper: a number flanked by two nudges, so difficulty is adjusted without typing.
+  .twt-stepper {
+    display: flex;
+    align-items: stretch;
+
+    button {
+      flex: 0 0 auto;
+      width: 1.9rem;
+      border: 1px solid var(--twt-green-deep);
+      background: var(--twt-green-deep);
+      color: var(--twt-cream);
+      font-family: $font-data;
+      line-height: 1;
+      cursor: pointer;
+
+      &:first-of-type { border-radius: 3px 0 0 3px; }
+      &:last-of-type { border-radius: 0 3px 3px 0; }
+      &:hover { background: var(--twt-green); }
+    }
+
+    input {
+      flex: 1 1 auto;
+      min-width: 0;
+      border-radius: 0;
+      text-align: center;
+      font-family: $font-data;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+
+  .twt-fieldset {
+    margin: 0;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    padding: 0.4rem 0.55rem 0.5rem;
+
+    legend {
+      border-radius: 2px;
+      padding: 0.05rem 0.4rem;
+      background: var(--twt-green-deep);
+      color: var(--twt-cream);
+      font-family: $font-display;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+  }
+
+  .twt-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+
+    input { flex: 0 0 auto; margin-top: 0.15rem; }
+  }
+
+  .twt-check-value {
+    font-family: $font-data;
+    font-style: normal;
+    color: var(--twt-glow);
+  }
+
+  .twt-check-note {
+    color: var(--twt-ink-dim);
+    font-size: 0.75rem;
+  }
+
+  .twt-pool-readout {
+    margin: 0;
+    border: 1px solid var(--twt-paper-edge);
+    border-radius: 3px;
+    padding: 0.45rem 0.6rem;
+    background: var(--twt-paper);
+    color: var(--twt-ink-paper);
+    font-family: $font-data;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .twt-pool-total {
+    color: var(--twt-wine);
+    font-family: $font-body;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  // Strain die picker: the dice themselves are the checkboxes.
+  .twt-die-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .twt-die-pick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    cursor: pointer;
+  }
+
+  .twt-die {
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    background: var(--twt-soot);
+    color: var(--twt-ink-dim);
+    font-family: $font-data;
+    font-variant-numeric: tabular-nums;
+
+    &.is-mark {
+      border-color: var(--twt-glow);
+      background: color-mix(in srgb, var(--twt-glow) 22%, var(--twt-soot));
+      color: var(--twt-glow);
+      font-weight: 700;
+    }
+  }
+
+  .twt-boon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .twt-boon-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    border: 1px solid var(--twt-slate);
+    border-radius: 3px;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+
+    &:hover { border-color: var(--twt-green); background: color-mix(in srgb, var(--twt-green) 10%, transparent); }
+
+    input { flex: 0 0 auto; margin-top: 0.2rem; }
+
+    em {
+      color: var(--twt-glow);
+      font-family: $font-data;
+      font-size: 0.72rem;
+      font-style: normal;
+    }
+  }
+
+  // Damage preview: one row per target, since armor and conditions differ per actor.
+  .twt-damage-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .twt-damage-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    border: 1px solid var(--twt-rule);
+    border-left: 3px solid var(--twt-slate);
+    border-radius: 3px;
+    padding: 0.35rem 0.45rem;
+
+    &.is-lethal { border-left-color: var(--twt-wine); }
+  }
+
+  .twt-damage-img {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--twt-rule);
+    border-radius: 2px;
+    object-fit: cover;
+  }
+
+  .twt-damage-lines {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .twt-damage-lethal {
+    color: var(--twt-wine);
+    font-family: $font-data;
+    font-size: 0.75rem;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .twt-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    border-top: 1px solid var(--twt-slate);
+    padding-top: 0.5rem;
+  }
+
+  .twt-primary {
+    width: auto;
+    border: 1px solid var(--twt-green);
+    border-radius: 3px;
+    padding: 0.3rem 1rem;
+    background: var(--twt-green-deep);
+    color: var(--twt-cream);
+    font-family: $font-display;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover { background: var(--twt-green); }
+  }
+}

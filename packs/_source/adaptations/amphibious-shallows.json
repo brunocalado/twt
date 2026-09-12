@@ -1,0 +1,45 @@
+{
+  "_id": "twtada0000000005",
+  "name": "Amphibious — SHALLOWS",
+  "type": "adaptation",
+  "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
+  "system": {
+    "description": "<p>The Amphibious line.</p>",
+    "rules": "",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "line": "Amphibious",
+    "tier": "awakened1",
+    "effects": {
+      "malignant": {
+        "name": "",
+        "text": ""
+      },
+      "awakened1": {
+        "name": "SHALLOWS",
+        "text": "Swimming tests are -1M easier. Swimming does not slow you or restrict your wield limit. You can breathe underwater."
+      },
+      "awakened2": {
+        "name": "",
+        "text": ""
+      },
+      "awakened3": {
+        "name": "",
+        "text": ""
+      }
+    }
+  },
+  "sort": 600000,
+  "_key": "!items!twtada0000000005",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

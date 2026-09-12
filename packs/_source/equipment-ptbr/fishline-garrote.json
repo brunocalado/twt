@@ -1,0 +1,40 @@
+{
+  "_id": "ptbequ0000000014",
+  "name": "Garrote de Linha de Pesca",
+  "type": "equipment",
+  "img": "icons/sundries/survival/rope-coiled-tan.webp",
+  "system": {
+    "description": "<p>Um metro de linha entre dois cabos. Trabalho silencioso.</p>",
+    "rules": "<p>Em um acerto, você pode agarrar o alvo; agarrada desse jeito, a vítima fica Muda e Sufocando. Ocultar esta arma é -1M mais fácil.</p>",
+    "state": "normal",
+    "charges": {
+      "enabled": false,
+      "value": 3,
+      "max": 3
+    },
+    "restoreTrigger": "",
+    "category": "weapon",
+    "heavy": false,
+    "doubleWielded": true,
+    "consumable": false,
+    "equipState": "wielded",
+    "price": 0,
+    "weapon": {
+      "attackTrait": "body",
+      "damage": 1,
+      "damageType": "body",
+      "range": 0,
+      "piercing": false
+    },
+    "armorBonus": 0,
+    "wardValue": 0
+  },
+  "sort": 1500000,
+  "_key": "!items!ptbequ0000000014",
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}
