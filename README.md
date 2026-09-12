@@ -12,6 +12,20 @@ This system implements the game's rules — the d6 mark pool, Strain, record slo
 travel — with character and NPC sheets, a chat-card dice engine, and compendiums of the printed
 content.
 
+## Screenshots
+
+|  |  |
+| :--: | :--: |
+| ![Delver sheet, Ledger tab](.github/screenshots/delver-ledger.webp) | ![Delver sheet, Combat tab](.github/screenshots/delver-combat.webp) |
+| **Ledger** — three traits, each with its own HP pool, and six skills. Armor, speed, ward and the slot counts sit along the bottom. | **Combat** — every major and minor action, each showing the trait and skill its test rolls. |
+| ![Delver sheet, Records tab](.github/screenshots/delver-records.webp) | ![The test dialog](.github/screenshots/test-dialog.webp) |
+| **Records** — items, features and adaptations, in the slots their trait pays for. | **Tests** — choose trait, skill and difficulty; the dice pool is worked out before you roll. |
+
+|  |  |  |
+| :--: | :--: | :--: |
+| ![NPC statblock](.github/screenshots/npc-sheet.webp) | ![Equipment record](.github/screenshots/item-sheet.webp) | ![Chat cards](.github/screenshots/chat-cards.webp) |
+| **NPC statblock** — one pool of health, with abilities and actions. The Keeper's notes stay hidden from players. | **Equipment** — category, damage, range and the rules text the Keeper adjudicates. | **Chat** — the dice that rolled, marks against difficulty, and boons left to spend. |
+
 ## The game
 
 *Time Without Tide* was created by David Naylor and James Coquillat and is published by Chaosium.
